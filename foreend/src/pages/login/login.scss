@@ -1,3 +1,60 @@
 page-login {
-
+    #body{
+        background-image: url("../assets/imgs/login-bg.png");
+        background-size:100%;
+    }
+    #login{
+        text-align: center;
+        color:white;
+        font-size:18px;
+    }
+    #logo{
+        width:30%;
+        margin-left:35%;
+        margin-top:50px;
+    }
+    
+    #list{
+        margin-top:50px;
+        width:80%;
+        margin-left:10%;
+    }
+    .in{
+        width:80%;
+        height:50px;
+        margin-left:10%;
+        background-color:rgba(0,0,0,0);
+        color:white;
+        border:none;
+        border-bottom: 1px solid gray;
+    }
+    input::-webkit-input-placeholder{
+        color:#e2e3e3;
+    }
+    #but1{
+        width:80%;
+        margin-left: 10%;
+        background-color: #1990ef;
+        margin-top:50px;
+    }
+    #but2{
+        width:80%;
+        margin-left: 10%;
+        background-color: #1990ef;
+    }
+    #pw{
+        color:#e2e3e3;
+        text-align: left;
+        font-size: 15px;
+        margin-left:10%;
+        width:30%;
+        display: inline-block;
+    }
+    #reg{
+        float:right;
+        margin-right:10%;
+        display: inline-block;
+        color:#e2e3e3;
+        font-size: 15px;
+    }
 }

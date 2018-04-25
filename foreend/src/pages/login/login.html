@@ -4,15 +4,28 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>登录</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
 
-<ion-content padding>
+<ion-content id="body" style="background-image:url('assets/imgs/bg.png')">
+  <p id="login">登录</p>
+  <img src="assets/imgs/logo0.png" alt="" id="logo">
 
+  
+  <ion-list id="list" style="BACKGROUND-COLOR: transparent;">
+      <input type="text" placeholder="请输入您的手机号" class="in" >
+      <input type="password" placeholder="请输入您的密码" class="in" >
+  </ion-list>
+
+    <div>
+        <button ion-button round color="none" (click)="sub()" id="but1">登 录</button>
+    </div>
+    <div id="pw"><p (click)="pwback()">忘记密码？</p></div>
+    <p id="reg" (click)="reg()">新用户注册</p>
 </ion-content>
