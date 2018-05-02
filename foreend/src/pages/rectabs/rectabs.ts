@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { RechomePage } from '../rechome/rechome';
+import { RecmessagePage } from '../recmessage/recmessage';
+import { RecmiddlePage } from '../recmiddle/recmiddle';
+import { RecnearPage } from '../recnear/recnear';
+import { RecmyPage } from '../recmy/recmy';
 
 
 @Component({
@@ -9,9 +11,11 @@ import { HomePage } from '../home/home';
 })
 export class RectabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = RechomePage;
+  tab2Root = RecmessagePage;
+  tab3Root = RecmiddlePage;
+  tab4Root = RecnearPage;
+  tab5Root = RecmyPage;
 
   constructor() {
 

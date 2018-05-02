@@ -7,10 +7,15 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { RectabsPage } from '../pages/rectabs/rectabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { PwbackPage } from '../pages/pwback/pwback';
+import { RechomePage } from '../pages/rechome/rechome';
+import { RecmessagePage } from '../pages/recmessage/recmessage';
+import { RecmiddlePage } from '../pages/recmiddle/recmiddle';
+import { RecnearPage } from '../pages/recnear/recnear';
+import { RecmyPage } from '../pages/recmy/recmy';
+import { RectabsPage } from '../pages/rectabs/rectabs';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,10 +28,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    RectabsPage,
     LoginPage,
     RegisterPage,
-    PwbackPage
+    PwbackPage,
+    RechomePage,
+    RecmessagePage,
+    RecmiddlePage,
+    RecnearPage,
+    RecmyPage,
+    RectabsPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +48,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    RectabsPage,
+    TabsPage,   
     LoginPage,
     RegisterPage,
-    PwbackPage
+    PwbackPage,
+    RechomePage,
+    RecmessagePage,
+    RecmiddlePage,
+    RecnearPage,
+    RecmyPage,
+    RectabsPage
   ],
   providers: [
     StatusBar,
