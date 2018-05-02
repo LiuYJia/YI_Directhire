@@ -57,7 +57,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecmiddlePage,
     RecnearPage,
     RecmyPage,
-    RectabsPage
+    RectabsPage 
   ],
   providers: [
     StatusBar,

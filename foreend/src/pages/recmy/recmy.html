@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title text-center>我的</ion-title>
+    <ion-title text-center>个人中心</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content id="body">
+    <div id="infor">
+        <img src="assets/imgs/class3.png" alt="">
+        <ion-icon name="settings" id="set" (click)="set()"></ion-icon>      
+        <p>用户名</p>     
+    </div>
+    <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item }}
+        </button>  
+    </ion-list>
 
+    <button ion-button round color="none" (click)="leave()" id="but1">退出登录</button>
 </ion-content>
