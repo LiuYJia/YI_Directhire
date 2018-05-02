@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { RegisterPage } from '../register/register';
+import { PwbackPage } from '../pwback/pwback';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,11 +18,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private formBuilder: FormBuilder) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+  sub(){
+    this.navCtrl.setRoot(TabsPage);
+    //this.navCtrl.push(RegisterPage);
+  }
+  pwback(){
+    this.navCtrl.push(PwbackPage);
+  }
+  reg(){
+    this.navCtrl.push(RegisterPage);
+  }
 }

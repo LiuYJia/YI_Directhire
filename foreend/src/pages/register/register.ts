@@ -21,5 +21,8 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
-
+  back(){
+    this.navCtrl.pop();
+    console.log("back");
+  }
 }

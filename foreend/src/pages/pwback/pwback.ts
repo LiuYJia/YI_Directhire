@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the PwbackPage page.
  *
@@ -21,5 +21,8 @@ export class PwbackPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PwbackPage');
   }
-
+  back(){
+    this.navCtrl.pop();
+    console.log("back");
+  }
 }
