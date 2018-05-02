@@ -16,6 +16,8 @@ import { RecmiddlePage } from '../pages/recmiddle/recmiddle';
 import { RecnearPage } from '../pages/recnear/recnear';
 import { RecmyPage } from '../pages/recmy/recmy';
 import { RectabsPage } from '../pages/rectabs/rectabs';
+import { StartPage } from '../pages/start/start';
+import { AnimationPage } from '../pages/animation/animation';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +38,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecmiddlePage,
     RecnearPage,
     RecmyPage,
-    RectabsPage
+    RectabsPage,
+    StartPage,
+    AnimationPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecmiddlePage,
     RecnearPage,
     RecmyPage,
-    RectabsPage 
+    RectabsPage,
+    StartPage,
+    AnimationPage
   ],
   providers: [
     StatusBar,
