@@ -13,6 +13,52 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content id="body">
+
+    <div id="top">
+      <ion-segment [(ngModel)]="near">
+        <ion-segment-button value="fast">
+          最快到达
+        </ion-segment-button>
+        <ion-segment-button value="high">
+          信誉度高
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+      
+    <div [ngSwitch]="near">
+      <ion-list *ngSwitchCase="'fast'" class="classify">
+          <ion-item class="seeker" (click)="seeker()">
+              <ion-thumbnail item-start>
+                  <img src="assets/imgs/class3.png">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+              <h3><i>女</i><i>27岁</i><i>本科</i></h3>
+              <div><p>应聘:网页设计师</p><p class="sal">薪资:5k-7k</p></div>
+              <h4>个人简介:...</h4>
+          </ion-item>
+          <ion-item class="seeker" (click)="seeker()">
+              <ion-thumbnail item-start>
+                  <img src="assets/imgs/class3.png">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+              <h3><i>女</i><i>27岁</i><i>本科</i></h3>
+              <div><p>应聘:网页设计师</p><p class="sal">薪资:5k-7k</p></div>
+              <h4>个人简介:...</h4>
+          </ion-item>
+      </ion-list>
+    
+      <ion-list *ngSwitchCase="'high'" class="classify">
+          <ion-item class="seeker" (click)="seeker()">
+              <ion-thumbnail item-start>
+                  <img src="assets/imgs/class3.png">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+              <h3><i>女</i><i>27岁</i><i>本科</i></h3>
+              <div><p>应聘:网页设计师</p><p class="sal">薪资:5k-7k</p></div>
+              <h4>个人简介:...</h4>
+          </ion-item>
+      </ion-list>
+    </div>
 
 </ion-content>

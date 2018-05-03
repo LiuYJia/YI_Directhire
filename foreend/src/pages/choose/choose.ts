@@ -28,6 +28,6 @@ export class ChoosePage {
   }
 
   goPage02(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push('RecloginPage');
   }
 }

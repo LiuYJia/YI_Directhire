@@ -25,7 +25,7 @@ export class RecmyPage {
 
   items = ["发布可抢职位","发布一般职位"];
   leave(){
-    this.app.getRootNavs()[0].setRoot(LoginPage);
+    this.app.getRootNavs()[0].setRoot('RecloginPage');
   }
   set(){
     this.navCtrl.push('RecsetPage');

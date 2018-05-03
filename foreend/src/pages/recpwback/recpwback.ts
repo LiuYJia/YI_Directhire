@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the RecnearPage page.
+ * Generated class for the RecpwbackPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-recnear',
-  templateUrl: 'recnear.html',
+  selector: 'page-recpwback',
+  templateUrl: 'recpwback.html',
 })
-export class RecnearPage {
+export class RecpwbackPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RecnearPage');
+    console.log('ionViewDidLoad RecpwbackPage');
   }
 
-  near="fast";
-  seeker(){
-    this.navCtrl.push('RecseekerPage');
+  back(){
+    this.navCtrl.pop();
+    console.log("back");
   }
 }

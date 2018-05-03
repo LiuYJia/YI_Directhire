@@ -1,3 +1,34 @@
 page-recnear {
-
+    #body{
+        background-color: #f2f2f2;
+    }
+    .seeker{
+        margin-top:5px;
+    }
+    .classify h2{
+        font-weight: bold;
+        font-size:18px;
+        display: inline;
+    }
+    .classify h3{
+        display: inline;
+    }
+    .classify h3 i{
+        font-size:15px;
+        color:#b9b8b8;
+        font-style: normal;
+        margin-left:5px;    
+    }
+    .classify div p{
+        font-size:15px;
+        color:red;
+        font-style: normal;
+        display: inline-block;
+    }
+    .sal{
+        margin-left:10px;
+    }
+    .classify h4{
+        font-size:15px;
+    }
 }

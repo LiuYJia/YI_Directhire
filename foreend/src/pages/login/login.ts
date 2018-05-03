@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterPage } from '../register/register';
 import { PwbackPage } from '../pwback/pwback';
-import { RectabsPage } from '../rectabs/rectabs';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LoginPage page.
  *
@@ -27,8 +27,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   sub(){
-    this.navCtrl.setRoot(RectabsPage);
-    //this.navCtrl.push(RegisterPage);
+    this.navCtrl.setRoot(TabsPage);
   }
   pwback(){
     this.navCtrl.push(PwbackPage);
