@@ -14,8 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'recseeker.html',
 })
 export class RecseekerPage {
-
+  img;
+  name;
+  sex;
+  age;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.img = navParams.get('title').img;
+    this.name = navParams.get('title').name;
+    this.sex = navParams.get('title').sex;
+    this.age = navParams.get('title').age;
   }
 
   ionViewDidLoad() {

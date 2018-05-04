@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>求职者信息</ion-title>
+    <ion-title text-center>求职者信息</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,8 +15,8 @@
 
 <ion-content>
   <div id="top">
-    <img src="assets/imgs/class3.png" alt="">
-    <h3>姓名</h3>
+    <img src="{{img}}" alt="">
+    <h3>{{name}}</h3>
   </div>
 
   <ion-list>
@@ -24,8 +24,9 @@
   </ion-list>
   <ion-list>
     <ion-item>
-      <p>姓名：</p>
-      <p>性别：</p>
+      <p>姓名：{{name}}</p>
+      <p>性别：{{sex}}</p>
+      <p>年龄：{{age}}</p>
       <p>最高学历：</p>
     </ion-item>
   </ion-list>

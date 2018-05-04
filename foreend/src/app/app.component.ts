@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { RectabsPage } from '../pages/rectabs/rectabs';
-import { RecnearPage } from '../pages/recnear/recnear';
+import { RecmessagePage } from '../pages/recmessage/recmessage';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
 
@@ -14,7 +14,7 @@ import { StartPage } from '../pages/start/start';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = RecnearPage;
+  rootPage:any = RectabsPage;
   //rootPage:any = LoginPage;
   //rootPage:any = StartPage;
 
