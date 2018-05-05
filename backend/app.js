@@ -4,9 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var router = express.Router();
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes');
 
 var app = express();
 
@@ -19,11 +20,17 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+//这里传入了一个密钥加session id
+app.use(cookieParser('Wilson'));
+//使用靠就这个中间件
+app.use(session({ secret: 'wilson'}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use('/',routes);
+
+routes(app);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,5 +49,16 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+//设置跨域访问
+app.all('*', function(req, res, next) {
+	//res.Header('Content-Type','text/plain');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    next();
+});
+
+app.listen(8080);
 
 module.exports = app;

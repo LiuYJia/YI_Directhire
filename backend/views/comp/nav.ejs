@@ -1,0 +1,60 @@
+<nav class="col-md-8 navlist">
+    <ul class="nav nav-pills nav-stacked">
+        <li class="nav-item">
+            <a <% if (locals.page == 'home') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/home">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a>
+        </li>
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'adduser') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/user/adduser">用户管理</a>
+        </li>
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'master') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/master">管&nbsp;&nbsp;理&nbsp;&nbsp;员</a>
+        </li>
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'file') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/file">文件管理</a>
+        </li>
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'label') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/label">标签管理</a>
+        </li>
+
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'recommend') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/recommend">推&nbsp;&nbsp;荐&nbsp;&nbsp;位</a>
+        </li>
+
+        <li class="nav-item">
+            <a <% if (locals.page == 'msg') { %>
+                class="nav-link active"
+            <% } else { %>
+                    class="nav-link"
+            <% } %> href="/admin/msg">用户反馈</a>
+        </li>
+    </ul>
+</nav>

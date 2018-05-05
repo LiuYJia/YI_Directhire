@@ -1,0 +1,37 @@
+.navbar-static-top img{
+  width: 50px;
+  height: 50px;
+}  
+.navbar-static-top {
+  background-color: rgb(25,144,239);
+}
+.navbar-static-top a{
+  text-decoration: none;
+  color: white;
+}
+.li{
+  float: left;
+}
+.navleft{
+  background-color: rgb(57, 68, 96);
+  height: 561px;
+}
+.navleft a{
+  color: white;
+}
+.maintxt{
+  background-color: whitesmoke;
+  height:561px;
+}
+.maintxt .row{
+  border: 1px solid red;
+  height: 400px;
+  margin-top: 3.5%;
+}
+.navlist{
+  margin-top: 10%;
+  margin-left: 20%;
+}
+.navlist li{
+  margin-top: 10%;
+}

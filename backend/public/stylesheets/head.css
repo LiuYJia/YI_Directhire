@@ -1,0 +1,16 @@
+nav{
+    width: 100%;
+    background-color: rgb(25,144,239);
+}
+.navbar-brand{
+    color: whitesmoke;
+}
+.navbar-brand a{
+    text-decoration: none;
+}
+#btnSub,#btnLog{
+    margin-left: 15%;
+}
+#reg{
+    margin-left: 13%;
+}
