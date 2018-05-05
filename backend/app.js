@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //这里传入了一个密钥加session id
 app.use(cookieParser('Wilson'));
-//使用靠就这个中间件
+//使用就靠这个中间件
 app.use(session({ secret: 'wilson'}));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -59,6 +59,5 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.listen(8080);
 
 module.exports = app;
