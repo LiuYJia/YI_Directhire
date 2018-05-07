@@ -1,0 +1,4 @@
+1.提交——2018.5.7
+  admin-seeker表：s-id,username,userpass,age
+  admin-recruit表:r-id,username,userpass,age
+

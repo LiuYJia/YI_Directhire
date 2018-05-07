@@ -1,0 +1,8 @@
+1.提交——2018.5.7
+  modules文件夹：
+	新增user-recruit.js,user-seeker.js
+  routes文件夹：
+	新增admin-recruit.js:注册，用于前端调用
+	新增admin-seeker.js：注册，用于前端调用
+	新增getMessage.js:获取seeker用户数据
+	新增getMessage1.js：获取recruit用户数据
