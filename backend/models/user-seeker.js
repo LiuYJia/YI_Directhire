@@ -1,12 +1,11 @@
 ﻿var mysql = require('mysql');
-var DB_NAME = 'people';
+var DB_NAME = 'nodesample';
 
 var pool  = mysql.createPool({
     host     : '127.0.0.1',
     user     : 'root',
-    password : 'root',
-    database : 'people',
-    port     :3306
+    password : '123456',
+    database : 'nodesample'
 });
 
 pool.on('connection', function(connection) {  
@@ -102,19 +101,36 @@ pool.getConnection(function(err, connection) {
     AdminS.getUserByUserName = function getUserNumByName(username, callback) {
         pool.getConnection(function (err, connection) {
             var getUserByUserName_Sql = "SELECT * FROM admin_seeker WHERE username = ?";
+            var getUserByUserName_Sql1 = "SELECT * FROM admin_seeker";
 
-            connection.query(getUserByUserName_Sql, [username], function (err, result) {
-
-                //当连接不再使用时，用connection对象的release方法将其归还到连接池中
-                connection.release();
-                if (err) {
-                    console.log("getUserByUserName Error: " + err.message);
-                    return;
-                }
-
-                console.log("invoked[getUserByUserName]");
-                callback(err, result);
-            });
+            //如果username存在，则返回相关用户信息
+            if(username != undefined){
+                connection.query(getUserByUserName_Sql, [username], function (err, result) {  
+                    if (err) {
+                        console.log("getUserByUserName Error: " + err.message);
+                        return;
+                    }
+                    console.log("invoked[getUserByUserName]");
+                    callback(err, result);
+    
+                    //当连接不再使用时，用connection对象的release方法将其归还到连接池中
+                    connection.release();
+                });
+            }
+            //如果username不存在，则返回全部用户信息
+            else{
+                connection.query(getUserByUserName_Sql1, function (err, result) {  
+                    if (err) {
+                        console.log("getUserByUserName Error: " + err.message);
+                        return;
+                    }
+                    console.log("invoked[getUserByUserName]");
+                    callback(err, result);
+    
+                    //当连接不再使用时，用connection对象的release方法将其归还到连接池中
+                    connection.release();
+                });
+            }
         });
     };
  

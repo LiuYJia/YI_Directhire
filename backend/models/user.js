@@ -1,12 +1,11 @@
 var mysql = require('mysql');
-var DB_NAME = 'people';
+var DB_NAME = 'nodesample';
 
 var pool  = mysql.createPool({
     host     : '127.0.0.1',
     user     : 'root',
-    password : 'root',
-    database : 'people',
-    port     :3306
+    password : '123456',
+    database : 'nodesample'
 });
 
 pool.on('connection', function(connection) {  

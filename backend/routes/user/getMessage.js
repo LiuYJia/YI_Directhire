@@ -14,14 +14,16 @@ router.get('/',function(req,res){
   
   //获取用户信息
   AdminS.getUserByUserName(userName,function(err,results){
-    if(err){
+
+      if(err){
         res.locals.error = err;
         return;
-    }
-    if(results){
-      console.log(results);
-      res.send(results[0]);
-    }
+      }
+      if(results){
+        console.log(results);
+        res.send(results);
+      }
+
   })
 
 });
