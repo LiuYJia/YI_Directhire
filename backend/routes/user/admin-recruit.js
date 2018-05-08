@@ -26,28 +26,29 @@ router.get('/', function(req, res) {
     AdminR.getUserNumByName(newUser.username, function (err, results) { 
       
       console.log(results[0]['num']);
-
-      if(results[0]['num'] == 0){
-        console.log('success!');
-
-        //返回响应数据
-        res.send('0');
-
-        //向数据库存储数据
-        newUser.save({username:newUser.username,userpass:newUser.userpass},function(err,result){
-          if(err){
-            res.locals.error = err;
-            return;
-          }
-        })        
-        
+      if(newUser.name != undefined){
+        if(results[0]['num'] == 0){
+          console.log('success!');
+  
+          //向数据库存储数据
+          newUser.save({username:newUser.username,userpass:newUser.userpass},function(err,result){
+            if(err){
+              res.locals.error = err;
+              return;
+            }
+  
+          })
+          //返回响应数据
+          res.send('0');  
+          
+        }
+  
+        if(results[0]['num'] > 0){
+          res.send('1');
+          console.log('用户名已存在');
+        }
       }
-
-      if(results[0]['num'] > 0){
-        res.send('1');
-        console.log('用户名已存在');
-      }
-    
+      res.send('请传入参数!');
     });
 });
 

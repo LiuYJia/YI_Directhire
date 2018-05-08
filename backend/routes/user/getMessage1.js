@@ -20,7 +20,7 @@ router.get('/',function(req,res){
     }
     if(results){
       console.log(results);
-      res.send(results[0]);
+      res.send(results);
     }
   })
 
