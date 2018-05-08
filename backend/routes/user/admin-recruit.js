@@ -1,4 +1,4 @@
-var express = require('express'),
+﻿var express = require('express'),
     router = express.Router(),
     AdminR = require('../../models/user-recruit'),
     crypto = require('crypto'),
@@ -10,16 +10,18 @@ router.get('/', function(req, res) {
     console.log(req.body);
     
     //接收参数
+    let md5 = crypto.createHash("md5");
     var param = req.query || req.params;
     console.log('username:'+param.userName);
     console.log('userpassword'+param.userPwd);
     var userName = param.userName;
     var userPwd = param.userPwd;
+    let newPas = md5.update(password).digest("hex");
   
     //创建UserS对象
     var newUser = new AdminR({
       username: userName,
-      userpass: userPwd
+      userpass: newPas
     });
 
     //检查用户名是否存在
