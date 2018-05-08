@@ -10,7 +10,7 @@ seeker：
 	1: 用户名已存在
 获取信息：
   方式：get
-  地址：'http://127.0.0.1:3000/user/admin-seeker/getMessage'
+  地址：'http://127.0.0.1:3000/user/getMessage'
   参数：
 	用户名:userName
   返回值：
@@ -28,7 +28,7 @@ recruit：
 	1: 用户名已存在
 获取信息：
   方式：get
-  地址：'http://127.0.0.1:3000/user/admin-recruit/getMessage1'
+  地址：'http://127.0.0.1:3000/user/getMessage1'
   参数：
 	用户名:userName
   返回值：
