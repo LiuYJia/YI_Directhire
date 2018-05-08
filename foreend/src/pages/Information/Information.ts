@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the InformationPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-information',
+  templateUrl: 'information.html',
 })
 export class InformationPage {
   list=[{title:'马云',icon:'assets/imgs/18.jpg',ig:'五星级酒店不能去抢麻辣烫的生意，要有自己的定位。',time:'10:11'},
@@ -17,8 +25,11 @@ export class InformationPage {
   info=[{title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'}];
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad InformationPage');
   }
 
 }

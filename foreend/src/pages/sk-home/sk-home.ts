@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the SkHomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-sk-home',
+  templateUrl: 'sk-home.html',
 })
 export class SkHomePage {
-  searchQuery: string = '';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SkHomePage');
+  } searchQuery: string = '';
   items: string[];
   list=[{title:'招聘天猫运营加运营助理',
          price:'3K-5K',
@@ -29,9 +43,6 @@ export class SkHomePage {
   
 
 ];
-  constructor(public navCtrl: NavController) {
-
-  }
   initializeItems() {
     this.items = [
       '快递员',
