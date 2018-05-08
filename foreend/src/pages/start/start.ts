@@ -27,7 +27,7 @@ export class StartPage {
     setTimeout(function(){
       console.log('20000');
       that.navCtrl.push(AnimationPage);
-    },5000)
+    },2000)
   }
 
   ionViewDidLoad() {
