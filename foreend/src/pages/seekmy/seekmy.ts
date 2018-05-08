@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
 
 /**
  * Generated class for the SeekmyPage page.
@@ -15,11 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeekmyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(app:App,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekmyPage');
   }
-
+  retreat(){
+    this.app.getRootNavs()[0].setRoot('RecloginPage');
+  }
 }
