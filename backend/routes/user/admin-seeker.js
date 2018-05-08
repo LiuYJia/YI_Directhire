@@ -15,6 +15,10 @@ router.get('/', function(req, res) {
     console.log('userpassword'+param.userPwd);
     var userName = param.userName;
     var userPwd = param.userPwd;
+
+    //密码加密
+    //let md5 = crypto.createHash("md5");
+    //let newPas = md5.update(userPwd).digest("hex");
   
     //创建UserS对象
     var newUser = new AdminS({
@@ -26,30 +30,29 @@ router.get('/', function(req, res) {
     AdminS.getUserNumByName(newUser.username, function (err, results) { 
       
       console.log(results[0]['num']);
-      console.log('result'+results);
-
-      if(results[0]['num'] == 0){
-        console.log('success!');
-
-        //返回相应数据
-        res.send('0');
-
-        //向数据库存储数据
-        newUser.save({username:newUser.username,userpass:newUser.userpass},function(err,result){
-          if(err){
-            res.locals.error = err;
-            return;
-          }
-          console.log(result);
-        })   
-        
+      if(newUser.name != undefined){
+        if(results[0]['num'] == 0){
+          console.log('success!');
+  
+          //向数据库存储数据
+          newUser.save({username:newUser.username,userpass:newUser.userpass},function(err,result){
+            if(err){
+              res.locals.error = err;
+              return;
+            }
+  
+          })
+          //返回响应数据
+          res.send('0');  
+          
+        }
+  
+        if(results[0]['num'] > 0){
+          res.send('1');
+          console.log('用户名已存在');
+        }
       }
-
-      if(results[0]['num'] > 0){
-        res.send('1');
-        console.log('用户名已存在');
-      }
-    
+      res.send('请传入参数!');
     });
 });
 
