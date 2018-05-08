@@ -17,10 +17,6 @@ import { RecnearPage } from '../pages/recnear/recnear';
 import { RecmyPage } from '../pages/recmy/recmy';
 import { RectabsPage } from '../pages/rectabs/rectabs';
 import { StartPage } from '../pages/start/start';
-import { InformationPage } from '../pages/Information/Information';
-import { MePage } from '../pages/Me/Me';
-import { NearbyPage } from '../pages/Nearby/Nearby';
-import { SkHomePage } from '../pages/SkHome/SkHome';
 import { AnimationPage } from '../pages/animation/animation';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -44,10 +40,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RectabsPage,
     StartPage,
     AnimationPage,
-    InformationPage,
-    MePage,
-    SkHomePage,
-    NearbyPage
   ],
   imports: [
     BrowserModule,
@@ -76,10 +68,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RectabsPage,
     StartPage,
     AnimationPage,
-    InformationPage,
-    MePage,
-    SkHomePage,
-    NearbyPage
   ],
   providers: [
     StatusBar,

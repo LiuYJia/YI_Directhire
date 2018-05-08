@@ -1,0 +1,25 @@
+page-seekmy {
+    .item-md ion-avatar ion-img, .item-md ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 80px;
+        height: 80px;
+    }
+    .item-md p {
+        margin: 15px 0 0 2px;
+        overflow: inherit;
+        font-size: 1.5rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: #343434;
+        font-weight: bold;
+    }
+    .item-md h2 {
+        margin: 5px 0;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .label-md {
+       margin: 0 0 0 0;
+    }
+}

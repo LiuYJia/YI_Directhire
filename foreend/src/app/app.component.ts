@@ -14,9 +14,9 @@ import { StartPage } from '../pages/start/start';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = RectabsPage;
+  //rootPage:any = RectabsPage;
   //rootPage:any = LoginPage;
-  //rootPage:any = StartPage;
+  rootPage:any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
