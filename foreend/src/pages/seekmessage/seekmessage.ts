@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
-<<<<<<< HEAD:foreend/src/pages/seekmessage/seekmessage.ts
  * Generated class for the SeekmessagePage page.
-=======
- * Generated class for the InformationPage page.
->>>>>>> 69e041914da789ac4758bdd9fa0061c3b93bcc01:foreend/src/pages/Information/Information.ts
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,13 +10,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-<<<<<<< HEAD:foreend/src/pages/seekmessage/seekmessage.ts
   selector: 'page-seekmessage',
   templateUrl: 'seekmessage.html',
-=======
-  selector: 'page-information',
-  templateUrl: 'information.html',
->>>>>>> 69e041914da789ac4758bdd9fa0061c3b93bcc01:foreend/src/pages/Information/Information.ts
 })
 export class SeekmessagePage {
 
@@ -41,14 +32,5 @@ export class SeekmessagePage {
   info=[{title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'}];
-<<<<<<< HEAD:foreend/src/pages/seekmessage/seekmessage.ts
-=======
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InformationPage');
-  }
->>>>>>> 69e041914da789ac4758bdd9fa0061c3b93bcc01:foreend/src/pages/Information/Information.ts
 
 }
