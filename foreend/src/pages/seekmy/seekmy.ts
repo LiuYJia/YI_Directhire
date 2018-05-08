@@ -21,7 +21,5 @@ export class SeekmyPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekmyPage');
   }
-  retreat(){
-    this.app.getRootNavs()[0].setRoot('RecloginPage');
-  }
+  
 }
