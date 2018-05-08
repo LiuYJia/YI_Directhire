@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { RectabsPage } from '../pages/rectabs/rectabs';
-import { RecmessagePage } from '../pages/recmessage/recmessage';
+import { RecloginPage } from '../pages/reclogin/reclogin';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
 
@@ -14,9 +14,9 @@ import { StartPage } from '../pages/start/start';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  //rootPage:any = RectabsPage;
+  rootPage:any = 'RecloginPage';
   //rootPage:any = LoginPage;
-  rootPage:any = StartPage;
+  //rootPage:any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
