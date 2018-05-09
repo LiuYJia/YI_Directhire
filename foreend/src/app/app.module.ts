@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -15,7 +17,7 @@ import { RecmyPage } from '../pages/recmy/recmy';
 import { RectabsPage } from '../pages/rectabs/rectabs';
 import { StartPage } from '../pages/start/start';
 import { AnimationPage } from '../pages/animation/animation';
-
+import { SeekremessagePage } from '../pages/seekremessage/seekremessage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -34,9 +36,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RectabsPage,
     StartPage,
     AnimationPage,
+    SeekremessagePage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
       backButtonText:'',
@@ -59,6 +64,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RectabsPage,
     StartPage,
     AnimationPage,
+    SeekremessagePage
   ],
   providers: [
     StatusBar,

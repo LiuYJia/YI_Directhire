@@ -13,9 +13,8 @@
 </ion-header>
 <ion-content>
 <ion-searchbar placeholder="搜索"></ion-searchbar>
-<ion-list *ngFor='let item of list;let i = index;'>
-  <ion-item (click)="goto()">
-  
+<ion-list>
+  <ion-item *ngFor='let item of list;'  (click)="goto(item)">
     <ion-avatar item-start>
         <img src="{{item.icon}}">
     </ion-avatar>
@@ -28,7 +27,7 @@
 <h1>商家推送：</h1>
 
 <ion-list *ngFor='let item of info;let i = index;'>
-  <ion-item (click)="goto()">
+  <ion-item (click)="goto(item)">
      
     <h3>商家名称:{{item.title}}<span style="float:right">{{item.time}}</span></h3>
     <p>{{item.info}}</p>

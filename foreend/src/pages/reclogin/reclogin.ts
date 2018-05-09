@@ -22,9 +22,12 @@ export class RecloginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecloginPage');
   }
-
+  back(){
+    this.navCtrl.pop();
+  }
   sub(){
-    this.navCtrl.setRoot(RectabsPage);
+   this.navCtrl.setRoot(RectabsPage);
+    //this.navCtrl.push('RectabsPage');
   }
   pwback(){
     this.navCtrl.push('RecpwbackPage');

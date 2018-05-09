@@ -26,6 +26,9 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  back(){
+    this.navCtrl.pop();
+  }
   sub(){
     this.navCtrl.setRoot(TabsPage);
   }

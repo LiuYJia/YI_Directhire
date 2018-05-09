@@ -2,6 +2,9 @@ page-rechome {
     #body{
         background-color: #f2f2f2;
     }
+    #grid{
+        margin-left:4px;
+    }
     .col{
         width:25%;
         height:110px;
@@ -11,7 +14,20 @@ page-rechome {
         text-align: center
     }
     .col img{
-        width:75px;
+        width:85%;
         //margin-left:10%;
+        border-radius: 50%;
+    }
+    #more{
+        line-height: 64px;
+    }
+    #more img{
+        width:50%;
+        margin-left:25%;
+        margin-top:50%;
+        display: block;
+    }
+    #fab{
+        //z-index: 1;
     }
 }
