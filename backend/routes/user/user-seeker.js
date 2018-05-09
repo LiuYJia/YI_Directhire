@@ -33,7 +33,7 @@ router.get('/', function(req, res) {
       
       console.log(results[0]['num']);
 
-        if(newUser.username != ''){
+        if(newUser.username != '' && newUser.username != undefined){
           if(results[0]['num'] == 0){
             console.log('success!');
     
@@ -54,7 +54,7 @@ router.get('/', function(req, res) {
           }
         }
         else{
-          res.end('请传入参数');
+          res.end('input parameter');
         }
     });
 });
