@@ -123,7 +123,7 @@ pool.getConnection(function(err, connection) {
         console.log('use database admin-seeker');
         pool.getConnection(function (err, connection) {
             var getUserByUserName_Sql = "SELECT * FROM user_seeker WHERE username = ?";
-            var getUserByUserName_Sql1 = "SELECT * FROM admin_seeker";
+            var getUserByUserName_Sql1 = "SELECT * FROM user_seeker";
 
             //如果username存在，则返回相关用户信息
             if(username != undefined){
