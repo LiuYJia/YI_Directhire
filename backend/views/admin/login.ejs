@@ -30,14 +30,15 @@
         <% } %> 
        
         <form class="form-signin" role="form" method="post">
-        <h2 class="form-signin-heading">登录</h2>
-        <input id="txtUserName" name="txtUserName" type="text" class="form-control" placeholder="管理员" required autofocus />
-        <input id="txtUserPwd" name="txtUserPwd" type="password" class="form-control" placeholder="密码" required/> 
+        <h2 class="form-signin-heading">Login</h2>
+
+        <input id="txtUserName" name="txtUserName" type="text" class="form-control" placeholder="Admin" required autofocus />        
+        <input id="txtUserPwd" name="txtUserPwd" type="password" class="form-control" placeholder="Password" required/> 
         <label class="checkbox">
             <input name="chbRem" id="chbRem" type="checkbox" value="remember-me"> 自动登录
         </label>              
         <button id="btnSub" class="btn btn-md btn-primary" type="submit">登  录</button>
-        <a class="btn btn-md btn-primary" href="/register" role="button" id="reg">注  册</a>
+        <a class="btn btn-md btn-primary" href="/admin/register" role="button" id="reg">注  册</a>
 
         </form>
             

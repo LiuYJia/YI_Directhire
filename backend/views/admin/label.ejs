@@ -1,3 +1,25 @@
-<p>标签管理</p>
-
-<%= title %>
+<div class="container">
+        <h2><%= title %></h2>
+        <button class="btn btn-info addadmin">添加标签</button>
+        
+        <table class="table table-condensed table-hover mastertable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>职业分类</th>
+                    <th>权限</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(item){ %>                
+                    <tr>                    
+                        <td><%= item.id %></td>
+                        <td><%= item.name %></td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">删除</button>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+</div>

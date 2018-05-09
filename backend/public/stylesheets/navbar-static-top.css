@@ -12,21 +12,13 @@
 .li{
   float: left;
 }
+/* 导航栏 */
 .navleft{
   background-color: rgb(57, 68, 96);
   height: 561px;
 }
 .navleft a{
   color: white;
-}
-.maintxt{
-  background-color: whitesmoke;
-  height:561px;
-}
-.maintxt .row{
-  border: 1px solid red;
-  height: 400px;
-  margin-top: 3.5%;
 }
 .navlist{
   margin-top: 10%;
@@ -35,3 +27,50 @@
 .navlist li{
   margin-top: 10%;
 }
+/* 主内容 */
+.maintxt{
+  background-color: whitesmoke;
+  height:561px;
+  text-align: center; 
+}
+.maintxt .maintxtrow{
+  border: 1px solid black;
+  height: 561px; 
+}
+h2{
+  margin: 2% auto;
+}
+/* 首页 */
+.thum{
+  border: 1px solid black;
+  float: left;
+  margin-top: 3%;
+  margin-left: 6.8%;
+}
+.thum img{
+  width: 100px;
+  height: 100px;
+}
+/* 用户管理 */
+.sort{
+  margin-left: 1.5%;
+}
+.sort a{
+  text-decoration: none;
+}
+.usertable{
+  margin-top: 2%;
+}
+.search{
+  margin-left: 50%;
+  margin-top: -1.5%;
+}
+/* 管理员 */
+.addadmin{
+    margin-top: -9.5%;
+    margin-left: 90%;
+}
+.mastertable{
+  margin-top: -1%;
+}
+

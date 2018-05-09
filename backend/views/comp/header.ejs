@@ -1,12 +1,12 @@
 <nav class="navbar navbar-fixed-top navbar-static-top nav-inverse" role="navigation">
 	  <div class="navbar-header">
-	    <a class="navbar-brand" href="/login"><img src="/images/logo.ico"/>&nbsp;&nbsp;&nbsp;&nbsp;后台管理系统</a>
+	    <a class="navbar-brand" href="/admin/login"><img src="/images/logo.ico"/>&nbsp;&nbsp;&nbsp;&nbsp;后台管理系统</a>
 	  </div>
 	
     <ul class="nav navbar-right">
         <% if (locals.username) { %> 
           <li class="li"><a href="#">Admin:<%= username %></a></li>
-          <li class="li"><a href="/logout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安全退出</a></li> 
+          <li class="li"><a href="/admin/logout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;退出登陆</a></li> 
         <% } %>           
     </ul>
 </nav> 

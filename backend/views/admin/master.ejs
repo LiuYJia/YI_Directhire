@@ -1,2 +1,29 @@
-<p>管理员界面</p>
-<%= title %>
+<div class="container">
+    
+    <h2><%= title %></h2>
+    <button class="btn btn-info addadmin">添加管理员</button>
+    
+    <table class="table table-bordered table-condensed mastertable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>密码</th>
+                <th>权限</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(item){ %>                
+                <tr>                    
+                    <td><%= item.id %></td>
+                    <td><%= item.UserName %></td>
+                    <td><%= item.UserPass %></td>
+                    <td>
+                        <button class="btn btn-default btn-sm">更改</button>
+                        <button class="btn btn-danger btn-sm" id="admin_del">删除</button>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
