@@ -6,3 +6,7 @@
 	新增admin-seeker.js：注册，用于前端调用
 	新增getMessage.js:获取seeker用户数据
 	新增getMessage1.js：获取recruit用户数据
+2.提交——2018.5.9
+  modules文件夹：
+	修改admin-seeker：user-seeker,修改内容
+	修改admin-recruit：user-recruit，修改内容

@@ -1,12 +1,9 @@
 ﻿var mysql = require('mysql');
-var DB_NAME = 'nodesample';
 
-var pool  = mysql.createPool({
-    host     : '127.0.0.1',
-    user     : 'root',
-    password : '123456',
-    database : 'nodesample'
-});
+var database = require('./database');
+var pool = mysql.createPool(database.pool);
+//var AdminS = database.User;
+var DB_NAME = database.name;
 
 pool.on('connection', function(connection) {  
     connection.query('SET SESSION auto_increment_increment=1'); 
@@ -14,8 +11,9 @@ pool.on('connection', function(connection) {
 
 function AdminS(admin){
     this.username = admin.username;
-    this.userpass = admin.userpass;
+    this.userpass = admin.password;
 };
+
 module.exports = AdminS;
 
 pool.getConnection(function(err, connection) {
@@ -36,7 +34,7 @@ pool.getConnection(function(err, connection) {
         pool.getConnection(function (err, connection) {
 
 
-            var insertUser_Sql = "INSERT INTO admin_seeker(username,userpass) VALUES(?,?)";
+            var insertUser_Sql = "INSERT INTO user_seeker(username,userpass) VALUES(?,?)";
 
             connection.query(insertUser_Sql, [admin.username, admin.userpass], function (err, result) {
 
@@ -57,8 +55,8 @@ pool.getConnection(function(err, connection) {
     //修改数据
     AdminS.prototype.update = function update(username,updata,callback){
         pool.getConnection(function(err,connection){
-            var updateUser_Sql = "UPDATE admin_seeker SET userpass = ?,age = ? WHERE username = ?";
-            var userModSql_Params = [update.userpass,updata.age,username];
+            var updateUser_Sql = "UPDATE user_seeker SET userpass = ?,age = ? WHERE username = ?";
+            var userModSql_Params = [updata.userpass,updata.age,username];
 
             connection.query(updateUser_Sql,userModSql_Params,function (err, result) {
 
@@ -74,13 +72,36 @@ pool.getConnection(function(err, connection) {
         })
     }
 
+    //删除数据
+    AdminS.prototype.deleteData = function deleteData(username,callback){
+        pool.getConnection(function(err,connection){
+            var deleteUser_Sql = "DELETE FROM user_seeker WHERE username = ?";
+            
+            console.log('111111111111111111'+username);
+
+            connection.query(deleteUser_Sql, [username] , function (err, result) {
+                
+                if(err){
+                    console.log('[DELETE ERROR] - ',err.message);
+                    return;
+                }
+
+                callback(err,result);
+           
+                console.log('----------DELETE-------------');
+                console.log('DELETE affectedRows',result.affectedRows);
+                console.log('******************************');
+                connection.release();
+            });
+        })
+    }
 
     //根据用户名得到用户数量
     AdminS.getUserNumByName = function getUserNumByName(username, callback) {
 
         pool.getConnection(function (err, connection) {
 
-            var getUserNumByName_Sql = "SELECT COUNT(1) AS num FROM admin_seeker WHERE username = ?";
+            var getUserNumByName_Sql = "SELECT COUNT(1) AS num FROM user_seeker WHERE username = ?";
 
             connection.query(getUserNumByName_Sql, [username], function (err, result) {
                 callback(err,result);
@@ -99,8 +120,9 @@ pool.getConnection(function(err, connection) {
 
     //根据用户名得到用户信息
     AdminS.getUserByUserName = function getUserNumByName(username, callback) {
+        console.log('use database admin-seeker');
         pool.getConnection(function (err, connection) {
-            var getUserByUserName_Sql = "SELECT * FROM admin_seeker WHERE username = ?";
+            var getUserByUserName_Sql = "SELECT * FROM user_seeker WHERE username = ?";
             var getUserByUserName_Sql1 = "SELECT * FROM admin_seeker";
 
             //如果username存在，则返回相关用户信息
@@ -118,7 +140,8 @@ pool.getConnection(function(err, connection) {
                 });
             }
             //如果username不存在，则返回全部用户信息
-            else{
+            if(username == undefined){
+                console.log('undefined!!!!!!!!!!11');
                 connection.query(getUserByUserName_Sql1, function (err, result) {  
                     if (err) {
                         console.log("getUserByUserName Error: " + err.message);

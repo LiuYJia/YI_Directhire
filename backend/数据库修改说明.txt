@@ -1,4 +1,7 @@
 1.提交——2018.5.7
   admin-seeker表：s-id,username,userpass,age
   admin-recruit表:r-id,username,userpass,age
+2.提交——2018.5.9
+  将admin-seeker修改为user-seeker:s-id,username,password,age
+  将admin-recruit修改为user-recruit:r-id,username,password,age
 
