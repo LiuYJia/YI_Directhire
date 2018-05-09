@@ -16,10 +16,12 @@ module.exports = function (app) {
     app.use('/admin/label',require('./admin/label'));
     app.use('/admin/msg',require('./admin/msg'));
 
-    app.use('/user/admin-seeker',require('./user/admin-seeker'));
-    app.use('/user/admin-recruit',require('./user/admin-recruit'));
-    app.use('/user/getMessage',require('./user/getMessage'));
-    app.use('/user/getMessage1',require('./user/getMessage1'));
+    app.use('/user/user-seeker',require('./user/user-seeker'));
+    app.use('/user/user-recruit',require('./user/user-recruit'));
+    app.use('/user/getMessage-seeker',require('./user/getMessage-seeker'));
+    app.use('/user/getMessage-recruit',require('./user/getMessage-recruit'));
+    app.use('/user/deleteSeeker',require('./user/deleteSeeker'));
+    app.use('/user/deleteRecruit',require('./user/deleteRecruit'));
 
     app.use('/user/adduser',require('./user/adduser'));
    
