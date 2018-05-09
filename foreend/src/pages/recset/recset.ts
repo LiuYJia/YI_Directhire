@@ -15,11 +15,16 @@ import { IonicPage, NavController, NavParams,Platform, ToastController } from 'i
   templateUrl: 'recset.html',
 })
 export class RecsetPage {
+  name;img;num;password;
 
   constructor(public platform: Platform,
     public toastCtrl: ToastController,
     public navCtrl: NavController, 
     public navParams: NavParams) {
+      this.name = navParams.get('user').name;
+      this.img = navParams.get('user').img;
+      this.num = navParams.get('user').num;
+      this.password = navParams.get('user').password;
   }
 
   ionViewDidLoad() {
@@ -29,25 +34,8 @@ export class RecsetPage {
     this.navCtrl.pop();
     console.log("back");
   }
-  //控制硬件返回按钮是否触发，默认false
-  backButtonPressed: boolean = false;
-  //退出应用方法
-  showExit() {
-    //如果为true，退出
-    if (this.backButtonPressed) {
-      this.platform.exitApp();
-    } else {
-        //第一次按，弹出Toast
-        this.toastCtrl.create({
-            message: '再按一次退出应用',
-            duration: 2000,
-            position: 'middle'
-        }).present();
-      //标记为true
-      this.backButtonPressed = true;
-      //两秒后标记为false，如果退出的话，就不会执行了
-      setTimeout(() => this.backButtonPressed = false, 2000);
-    }
+  cgpwd(){
+    this.navCtrl.push('ReccgpwdPage');
   }
 
 }

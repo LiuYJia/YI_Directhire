@@ -22,8 +22,23 @@ export class RechomePage {
     console.log('ionViewDidLoad RechomePage');
   }
 
+  class = [];
   class1=[{img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
   class2=[{img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
+  goMore(){
+    this.navCtrl.push('RecmorePage');
+  }
+  doInfinite(infiniteScoll){
+    setTimeout(()=>{
+      // for(let i=0;i<5;i++){
+      //   this.class1.push('this.class1.length');
+      // }
+      infiniteScoll.complete();
+      if(this.class1.length>100){
+        infiniteScoll.enable(false);
+      }
+    },500);
+  }
 }

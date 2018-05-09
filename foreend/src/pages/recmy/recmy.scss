@@ -5,11 +5,12 @@ page-recmy {
     #infor{
         background-image: url("../assets/imgs/infor-bg.png");
         width:100%;
-        height:30%;
+        height:29%;
     }
     #infor img{
         width:30%;
         margin-left:35%;
+        margin-top:3%
     }
     #infor p{
         text-align:center;
@@ -21,6 +22,17 @@ page-recmy {
         float: right;
         margin-top:10px;
         margin-right:10px
+    }
+    #list{
+        margin-top:30px;
+    }
+    .i{
+        font-size: inherit;
+        color: black;
+    }
+    .gr{
+        font-size: 18px;
+        color:#b0b0b0;
     }
     #but1{
         width:80%;

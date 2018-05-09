@@ -23,12 +23,13 @@ export class RecmyPage {
     console.log('ionViewDidLoad RecmyPage');
   }
 
-  items = ["发布可抢职位","发布一般职位"];
+  items = ["发布职位信息","清除缓存"];
+  user = {img:"assets/imgs/class3.png",name:"Luna",num:"13145878888",password:"123456"};
   leave(){
     this.app.getRootNavs()[0].setRoot('RecloginPage');
   }
   set(){
-    this.navCtrl.push('RecsetPage');
+    this.navCtrl.push('RecsetPage',{user:this.user});
   }
   
 }

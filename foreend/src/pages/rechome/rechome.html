@@ -81,7 +81,8 @@
           <ion-col class="col" col-3><img src="assets/imgs/class5.png">审核录入</ion-col>
           <ion-col class="col" col-3><img src="assets/imgs/class6.png">服务员</ion-col>
           <ion-col class="col" col-3><img src="assets/imgs/class7.png">问卷调查</ion-col>
-          <ion-col class="col" col-3 id="more"><img src="assets/imgs/more.png">更多</ion-col>
+          <!-- <ion-col class="col" col-3 id="more" (click)="goMore()"><img src="assets/imgs/more.png">更多</ion-col> -->
+          <ion-col class="col" col-3><img src="assets/imgs/class8.png">计算机</ion-col>
       </ion-row>
     </ion-grid>
   </div>
@@ -114,5 +115,9 @@
         </ion-item>
   </ion-list>
 
+  <!-- 上拉加载 -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>
