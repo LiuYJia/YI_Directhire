@@ -18,8 +18,8 @@ module.exports = function (app) {
 
     app.use('/user/user-seeker',require('./user/user-seeker'));
     app.use('/user/user-recruit',require('./user/user-recruit'));
-    app.use('/user/getMessage-seeker',require('./user/getMessage-seeker'));
-    app.use('/user/getMessage-recruit',require('./user/getMessage-recruit'));
+    app.use('/user/getMessage-seeker',require('./user/getMessage_seeker'));
+    app.use('/user/getMessage-recruit',require('./user/getMessage_recruit'));
     app.use('/user/deleteSeeker',require('./user/deleteSeeker'));
     app.use('/user/deleteRecruit',require('./user/deleteRecruit'));
 
