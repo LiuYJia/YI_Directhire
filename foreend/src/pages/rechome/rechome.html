@@ -15,7 +15,6 @@
   <!-- 搜索框 -->
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
-
   <!-- <div padding>
       <ion-segment [(ngModel)]="position">
         <ion-segment-button value="class1">
@@ -71,7 +70,7 @@
     
   <!-- 分类 -->
   <div>
-    <ion-grid>
+    <ion-grid id="grid">
       <ion-row>
         <ion-col class="col" col-3><img src="assets/imgs/class1.png">礼仪模特</ion-col>
         <ion-col class="col" col-3><img src="assets/imgs/class2.png">老师家教</ion-col>
@@ -82,11 +81,11 @@
           <ion-col class="col" col-3><img src="assets/imgs/class5.png">审核录入</ion-col>
           <ion-col class="col" col-3><img src="assets/imgs/class6.png">服务员</ion-col>
           <ion-col class="col" col-3><img src="assets/imgs/class7.png">问卷调查</ion-col>
-          <ion-col class="col" col-3><img src="assets/imgs/class8.png">促销导购</ion-col>
+          <ion-col class="col" col-3 id="more"><img src="assets/imgs/more.png">更多</ion-col>
       </ion-row>
     </ion-grid>
   </div>
-
+  
   <!-- 列表 -->
   <ion-list>
       <ion-list-header>

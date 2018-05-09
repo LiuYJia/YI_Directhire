@@ -14,18 +14,18 @@
 
 
 <ion-content id="body" style="background-image:url('assets/imgs/bg.png')">
-  <p id="login">登录</p>
+  <p id="login"><ion-icon name="arrow-back" id="back" (click)="back()"></ion-icon>登录</p>
   <img src="assets/imgs/logo0.png" id="logo">
 
   
   <ion-list id="list" style="BACKGROUND-COLOR: transparent;">
-      <input type="text" placeholder="请输入您的手机号" class="in" >
+      <input type="text" placeholder="请输入您的用户名" class="in" >
       <input type="password" placeholder="请输入您的密码" class="in" >
   </ion-list>
 
-    <div>
-        <button ion-button round color="none" (click)="sub()" id="but1">登 录</button>
-    </div>
-    <div id="pw"><p (click)="pwback()">忘记密码？</p></div>
-    <p id="reg" (click)="reg()">新用户注册</p>
+  <div>
+      <button ion-button round color="none" (click)="sub()" id="but1">登 录</button>
+  </div>
+  <div id="pw"><p (click)="pwback()">忘记密码？</p></div>
+  <p id="reg" (click)="reg()">新用户注册</p>
 </ion-content>

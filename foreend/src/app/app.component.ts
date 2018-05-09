@@ -14,7 +14,7 @@ import { StartPage } from '../pages/start/start';
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = 'RecloginPage';
+  rootPage:any = RectabsPage;
   //rootPage:any = LoginPage;
   //rootPage:any = StartPage;
 

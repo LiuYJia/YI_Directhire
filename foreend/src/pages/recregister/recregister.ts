@@ -28,9 +28,14 @@ export class RecregisterPage {
   back(){
     this.navCtrl.pop();
   }
+  username='';
+  password='';
+  
   reg(){
-    this.http.get('http://127.0.0.1:3000/user/admin-recruit').subscribe(data=>{
+    console.log(this.username);
+    this.http.get('http://127.0.0.1:3000/user/admin-recruit?userName='+this.username+'&userPwd='+this.password).subscribe(data=>{
       console.log(data);
     });
   }
+    
 }
