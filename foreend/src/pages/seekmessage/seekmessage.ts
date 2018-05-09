@@ -32,5 +32,7 @@ export class SeekmessagePage {
   info=[{title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'},
   {title:'某某公司',time:'2017/12/27',info:'一家上市的公司'}];
-
+  goto(item){
+    this.navCtrl.push('SeekremessagePage',{all:item});
+  }
 }

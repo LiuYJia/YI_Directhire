@@ -8,7 +8,7 @@ import { RectabsPage } from '../pages/rectabs/rectabs';
 import { RecloginPage } from '../pages/reclogin/reclogin';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
-
+import { SeekmessagePage } from '../pages/seekmessage/seekmessage';
 @Component({
   templateUrl: 'app.html'
 })
