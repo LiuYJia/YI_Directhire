@@ -9,12 +9,13 @@ import { RecloginPage } from '../pages/reclogin/reclogin';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
 import { SeekmessagePage } from '../pages/seekmessage/seekmessage';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = RectabsPage;
+  rootPage:any = StartPage;
   //rootPage:any = LoginPage;
   //rootPage:any = StartPage;
 
