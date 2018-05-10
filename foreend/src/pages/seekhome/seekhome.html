@@ -15,7 +15,209 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-grid class="grid">
+        <ion-grid>
+        <ion-row> 
+        <ion-segment [(ngModel)]="icons" color='dark'>              
+                <ion-segment-button value="1">
+                        <i class="iconfont">&#xe62c;</i>
+                        <h4>销售</h4>
+                    
+                </ion-segment-button> 
+                <ion-segment-button value="2"> 
+                        <i class="iconfont">&#xe62d;</i>
+                        <h4>客服</h4>
+                    
+                </ion-segment-button> 
+                 <ion-segment-button value="3"> 
+                        <i class="iconfont">&#xe626;</i>
+                        <h4>餐饮</h4>
+                    
+                 </ion-segment-button> 
+                 <ion-segment-button value="4"> 
+                        <i class="iconfont">&#xe625;</i>
+                        <h4>计算机</h4>                   
+                 </ion-segment-button> 
+               
+                </ion-segment>
+                </ion-row>
+                <ion-row> 
+                    <ion-segment [(ngModel)]="icons" color='dark'>              
+                                <ion-segment-button value="5">
+                                        <i class="iconfont">&#xe629;</i>
+                                        <h4>财务</h4>
+                                    
+                                </ion-segment-button> 
+                                <ion-segment-button value="6"> 
+                                        <i class="iconfont">&#xe628;</i>
+                                        <h4> 金融</h4>
+                                    
+                                </ion-segment-button> 
+                                 <ion-segment-button value="7"> 
+                                        <i class="iconfont">&#xe62a;</i>
+                                        <h4>医疗</h4>
+                                    
+                                 </ion-segment-button> 
+                                 <ion-segment-button value="8"> 
+                                        <i class="iconfont">&#xe62b;</i>
+                                        <h4>其他</h4>                   
+                                 </ion-segment-button> 
+                                </ion-segment>
+                                </ion-row>
+                 </ion-grid>
+
+        <div [ngSwitch]="icons"> 
+          <ion-grid *ngSwitchCase="'1'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'2'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list2;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'3'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list3;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'4'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list4;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'5'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list5;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'6'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list6;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'7'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list7;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+          <ion-grid *ngSwitchCase="'8'">
+                <h1 style="border:1px solid darkgray;line-height:2em;">聘职信息:</h1>
+                <ion-list *ngFor='let item of list8;let i = index;'>
+                        <ion-item (click)="goto(item)" style="margin-top:6%;"> 
+                          <ion-avatar item-start>
+                              <img src="{{item.icon}}">
+                          </ion-avatar>
+                          <h2 style="font-weight:bolder">{{item.title}}<span style="float:right;color:red;font-size:80%;">{{item.price}}</span></h2>
+                          <p>{{item.msg}}</p>
+                          <p>{{item.locate}}</p>
+                         
+                      </ion-item>
+                      </ion-list>
+              
+          </ion-grid>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <ion-grid class="grid">
         <ion-row>
           <ion-col>
              
@@ -79,12 +281,5 @@
 
 
 
-
-
-
-
-
-
-
-
+ -->
  </ion-content>
