@@ -25,13 +25,13 @@
       <p>个人简介:</p>
     </ion-item>
   </ion-list>
-  <hr>
+
   <ion-list *ngFor='let item of list;let i = index;'style="margin-top:0;" id="list">   
  <ion-item>
  
           {{item}} <span style="float: right;"><ion-icon name="ios-arrow-forward"></ion-icon></span>
-  <hr> 
+
 </ion-item>
   </ion-list>
-  <button ion-button color="light" (click)="retreat();">退出登录</button>
+  <button ion-button color="light" (click)="retreat();"style="float:right">退出登录</button>
 </ion-content>
