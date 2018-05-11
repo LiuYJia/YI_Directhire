@@ -19,8 +19,9 @@
 
   
   <ion-list id="list" style="BACKGROUND-COLOR: transparent;">
-      <input type="text" placeholder="请输入您的用户名" class="in" >
-      <input type="password" placeholder="请输入您的密码" class="in" >
+      <input type="text" placeholder="请输入您的用户名" class="in" [(ngModel)]="username">
+      <p class="mes">{{mes}}</p>
+      <input type="password" placeholder="请输入您的密码" class="in" [(ngModel)]="password">
   </ion-list>
 
   <div>

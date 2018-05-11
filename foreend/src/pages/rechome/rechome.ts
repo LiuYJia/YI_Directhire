@@ -22,21 +22,46 @@ export class RechomePage {
     console.log('ionViewDidLoad RechomePage');
   }
 
-  class = [];
+  row1="class1";
+  class = [{img:"assets/imgs/class1.png",name:"礼仪模特",val:"class1"},
+  {img:"assets/imgs/class2.png",name:"老师家教",val:"class2"},
+  {img:"assets/imgs/class3.png",name:"话务客服",val:"class3"},
+  {img:"assets/imgs/class4.png",name:"传单派发",val:"class4"},
+  {img:"assets/imgs/class5.png",name:"审核录入",val:"class5"},
+  {img:"assets/imgs/class6.png",name:"服务员",val:"class6"},
+  {img:"assets/imgs/class7.png",name:"问卷调查",val:"class7"},
+  {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
+  class0 = [{img:"assets/imgs/class5.png",name:"审核录入",val:"class5"},
+  {img:"assets/imgs/class6.png",name:"服务员",val:"class6"},
+  {img:"assets/imgs/class7.png",name:"问卷调查",val:"class7"},
+  {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
   class1=[{img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
   class2=[{img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
-  goMore(){
-    this.navCtrl.push('RecmorePage');
+  class3=[{img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
+  class4=[{img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
+  class5=[{img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
+  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
+  more(item){
+    this.navCtrl.push('RecclassPage',{class:item});
   }
   doInfinite(infiniteScoll){
     setTimeout(()=>{
-      // for(let i=0;i<5;i++){
-      //   this.class1.push('this.class1.length');
-      // }
       infiniteScoll.complete();
-      if(this.class1.length>100){
+      if(this.class1.length>50){
         infiniteScoll.enable(false);
       }
     },500);

@@ -13,8 +13,8 @@ page-rechome {
         margin-top:-2px;
         text-align: center
     }
-    .col img{
-        width:85%;
+    img{
+         width:85%;
         //margin-left:10%;
         border-radius: 50%;
     }
@@ -27,7 +27,12 @@ page-rechome {
         margin-top:50%;
         display: block;
     }
-    #fab{
-        //z-index: 1;
+    .segment-ios .segment-button{
+        line-height: 1rem;
+        color: black;
+    }
+    .segment-button{
+        width:25%;
+        white-space: normal;
     }
 }
