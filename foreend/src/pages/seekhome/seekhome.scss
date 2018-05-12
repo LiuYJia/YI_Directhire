@@ -42,6 +42,44 @@ page-seekhome {
     -webkit-transition: 100ms all linear;
     transition: 100ms all linear;
     padding: 0 6px;
+    font-size: 1.3em;
+    line-height: 3em;
+}
+.segment-lg .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: auto;
+    border:2px solid darkgray;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    opacity: 0.7;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0 6px;
+    font-size: 1.3em;
+    line-height: 3em;
+}
+.segment-sm .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: auto;
+    border:2px solid darkgray;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    opacity: 0.7;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0 6px;
+    font-size: 1.3em;
+    line-height: 3em;
 }
 .segment-ios .segment-button {
     -webkit-box-flex: 1;
@@ -52,13 +90,13 @@ page-seekhome {
     height: auto;
     border-width: 1px;
     border-style: solid;
-    font-size: 1.3rem;
-    line-height: 3rem;
+    font-size: 1.3em;
+    line-height: 3em;
     background-color: transparent;
 }
  h4 {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     font-weight: 500;
     line-height: 1.2;
 }
