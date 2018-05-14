@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../../pages/login/login';
+import { RecloginPage } from '../../pages/reclogin/reclogin';
 
 /**
  * Generated class for the ChoosePage page.
@@ -28,6 +29,6 @@ export class ChoosePage {
   }
 
   goPage02(){
-    this.navCtrl.push('RecloginPage');
+    this.navCtrl.push(RecloginPage);
   }
 }
