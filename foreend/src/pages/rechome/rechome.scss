@@ -5,6 +5,13 @@ page-rechome {
     #grid{
         margin-left:4px;
     }
+    #slides{
+        height:30%;
+    }
+    .slide img{
+        margin-left:0;
+        margin-top:0px;
+    }
     .col{
         width:25%;
         height:110px;
@@ -13,7 +20,7 @@ page-rechome {
         margin-top:-2px;
         text-align: center
     }
-    img{
+    #class img{
          width:85%;
         //margin-left:10%;
         border-radius: 50%;

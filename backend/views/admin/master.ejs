@@ -1,7 +1,8 @@
 <div class="container">
     
     <h2><%= title %></h2>
-    <button class="btn btn-info addadmin">添加管理员</button>
+
+    <button class="btn btn-info addadmin" onclick="window.location.href='/admin/all/addmaster'">添加管理员</button>
     
     <table class="table table-bordered table-condensed mastertable">
         <thead>
@@ -19,8 +20,16 @@
                     <td><%= item.UserName %></td>
                     <td><%= item.UserPass %></td>
                     <td>
-                        <button class="btn btn-default btn-sm">更改</button>
-                        <button class="btn btn-danger btn-sm" id="admin_del">删除</button>
+                        <button class="btn btn-default btn-sm" onclick="window.location.href='/admin/all/edit/?id=<%= item.id %>'">更改</button>
+
+
+                        <form action="/admin/all/delMaster" id="<%= item.id %>" method="post" style="display: none">
+                            <input type="hidden" name="d_master" value="<%= item.id %>">
+                        </form>
+                        <button onclick="if(confirm('你确定将 <%= item.UserName %> 彻底删除吗？')){
+                                            document.getElementById('<%= item.id %>').submit();
+                                            event.preventDefault();
+                        }" class="btn btn-danger btn-sm">删除</button>
                     </td>
                 </tr>
             <% }) %>

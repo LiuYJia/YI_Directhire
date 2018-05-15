@@ -55,6 +55,14 @@
                       <%include ./admin/msg %>
                     <% } %>
 
+                    <% if (locals.page == 'edit') { %>
+                      <% include ./admin/edit %>
+                    <% } %>
+
+                    <% if (locals.page == 'addmaster') { %>
+                      <% include ./admin/addmaster %>
+                    <% } %>
+
                   
                 </div>
               </div>

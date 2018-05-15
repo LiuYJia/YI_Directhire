@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { AlertController } from 'ionic-angular';
+import { Headers } from '@angular/http';
 
 /**
  * Generated class for the RecregisterPage page.
@@ -40,25 +41,22 @@ export class RecregisterPage {
   username='';
   password='';
   mes='';
+
+  headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   
   reg(){
-    console.log(this.username);
-    this.http.get('http://datainfo.duapp.com/shopdata/userinfo.php?status=register&userName='+this.username+'&userPwd='+this.password).subscribe(data=>{
-      console.log(data);
-      if(data['_body']==0){
-        this.mes="";
-        this.showAlert();
-      }     
-      if(data['_body']==1){
-        this.mes="用户名已存在";
-      }
-      if(data['_body']=='input parameter'){
-        this.mes = '请输入用户名和密码';
-      }
-    });
-    // this.http.get('http://127.0.0.1:3000/user/admin-recruit').subscribe(data=>{
-    //   console.log(data);
-    // });
-  }
+   
+    this.http.post('http://127.0.0.1:3000/user/admin-recruit',JSON.stringify({status:'register',username:this.username,password:this.password}),{headers:this.headers}).subscribe(data=>{
+    console.log(data);
+    if(data['_body']==1){
+      this.mes="";
+      this.showAlert();
+    }     
+    if(data['_body']==2){
+      this.mes="用户名已存在";
+    }
+  });
+
+}
     
 }

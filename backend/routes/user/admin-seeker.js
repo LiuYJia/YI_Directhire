@@ -42,7 +42,7 @@ router.get('/', function(req, res) {
               console.log('success!');
       
                 //向数据库存储数据
-                newUser.save(this,function(err,result){
+                newUser.save({username:newUser.username,userpass:newUser.password},function(err,result){
                   if(err){
                     res.locals.error = err;
                     return;

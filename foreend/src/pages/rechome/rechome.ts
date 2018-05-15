@@ -31,10 +31,6 @@ export class RechomePage {
   {img:"assets/imgs/class6.png",name:"服务员",val:"class6"},
   {img:"assets/imgs/class7.png",name:"问卷调查",val:"class7"},
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
-  class0 = [{img:"assets/imgs/class5.png",name:"审核录入",val:"class5"},
-  {img:"assets/imgs/class6.png",name:"服务员",val:"class6"},
-  {img:"assets/imgs/class7.png",name:"问卷调查",val:"class7"},
-  {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
   class1=[{img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},

@@ -49,14 +49,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-//设置跨域访问
-app.all('*', function(req, res, next) {
-	//res.Header('Content-Type','text/plain');
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header('Access-Control-Allow-Headers', 'content-type');
-    next();
-});
+
 
 module.exports = app;

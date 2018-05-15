@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h2><%= title %></h2>
+
+    <form class="form-horizontal" id="edit-form" style="width: 40%;margin: 0 auto" action="/admin/all/edit" method="POST">
+
+        <input type="hidden" name="id" value="<%= id %>">
+
+        <input type="text" name='name' placeholder="Admin" class="input-lg form-control"><br>
+
+        <input type="text" name='pwd' placeholder="Password" class="input-lg form-control"><br>
+
+        <button class="btn btn-success" type="button" id="edit-btn" onclick="if(true){document.getElementById('edit-form').submit();}">保存</button>
+
+</form>
+    
+    
+
+</div>
+<!-- <script src="/javascripts/function/edit.js"></script> -->
+
+

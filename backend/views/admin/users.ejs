@@ -41,7 +41,15 @@
                             <td><%= item.username %></td>                            
                             <td><%= item.email %></td>
                             <td><%= item.phone %></td>
-                            <td><button class="btn btn-danger">删除</button></td>
+                            <td>
+                                <form action="/admin/all/delUser_recruit" id="<%= item.r_id %>" method="post">
+                                    <input type="hidden" name="r_user" value="<%= item.r_id %>">
+                                </form>
+                                <button class="btn btn-danger"  onclick="if(confirm('你确定将用户<%= item.name %> 彻底删除吗？')){
+                                    document.getElementById('<%= item.r_id %>').submit();
+                                    event.preventDefault(); }">删除     
+                                </button>
+                            </td>
                         </tr>
                     <% }) %>
                 </tbody>
@@ -78,7 +86,15 @@
                             <td><%= item.username %></td>
                             <td><%= item.phone %></td>
                             <td><%= item.email %></td>
-                            <td><button class="btn btn-danger">删除</button></td>
+                            <td>
+                                <form action="/admin/all/delUser_seeker" id="<%= item.s_id %>" method="post">
+                                    <input type="hidden" name="s_user" value="<%= item.s_id %>">
+                                </form>
+                                <button class="btn btn-danger"  onclick="if(confirm('你确定将用户<%= item.name %> 彻底删除吗？')){
+                                    document.getElementById('<%= item.s_id %>').submit();
+                                    event.preventDefault(); }">删除     
+                                </button>
+                            </td>
                         </tr>
                     <% }) %>
                 </tbody>

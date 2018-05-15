@@ -1,25 +1,27 @@
 <div class="container">
         <h2><%= title %></h2>
-        <button class="btn btn-info addadmin">添加标签</button>
+
+        <form role="form" id="add-form" style="width: 40%;margin:0 auto;" action="/admin/all/addlabel" method="POST"> 
+            <div class="input-group">
+                <input type="text" class="form-control" name="add_label">
+
+                <button class="btn btn-info" onclick="if(true){document.getElementById('add-form').submit();}">添加标签</button>
+            </div>
+        </form><br><br>                      
+
+        <% data.forEach(function(item){ %>   
+
+
+            <form action="/admin/all/delLabel" id="<%= item.id %>" method="post" style="display: none">
+                <input type="hidden" name="d_label" value="<%= item.id %>">
+            </form>
+
+            <button class="btn btn-info btn-lg" style="margin-top: 1%"><%= item.name %>&nbsp;&nbsp;
+                <a class="badge badge-danger" href="#" onclick="if(confirm('你确定将 <%= item.name %> 彻底删除吗？')){
+                document.getElementById('<%= item.id %>').submit();
+                event.preventDefault();
+                }">X</a>
+            </button>
+        <% }) %>
         
-        <table class="table table-condensed table-hover mastertable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>职业分类</th>
-                    <th>权限</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% data.forEach(function(item){ %>                
-                    <tr>                    
-                        <td><%= item.id %></td>
-                        <td><%= item.name %></td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">删除</button>
-                        </td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table>
 </div>
