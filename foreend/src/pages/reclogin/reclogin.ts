@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
 import { RectabsPage } from '../rectabs/rectabs';
 import { Http } from '@angular/http';
 // import { RectabsPage } from '../rectabs/rectabs';
@@ -17,14 +17,14 @@ import { Http } from '@angular/http';
 })
 export class RecloginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public app:App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecloginPage');
   }
   back(){
-    this.navCtrl.pop();
+    this.app.getRootNavs()[0].setRoot('ChoosePage');
   }
   username='';
   password='';
@@ -37,11 +37,12 @@ export class RecloginPage {
       console.log(data);
       if(data['_body']==1)this.navCtrl.setRoot(RectabsPage);
       if(data['_body']==2)this.mes="用户名或密码不正确";
-      if(data['_body']==0)this.mes="用户名不存在";
+      if(data['_body']==3)this.mes="用户名不存在";
     });
   }
   pwback(){
     this.navCtrl.push('RecpwbackPage');
+    
   }
 
   reg(){

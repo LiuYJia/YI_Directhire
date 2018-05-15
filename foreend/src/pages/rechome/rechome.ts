@@ -51,9 +51,9 @@ export class RechomePage {
   {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
   {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."}];
-  more(item){
-    this.navCtrl.push('RecclassPage',{class:item});
-  }
+  // more(item){
+  //   this.navCtrl.push('RecclassPage',{class:item});
+  // }
   doInfinite(infiniteScoll){
     setTimeout(()=>{
       infiniteScoll.complete();

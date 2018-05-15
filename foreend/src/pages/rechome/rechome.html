@@ -3,21 +3,25 @@
   <ion-navbar color="primary">
     <ion-title text-center>首页</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content id="body">
-  <!-- 搜索框 -->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <!-- 轮播图 -->
-  <ion-slides id="slides" pager="true" loop>
+  <ion-slides id="slides" pager="true" loop  autoplay="1500">
     <ion-slide class="slide" >
       <img src="assets/imgs/slide1.png">
     </ion-slide>      
     <ion-slide class="slide">
-        <img src="assets/imgs/slide2.png">
-    </ion-slide>     
-</ion-slides>
+      <img src="assets/imgs/slide2.png">
+    </ion-slide> 
+    <ion-slide class="slide">
+      <img src="assets/imgs/slide3.png">
+    </ion-slide>    
+  </ion-slides>
 
   <div id="class">
       <ion-grid>
