@@ -5,36 +5,39 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar color="primary">
-     <ion-searchbar placeholder="搜索"id="search" (ionInput)="getItems($event)"></ion-searchbar>
-     <ion-list>
-        <ion-item *ngFor="let item of items">
-          {{ item }}
-        </ion-item>
-      </ion-list>
+    <ion-navbar color='primary'>
+        <ion-title style="text-align:center;">
+            首页
+           </ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
+        <ion-searchbar placeholder="搜索" (ionInput)="getItems($event)" id="search"></ion-searchbar>
+        <ion-list>
+           <ion-item *ngFor="let item of items">
+             {{ item }}
+           </ion-item>
+         </ion-list>     
         <ion-grid>
         <ion-row> 
         <ion-segment [(ngModel)]="icons" color='dark'>              
                 <ion-segment-button value="1">
-                        <i class="iconfont">&#xe62c;</i>
+                        <img src="assets/imgs/s3.jpg" style="width: 90px;height: 90px;">
                         <h4>销售</h4>
                     
                 </ion-segment-button> 
                 <ion-segment-button value="2"> 
-                        <i class="iconfont">&#xe62d;</i>
-                        <h4>客服</h4>
+                        <img src="assets/imgs/s5.jpg" style="width: 90px;height: 90px;">
+                        <h4>收营</h4>
                     
                 </ion-segment-button> 
                  <ion-segment-button value="3"> 
-                        <i class="iconfont">&#xe626;</i>
+                        <img src="assets/imgs/s1.jpg"style="width: 90px;height: 90px;">
                         <h4>餐饮</h4>
                     
                  </ion-segment-button> 
                  <ion-segment-button value="4"> 
-                        <i class="iconfont">&#xe625;</i>
+                        <img src="assets/imgs/s8.jpg" style="width: 90px;height: 90px;">
                         <h4>计算机</h4>                   
                  </ion-segment-button> 
                
@@ -43,22 +46,22 @@
                 <ion-row> 
                     <ion-segment [(ngModel)]="icons" color='dark'>              
                                 <ion-segment-button value="5">
-                                        <i class="iconfont">&#xe629;</i>
+                                        <img src="assets/imgs/s4.jpg" style="width: 90px;height: 90px;">
                                         <h4>财务</h4>
                                     
                                 </ion-segment-button> 
                                 <ion-segment-button value="6"> 
-                                        <i class="iconfont">&#xe628;</i>
+                                        <img src="assets/imgs/s7.jpg"style="width: 90px;height: 90px;">
                                         <h4> 金融</h4>
                                     
                                 </ion-segment-button> 
                                  <ion-segment-button value="7"> 
-                                        <i class="iconfont">&#xe62a;</i>
+                                        <img src="assets/imgs/s6.jpg"style="width: 90px;height: 90px;">
                                         <h4>医疗</h4>
                                     
                                  </ion-segment-button> 
                                  <ion-segment-button value="8"> 
-                                        <i class="iconfont">&#xe62b;</i>
+                                        <img src="assets/imgs/s2.jpg" style="width: 90px;height: 90px;">
                                         <h4>其他</h4>                   
                                  </ion-segment-button> 
                                 </ion-segment>

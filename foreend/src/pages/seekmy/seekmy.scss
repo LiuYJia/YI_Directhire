@@ -22,4 +22,13 @@ page-seekmy {
     .label-md {
        margin: 0 0 0 0;
     }
+    #img {
+        width: 50%;
+        border-radius: 100%;
+        margin-left: 25%;
+        margin-top: 2%;
+    }
+    .list-ios > .item-block:first-child {
+    border-top: none;
+    }
 }

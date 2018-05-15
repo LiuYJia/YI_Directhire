@@ -16,21 +16,11 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-avatar item-start>
-          <img src="assets/imgs/1.jpg">
-      </ion-avatar>
-      <h2>昵称:</h2>
-      <p>个人简介:</p>
-    </ion-item>
-  </ion-list>
-
+          <img src="assets/imgs/1.jpg"id="img">     
+      <h1 style="text-align: center;"> 昵称:某某某</h1>
   <ion-list *ngFor='let item of list;let i = index;'style="margin-top:0;" id="list">   
- <ion-item>
- 
+ <ion-item >
           {{item}} <span style="float: right;"><ion-icon name="ios-arrow-forward"></ion-icon></span>
-
 </ion-item>
   </ion-list>
   <button ion-button color="light" (click)="retreat();"style="float:right">退出登录</button>

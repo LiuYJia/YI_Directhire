@@ -20,6 +20,10 @@ page-seekhome {
     color: #222;
     opacity: 1;
 }
+.segment-ios-dark .segment-button.segment-activated {
+    color: #fff;
+    background-color: #1990ef;
+}
 .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
     border-color: #1990ef;
     opacity: 1;
@@ -99,5 +103,11 @@ page-seekhome {
     margin-bottom: 1em;
     font-weight: 500;
     line-height: 1.2;
+}
+.item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
 }
 }

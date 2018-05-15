@@ -49,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StartPage,
     AnimationPage,
    
+   
   ],
   imports: [
     BrowserModule,
@@ -82,6 +83,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecloginPage,
     StartPage,
     AnimationPage,
+  
    
   ],
   providers: [
