@@ -184,6 +184,9 @@ icon:'assets/imgs/1.jpg',
       '发传单',
     ]
   }
+  goto(item){
+    this.navCtrl.push('SeekinfoPage',{all:item});
+  }
 
   getItems(ev: any) {
     // Reset items back to all of the items
