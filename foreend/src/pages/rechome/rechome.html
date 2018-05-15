@@ -11,16 +11,22 @@
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 
   <!-- <div padding>
-      <ion-segment [(ngModel)]="row1">
-          <ion-segment-button style="height:110px" *ngFor="let item of class" value="{{item.val}}">
-            <img src="{{item.img}}"><p>{{item.name}}</p>
-          </ion-segment-button>
-      </ion-segment>
-      <ion-segment [(ngModel)]="row2">
-          <ion-segment-button style="height:110px;width:25%" *ngFor="let item of class0" value="{{item.val}}">
-            <img src="{{item.img}}"><p>{{item.name}}</p>
-          </ion-segment-button>
-      </ion-segment>
+      <ion-grid>
+          <ion-row>
+              <ion-segment [(ngModel)]="row1">
+                  <ion-segment-button style="height:110px" *ngFor="let item of class" value="{{item.val}}">
+                    <img src="{{item.img}}"><p>{{item.name}}</p>
+                  </ion-segment-button>
+              </ion-segment>
+          </ion-row>
+          <ion-row> 
+              <ion-segment [(ngModel)]="row2">
+                  <ion-segment-button style="height:110px;width:25%" *ngFor="let item of class0" value="{{item.val}}">
+                    <img src="{{item.img}}"><p>{{item.name}}</p>
+                  </ion-segment-button>
+              </ion-segment>
+          </ion-row>
+       </ion-grid>
   </div>
     
     <div [ngSwitch]="row1">
@@ -166,8 +172,8 @@
                 <p>{{item.mes}}</p>
             </ion-item>
         </ion-list>
-      </div>
-     -->
+      </div> -->
+    
 
   <div>
     <ion-grid id="grid" >

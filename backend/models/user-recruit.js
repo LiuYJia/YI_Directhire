@@ -13,6 +13,7 @@ function AdminR(admin){
     this.username = admin.username;
     this.password = admin.password;
     this.age = admin.age;
+    this.status = admin.status;
 };
 module.exports = AdminR;
 
@@ -30,13 +31,13 @@ pool.getConnection(function(err, connection) {
     //保存数据
     AdminR.prototype.save = function save(admin,callback) {
 
-        console.log(admin.username);
+        console.log(admin.username,admin.userpass);
         pool.getConnection(function (err, connection) {
 
 
             var insertUser_Sql = "INSERT INTO user_recruit(username,password) VALUES(?,?)";
 
-            connection.query(insertUser_Sql, [admin.username, admin.password], function (err, result) {
+            connection.query(insertUser_Sql, [admin.username, admin.userpass], function (err, result) {
 
                 connection.release();
                 if (err) {
@@ -123,7 +124,7 @@ pool.getConnection(function(err, connection) {
     };
 
     //根据用户名得到用户信息
-    AdminR.getUserByUserName = function getUserNumByName(username, callback) {
+    AdminR.getUserByUserName = function getUserByUserName(username, callback) {
         console.log('use database admin-recruit');
         pool.getConnection(function (err, connection) {
             var getUserByUserName_Sql = "SELECT * FROM user_recruit WHERE username = ?";

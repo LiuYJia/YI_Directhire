@@ -11,8 +11,10 @@ module.exports = function (app) {
 
     app.use('/admin/login',require('./admin/login'));
     app.use('/admin/register',require('./admin/register'));
-    app.use('/admin/logout',require('./admin/logout'));
+    // app.use('/admin/logout',require('./admin/logout'));
 
+    // app.use('/admin/edit',require('./admin/edit'));
+    app.use('/admin/all',require('./admin/all'));
     app.use('/admin/home',require('./admin/home'));
     app.use('/admin/master',require('./admin/master'));
     app.use('/admin/file',require('./admin/file'));
@@ -20,6 +22,7 @@ module.exports = function (app) {
     app.use('/admin/label',require('./admin/label'));
     app.use('/admin/msg',require('./admin/msg'));
     app.use('/admin/users',require('./admin/users'));
+
 
     app.use('/user/admin-seeker',require('./user/admin-seeker'));
     app.use('/user/admin-recruit',require('./user/admin-recruit'));

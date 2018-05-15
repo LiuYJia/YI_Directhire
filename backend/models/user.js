@@ -97,7 +97,7 @@ pool.getConnection(function(err, connection) {
     User.totalSeekerNum = function totalSeekerNum(callback){
         pool.getConnection(function(err,connection){
 
-            var totalSeekerNum_Sql = "SELECT COUNT(*) AS num_seeker FROM user_seeker";
+            var totalSeekerNum_Sql = "SELECT COUNT(*) AS num_seeker FROM user_seekercase";
             connection.query(totalSeekerNum_Sql,function(err,result){
                 connection.release();
                 if(err){
@@ -115,7 +115,7 @@ pool.getConnection(function(err, connection) {
     User.totalRecruitNum = function totalRecruitNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalRecruitNum_sql = "select count(*) as num_recruit from user_recruit";
+            var totalRecruitNum_sql = "select count(*) as num_recruit from user_recruitcase";
             connection.query(totalRecruitNum_sql,function(err,result){
                 connection.release();
 
@@ -133,7 +133,7 @@ pool.getConnection(function(err, connection) {
     User.totalManNum = function totalManNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalManNum_sql = "select count(sex) as num_man from user_seeker  where sex='男'";
+            var totalManNum_sql = "select count(sex) as num_man from user_seekercase  where sex='男'";
             connection.query(totalManNum_sql,function(err,result){
                 connection.release();
 
@@ -152,7 +152,7 @@ pool.getConnection(function(err, connection) {
     User.totalWomanNum = function totalWomanNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalWomanNum_sql = "select count(sex) as num_woman from user_seeker  where sex='女'";
+            var totalWomanNum_sql = "select count(sex) as num_woman from user_seekercase  where sex='女'";
             connection.query(totalWomanNum_sql,function(err,result){
                 connection.release();
 
@@ -182,6 +182,8 @@ pool.getConnection(function(err, connection) {
             });
         });
     }
+
+    //删除管理员
     User.Master_del = function Master_del(username,callback){
 
         pool.getConnection(function(err,connection){
@@ -197,13 +199,13 @@ pool.getConnection(function(err, connection) {
             });
         });
     }
-    //删除管理员
+    
 
     //求职人员列表
     User.Seeker = function Seeker(callback){
 
         pool.getConnection(function(err,connection){
-            var Seeker_sql = "select * from user_seeker";
+            var Seeker_sql = "select * from user_seekercase";
             connection.query(Seeker_sql,function(err,result){
                 connection.release();
 
@@ -220,7 +222,7 @@ pool.getConnection(function(err, connection) {
     User.Recruit = function Recruit(callback){
 
         pool.getConnection(function(err,connection){
-            var Recruit_sql = "select * from user_recruit";
+            var Recruit_sql = "select * from user_recruitcase";
             connection.query(Recruit_sql,function(err,result){
                 connection.release();
 
@@ -252,21 +254,5 @@ pool.getConnection(function(err, connection) {
     }
 
 
-    User.seeekerall = function(callback){
-        pool.getConnection(function(err,connection){
-            var seekerall_sql = "select * from seeker";
-            connection.query(seekerall_sql,function(err,result){
-                connection.release();
-
-                if(err){
-                    console.log("seekerall Error:" + err.message);
-                    return;
-                }     
-                        
-                callback(err,result);
-            });
-        });
-
-    }
 
 });

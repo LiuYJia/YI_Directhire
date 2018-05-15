@@ -13,6 +13,7 @@ function AdminS(admin){
     this.username = admin.username;
     this.password = admin.password;
     this.age = admin.age;
+    this.status = admin.status;
 };
 
 module.exports = AdminS;

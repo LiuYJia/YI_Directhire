@@ -35,8 +35,8 @@ export class LoginPage {
   password='';
   mes='';
   sub(){
+    console.log(this.username);
     this.navCtrl.setRoot(TabsPage);
-    // console.log(this.username);
     // this.mes='';
     // this.http.get('http://127.0.0.1:3000/user/admin-recruit?status=login&userName='+this.username+'&userPwd='+this.password).subscribe(data=>{
     //   console.log(data);
