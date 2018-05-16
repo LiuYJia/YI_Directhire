@@ -20,9 +20,19 @@
         <p>{{user.name}}</p>     
     </div>
     <ion-list id="list">
-        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        <!-- <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
           {{ item }}
-        </button>  
+        </button>  -->
+        <button ion-item (click)="gorecmypub()">
+          发布职位信息
+        </button>
+        <button ion-item (click)="gorecmyallpub()">
+          我发布的
+        </button>
+        <button ion-item (click)="remove()">
+          清除缓存
+        </button> 
+
     </ion-list>
 
     <button  ion-item >
@@ -30,10 +40,8 @@
         关于易直聘<i class="gr" style="font-style:normal;float:right">目前已是最新版本</i>
       </p>
   </button>
-    <button  ion-item>
-      <p class="i">
-        联系我们<i class="gr" style="font-style:normal;float:right">QQ:123456789</i>
-      </p>
+    <button  ion-item (click)="gorecuserque()">
+      <p class="i">用户反馈</p>
   </button>
     <button ion-button round color="none" (click)="leave()" id="but1">退出登录</button>
 </ion-content>

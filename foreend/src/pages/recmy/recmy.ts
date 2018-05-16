@@ -24,13 +24,22 @@ export class RecmyPage {
     console.log('ionViewDidLoad RecmyPage');
   }
 
-  items = ["发布职位信息","清除缓存"];
+  items = ["发布职位信息","我发布的","清除缓存"];
   user = {img:"assets/imgs/class3.png",name:"Luna",num:"13145878888",password:"123456"};
-  leave(){
-    this.app.getRootNavs()[0].setRoot(RecloginPage);
-  }
+  
   set(){
     this.navCtrl.push('RecsetPage',{user:this.user});
   }
-  
+  gorecmypub(){
+    this.navCtrl.push('RecmypubPage');
+  }
+  gorecmyallpub(){
+    this.navCtrl.push('RecmyallpubPage');
+  }
+  gorecuserque(){
+    this.navCtrl.push('RecuserquePage');
+  }
+  leave(){
+    this.app.getRootNavs()[0].setRoot(RecloginPage);
+  }
 }
