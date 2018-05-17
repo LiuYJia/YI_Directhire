@@ -11,9 +11,8 @@ module.exports = function (app) {
 
     app.use('/admin/login',require('./admin/login'));
     app.use('/admin/register',require('./admin/register'));
-    // app.use('/admin/logout',require('./admin/logout'));
 
-    // app.use('/admin/edit',require('./admin/edit'));
+
     app.use('/admin/all',require('./admin/all'));
     app.use('/admin/home',require('./admin/home'));
     app.use('/admin/master',require('./admin/master'));
@@ -32,7 +31,7 @@ module.exports = function (app) {
     app.use('/user/deleteRecruit',require('./user/deleteRecruit'));
     app.use('/user/updateSeeker',require('./user/updateSeeker'));
     app.use('/user/updateRecruit',require('./user/updateRecruit'));
-    
+   
     
 }
 

@@ -1,2 +1,35 @@
-<p>用户反馈界面</p>
-<%= title %>
+<div class="container">
+    <h2><%= title %></h2>
+
+    <table class="table table-bordered table-condensed mastertable">
+        <thead>
+            <tr>
+                <td>用户名</td>
+                <td>类型</td>
+                <td>内容</td>
+                <td>联系方式</td>
+                <td>权限</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(item){ %>                
+                <tr>                    
+                    <td><%= item.username %></td>
+                    <td><%= item.sort %></td>
+                    <td><%= item.txt %></td>
+                    <td><%= item.tel %></td>
+                    <td>
+                        <form action="/admin/all/delFeedback" id="<%= item.id %>" method="post" style="display: none">
+                            <input type="hidden" name="d_feed" value="<%= item.id %>">
+                        </form>
+                        <button onclick="if(confirm('你确定彻底删除吗？')){
+                            document.getElementById('<%= item.id %>').submit();
+                            event.preventDefault();
+                        }" class="btn btn-sm btn-danger">删除</button>
+                    </td>
+                   
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
