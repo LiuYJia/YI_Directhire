@@ -42,10 +42,10 @@ export class RecsetPage {
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit?userName='+localStorage.getItem("login")).subscribe(data=>{
       var message = JSON.parse(data['_body'])[0];
       console.log(message);
-      this.name = message.name;
+     // this.name = message.name;
       this.phone = message.phone;
-      this.job = message.job;
-      this.age = message.age;
+      // this.job = message.job;
+      //this.age = message.age;
       this.email = message.email;
       this.password = message.password;
     });

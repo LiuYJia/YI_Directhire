@@ -25,14 +25,23 @@ page-rechome {
         //margin-left:10%;
         border-radius: 50%;
     }
-    #more{
-        line-height: 64px;
+    .spe{
+        margin-top:8px;
     }
-    #more img{
-        width:50%;
-        margin-left:25%;
-        margin-top:50%;
-        display: block;
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
+    }
+    #money{
+        font-style: normal;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
+    }
+    #position{
+        font-style: normal;
+        margin-left:10px;
+        font-size:18px;
     }
     .segment-ios .segment-button{
         line-height: 1rem;
