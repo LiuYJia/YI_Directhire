@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { AlertController } from 'ionic-angular';
-
+import { Headers } from '@angular/http';
 
 /**
  * Generated class for the RecsetPage page.
@@ -26,13 +26,6 @@ export class RecsetPage {
     public http: Http,
     public alertCtrl: AlertController) {
       //this.username = navParams.get('user').username;
-      // this.name = navParams.get('user').name;
-      // this.img = navParams.get('user').img;
-      // this.phone = navParams.get('user').num;
-      // this.job = navParams.get('user').job;
-      // this.age = navParams.get('user').age;
-      // this.email = navParams.get('user').email;
-      // this.password = navParams.get('user').password;
   }
 
   ionViewDidLoad() {
@@ -42,10 +35,7 @@ export class RecsetPage {
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit?userName='+localStorage.getItem("login")).subscribe(data=>{
       var message = JSON.parse(data['_body'])[0];
       console.log(message);
-     // this.name = message.name;
       this.phone = message.phone;
-      // this.job = message.job;
-      //this.age = message.age;
       this.email = message.email;
       this.password = message.password;
     });
@@ -71,11 +61,14 @@ export class RecsetPage {
   cgpwd(){
     this.navCtrl.push('ReccgpwdPage');
   }
+
+  headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   submit(){
-    this.http.get('http://127.0.0.1:3000/user/updateRecruit?username='+localStorage.getItem("login")+'&name='+this.name+'&job='+this.job+'&age='+this.age+'&password='+this.password+'&phone='+this.phone+'&email='+this.email).subscribe(data=>{
+    this.http.post('http://127.0.0.1:3000/user/updateRecruit',JSON.stringify({username:localStorage.getItem("login"),password:this.password,phone:this.phone,email:this.email}),{headers:this.headers}).subscribe(data=>{
       console.log(data);
       if(data['_body']==1) this.showAlert1();
       if(data['_body']==2) this.showAlert2();
     });
   }
+  
 }

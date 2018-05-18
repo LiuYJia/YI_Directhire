@@ -28,11 +28,10 @@ export class RechomePage {
   {img:"assets/imgs/class6.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
-  items = [];
+  items = [];class1=[];
   ionViewDidLoad() {
     console.log('ionViewDidLoad RechomePage');
-    this.http.get('http://127.0.0.1:3000/user/getSort_recruit').subscribe(data=>{
-      console.log(data['_body']);
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       for(let i=0;i<4;i++){
         this.class[i].name = message[i].name;
@@ -42,35 +41,28 @@ export class RechomePage {
       for(let i=0;i<4;i++){
         this.class0[i].name =message[i+4].name;
       }
-    })
+      this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+message[0].name).subscribe(data=>{
+        var message = JSON.parse(data['_body']);
+        for(var i=0;i<message.length;i++){
+          this.class1[i] = message[i];
+        }
+      })
+    })   
   }
-  get(){
-
+  sort(item){
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
+        var message = JSON.parse(data['_body']);
+        console.log(message);
+        for(var i=0;i<message.length;i++){
+          this.class1 = [];
+          this.class1[i] = message[i];
+        }
+    })
   }
   seeker(item){
     this.navCtrl.push('RecseekerPage',{title:item});
   }
-  class1=[{img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class1.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."}];
-  class2=[{img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class2.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."}];
-  class3=[{img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class3.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."}];
-  class4=[{img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class4.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."}];
-  class5=[{img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",sex:"女",age:"25 岁",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."},
-  {img:"assets/imgs/class5.png",name:"姓名",schooling:"本科",age:"25 岁",sex:"女",mes:"Listen, I've had a pretty messed up day..."}];
-//加载
+//延时加载
   doInfinite(infiniteScoll){
     setTimeout(()=>{
       infiniteScoll.complete();

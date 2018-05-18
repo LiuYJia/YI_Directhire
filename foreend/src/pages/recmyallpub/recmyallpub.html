@@ -30,13 +30,13 @@
       
       <div [ngSwitch]="position" id="more">
         <ion-list *ngSwitchCase="'all'">
-          <ion-item *ngFor="let item of all" >
-            <ion-thumbnail item-start><img src="{{item.img}}"></ion-thumbnail>
-            <h2 class="pos">{{item.pos}}</h2>
+          <ion-item *ngFor="let item of all" (click)="gorecpub_set(item)">
+            <ion-thumbnail item-start><img src="assets/imgs/logo.png"></ion-thumbnail>
+            <h2 class="pos">{{item.job}}</h2>
             <h3 class="money">{{item.money}}</h3>
-            <p><i>{{item.address}}</i><i>{{item.experience}}</i><i>{{item.edu}}</i></p>
+            <p><i>{{item.address}}</i><i>{{item.age}}</i><i>{{item.school}}</i></p>
             <p>公司：<i class="name">{{item.name}}</i></p>
-            <p>{{item.time}}</p>
+            <p>{{item.detail}}</p>
           </ion-item>
         </ion-list>
       

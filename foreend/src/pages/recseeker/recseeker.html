@@ -15,7 +15,7 @@
 
 <ion-content>
   <div id="top">
-    <img src="{{img}}" alt="">
+    <img src="assets/imgs/class2.png" alt="">
     <h3>{{name}}</h3>
   </div>
 
@@ -27,17 +27,27 @@
       <p>姓名：{{name}}</p>
       <p>性别：{{sex}}</p>
       <p>年龄：{{age}}</p>
-      <p>最高学历：</p>
+      <p>邮箱：{{email}}</p>
+      <p>最高学历：{{this.school}}</p>
+      <p>期望职业：{{this.job}}</p>
+      <p>期望薪资：{{this.money}}</p>
     </ion-item>
   </ion-list>
 
   <ion-list>
-      <ion-item><p  class="title">工作经验</p></ion-item>
+    <ion-item><p  class="title">个人介绍</p></ion-item>
     </ion-list>
     <ion-list>
       <ion-item>
-        <p>2015.06-2017.06</p>
-        <p>任职于XX公司XX职位</p>
+        <p>{{this.detail}}</p>
       </ion-item>
-    </ion-list>
+  </ion-list>
+  <ion-list>
+      <ion-item><p  class="title">兴趣爱好</p></ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          
+        </ion-item>
+  </ion-list>
 </ion-content>

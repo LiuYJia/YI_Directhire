@@ -29,4 +29,8 @@ page-recnear {
     .classify h4{
         font-size:15px;
     }
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
+    }
 }
