@@ -33,7 +33,6 @@ export class RecmyallpubPage {
     })
   }
   gorecpub_set(item){
-    console.log(item.id);
     this.navCtrl.push("RecpubsetPage",{title:item});
   }
 }

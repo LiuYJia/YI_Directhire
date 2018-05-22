@@ -15,7 +15,7 @@
   <ion-content id="body">
     
         <ion-list>
-            <ion-list-header><h2>基本信息</h2></ion-list-header>
+            <ion-list-header style="color:#1990ef"><h2>基本信息</h2></ion-list-header>
             <ion-item>
                 <label>职位名称:</label>
                 <input type="text" [(ngModel)]="job">
@@ -44,9 +44,7 @@
             </ion-item>
             <ion-item>
                 <label>学　　历:</label>
-                <select style="width:110px;margin-left:5px;height:25px" [(ngModel)]='school'> 
-                  <option *ngFor="let item of sch" value="{{item}}">{{item}}</option>    
-                </select>  
+                <input type="text" [(ngModel)]='school'>
               </ion-item>  
             <ion-item>
                 <label>联系方式:</label>
