@@ -1,0 +1,64 @@
+<!--
+  Generated template for the RecmyallpubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>我发布的</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="body">
+    <div>
+        <ion-segment [(ngModel)]="position">
+          <ion-segment-button value="all">
+            全部
+          </ion-segment-button>
+          <ion-segment-button value="viewed">
+            被查看
+          </ion-segment-button>
+          <ion-segment-button value="finish">
+             已结束
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="position" id="more">
+        <ion-list *ngSwitchCase="'all'">
+          <ion-item *ngFor="let item of all" (click)="gorecpub_set(item)">
+            <ion-thumbnail item-start><img src="assets/imgs/logo.png"></ion-thumbnail>
+            <h2 class="pos">{{item.job}}</h2>
+            <h3 class="money">{{item.money}}</h3>
+            <p><i>{{item.address}}</i><i>{{item.age}}</i><i>{{item.school}}</i></p>
+            <p>公司：<i class="name">{{item.name}}</i></p>
+            <p>{{item.detail}}</p>
+          </ion-item>
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'viewed'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-kitten-1.jpg">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+          ...
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'finish'">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+            </ion-item>
+            ...
+          </ion-list>
+      </div>
+
+</ion-content>

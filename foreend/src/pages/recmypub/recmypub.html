@@ -1,0 +1,91 @@
+<!--
+  Generated template for the RecmypubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>发布职位信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="body">
+    <!-- <div>
+        <ion-segment [(ngModel)]="position">
+          <ion-segment-button value="publish">
+            发布招聘职位
+          </ion-segment-button>
+          <ion-segment-button value="manage">
+            管理招聘职位
+          </ion-segment-button>
+          
+        </ion-segment>
+    </div> -->
+    
+    <div [ngSwitch]="position">
+        <ion-list *ngSwitchCase="'publish'">
+            <ion-list-header><h2>基本信息</h2></ion-list-header>
+            <ion-item>
+                <label>职位名称:</label>
+                <input type="text" [(ngModel)]="job">
+            </ion-item>
+            <ion-item>
+              <label>所属类别:</label>
+              <select style="width:110px;margin-left:5px;height:25px" [(ngModel)]='sort'> 
+                <option *ngFor="let item of items" value="{{item}}">{{item}}</option>    
+              </select>  
+            </ion-item>  
+            <ion-item>
+                <label>所属公司:</label>
+                <input type="text" [(ngModel)]="name">
+            </ion-item>
+            <ion-item>
+                <label>招聘人数:</label>
+                <input type="text" [(ngModel)]="num">
+            </ion-item>
+            <ion-item>
+                <label>提供月薪:</label>
+                <input type="text" [(ngModel)]="money">
+            </ion-item>
+            <ion-item>
+                <label>年　　龄:</label>
+                <input type="text" [(ngModel)]="age">
+            </ion-item>
+            
+            <!-- <ion-item>
+                <label>学　　历:</label>
+                <input type="text" [(ngModel)]="school">
+            </ion-item> -->
+            <ion-item>
+                <label>学　　历:</label>
+                <select style="width:110px;margin-left:5px;height:25px" [(ngModel)]='school'> 
+                  <option *ngFor="let item of sch" value="{{item}}">{{item}}</option>    
+                </select>  
+              </ion-item>  
+            <ion-item>
+                <label>联系方式:</label>
+                <input type="text" [(ngModel)]="tel">
+            </ion-item>
+            <ion-item>职位要求：</ion-item>
+            <ion-item>
+                <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+            </ion-item>
+            <button ion-button color="none" id="but" (click)="submit()">确认发布</button>
+        </ion-list>
+
+        <!-- <ion-list *ngSwitchCase="'manage'">
+          <ion-item *ngFor="let item of all" >
+            <ion-thumbnail item-start><img src="{{item.img}}"></ion-thumbnail>
+            <h2 class="pos">{{item.pos}}</h2>
+            <h3 class="money">{{item.money}}</h3>
+            <p><i>{{item.address}}</i><i>{{item.experience}}</i><i>{{item.edu}}</i></p>
+            <p>公司：<i class="name">{{item.name}}</i></p>
+            <p>{{item.time}}</p>
+          </ion-item>
+        </ion-list>         -->
+    </div>
+</ion-content>

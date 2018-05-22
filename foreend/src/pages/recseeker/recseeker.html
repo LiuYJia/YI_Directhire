@@ -15,29 +15,37 @@
 
 <ion-content>
   <div id="top">
-    <img src="{{img}}" alt="">
+    <img src="assets/imgs/class2.png" alt="">
     <h3>{{name}}</h3>
   </div>
 
   <ion-list>
     <ion-item><p  class="title">基本信息</p></ion-item>
-  </ion-list>
-  <ion-list>
     <ion-item>
-      <p>姓名：{{name}}</p>
-      <p>性别：{{sex}}</p>
-      <p>年龄：{{age}}</p>
-      <p>最高学历：</p>
+      <i class="iconfont">&#xe522;</i>
+      <p class="intro">姓　　名：{{name}}</p><br/>
+      <i class="iconfont">&#xe62b;</i>
+      <p class="intro">性　　别：{{sex}}</p><br/>
+      <i class="iconfont">&#xe64a;</i>
+      <p class="intro">年　　龄：{{age}}</p><br/>
+      <i class="iconfont">&#xe68b;</i>
+      <p class="intro">电　　话：{{tel}}</p><br/>
+      <i class="iconfont">&#xe624;</i>
+      <p class="intro">最高学历：{{this.school}}</p><br/>
+      <i class="iconfont">&#xe767;</i>
+      <p class="intro">期望职业：{{this.job}}</p><br/>
+      <i class="iconfont">&#xe61c;</i>
+      <p class="intro">期望薪资：{{this.money}}</p>
     </ion-item>
   </ion-list>
 
   <ion-list>
-      <ion-item><p  class="title">工作经验</p></ion-item>
-    </ion-list>
-    <ion-list>
-      <ion-item>
-        <p>2015.06-2017.06</p>
-        <p>任职于XX公司XX职位</p>
-      </ion-item>
-    </ion-list>
+    <ion-item><p  class="title">个人介绍</p></ion-item>
+    <ion-item>
+      <p>{{this.detail}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item><p  class="title">兴趣爱好</p></ion-item>
+  </ion-list>
 </ion-content>

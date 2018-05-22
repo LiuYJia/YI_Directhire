@@ -22,44 +22,20 @@
       <img src="assets/imgs/slide3.png">
     </ion-slide>    
   </ion-slides>
-
+  <!-- 分类 -->
   <div id="class">
       <ion-grid>
           <ion-row>
               <ion-segment [(ngModel)]="row1">
-                  <!-- <ion-segment-button style="height:110px" *ngFor="let item of class" value="{{item.val}}">
+                  <ion-segment-button style="height:110px" *ngFor="let item of class" value="{{item.val}}" (click)="sort(item)">
                     <img src="{{item.img}}"><p>{{item.name}}</p>
-                  </ion-segment-button> -->
-                  <ion-segment-button style="height:110px" value="class1">
-                    <img src="assets/imgs/class1.png"><p>礼仪模特</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class2">
-                    <img src="assets/imgs/class2.png"><p>老师家教</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class3">
-                    <img src="assets/imgs/class3.png"><p>话务客服</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class4">
-                    <img src="assets/imgs/class4.png"><p>传单派发</p>
                   </ion-segment-button>
               </ion-segment>
           </ion-row>
           <ion-row> 
               <ion-segment [(ngModel)]="row1">
-                  <!-- <ion-segment-button style="height:110px;width:25%" *ngFor="let item of class0" value="{{item.val}}">
+                  <ion-segment-button style="height:110px;width:25%" *ngFor="let item of class0" value="{{item.val}}" (click)="sort(item)">
                     <img src="{{item.img}}"><p>{{item.name}}</p>
-                  </ion-segment-button> -->
-                  <ion-segment-button style="height:110px" value="class5">
-                    <img src="assets/imgs/class5.png"><p>审核录入</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class6">
-                    <img src="assets/imgs/class6.png"><p>服务员</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class7">
-                    <img src="assets/imgs/class7.png"><p>问卷调查</p>
-                  </ion-segment-button>
-                  <ion-segment-button style="height:110px" value="class8">
-                    <img src="assets/imgs/class8.png"><p>计算机</p>
                   </ion-segment-button>
               </ion-segment>
           </ion-row>
@@ -68,137 +44,172 @@
     
     <div [ngSwitch]="row1">
       <ion-list *ngSwitchCase="'class1'">
-          <ion-list-header>礼仪模特</ion-list-header>       
-          <ion-item *ngFor="let item of class1">
-              <ion-avatar item-start>
-                <img src="{{item.img}}">
-              </ion-avatar>
-              <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
-              <p>{{item.mes}}</p>
+          <ion-list-header>{{items[0]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/class1.png">
+                </ion-avatar>
+                <h2>{{item.name}}</h2>
+                <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                  <i class="iconfont">&#xe522;</i>{{item.age}}
+                  <i class="iconfont">&#xe62b;</i>{{item.sex}}
+                </h3>
+                <p>{{item.mes}}</p>
+              </ion-item>
+              <ion-item>
+                  <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                  <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+              </ion-item>
           </ion-item>
       </ion-list>
     
       <ion-list *ngSwitchCase="'class2'">
-          <ion-list-header>老师家教</ion-list-header>       
-          <ion-item *ngFor="let item of class2">
+          <ion-list-header>{{items[1]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class2.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
 
       <ion-list *ngSwitchCase="'class3'">
-          <ion-list-header>话务客服</ion-list-header>       
-          <ion-item *ngFor="let item of class3">
+          <ion-list-header>{{items[2]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
       <ion-list *ngSwitchCase="'class4'">
-          <ion-list-header>传单派发</ion-list-header>       
-          <ion-item *ngFor="let item of class4">
+          <ion-list-header>{{items[3]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
       <ion-list *ngSwitchCase="'class5'">
-          <ion-list-header>审核录入</ion-list-header>       
-          <ion-item *ngFor="let item of class5">
+          <ion-list-header>{{items[4]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
     
       <ion-list *ngSwitchCase="'class6'">
-          <ion-list-header>服务员</ion-list-header>       
-          <ion-item *ngFor="let item of class6">
+          <ion-list-header>{{items[5]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
 
       <ion-list *ngSwitchCase="'class7'">
-          <ion-list-header>问卷调查</ion-list-header>       
-          <ion-item *ngFor="let item of class7">
+          <ion-list-header>{{items[6]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
 
       <ion-list *ngSwitchCase="'class8'">
-          <ion-list-header>计算机</ion-list-header>       
-          <ion-item *ngFor="let item of class8">
+          <ion-list-header>{{items[7]}}</ion-list-header>       
+          <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
+            <ion-item>
               <ion-avatar item-start>
-                <img src="{{item.img}}">
+                <img src="assets/imgs/class1.png">
               </ion-avatar>
               <h2>{{item.name}}</h2>
-              <h3>{{item.schooling}} {{item.age}}</h3>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
               <p>{{item.mes}}</p>
-          </ion-item>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+            </ion-item>
+        </ion-item>
       </ion-list>
     </div>
     
-
-  <!-- <div>
-    <ion-grid id="grid" >
-      <ion-row>
-        <ion-col class="col" col-3 *ngFor="let item of class" (click)="more(item)">
-          <img src="{{item.img}}">{{item.name}}
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  
-
-  <ion-list>
-      <ion-list-header>
-        礼仪模特
-      </ion-list-header>  
-      <ion-item *ngFor="let item of class1">
-        <ion-avatar item-start>
-          <img src="{{item.img}}">
-        </ion-avatar>
-        <h2>{{item.name}}</h2>
-        <h3>{{item.schooling}} {{item.age}}</h3>
-        <p>{{item.mes}}</p>
-      </ion-item>
-      <ion-list-header>
-          老师家教
-        </ion-list-header>  
-        <ion-item *ngFor="let item of class2">
-          <ion-avatar item-start>
-            <img src="{{item.img}}">
-          </ion-avatar>
-          <h2>{{item.name}}</h2>
-          <h3>{{item.schooling}} {{item.age}}</h3>
-          <p>{{item.mes}}</p>
-        </ion-item>
-  </ion-list> -->
-
   <!-- 上拉加载 -->
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

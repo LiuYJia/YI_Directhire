@@ -1,0 +1,26 @@
+page-recmyallpub {
+    #body{
+        background-color: #f2f2f2;
+    }
+    #more{
+        margin-top:5px;
+    }
+    .pos{
+        display: inline;
+    }
+    .money{
+        display: inline;
+        float: right;
+        color: red;
+    }
+    p i{
+        font-style: normal;
+        margin-right: 10px;
+    }
+    .name{
+        font-style: normal;
+    }
+    ion-item{
+        height:100px;
+    }
+}

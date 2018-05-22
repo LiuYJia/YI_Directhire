@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the SeekhomePage page.
@@ -15,194 +16,60 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeekhomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
   }
 
+  row1="class1";
+  class = [{img:"assets/imgs/class1.png",name:"",val:"class1"},
+  {img:"assets/imgs/class2.png",name:"",val:"class2"},
+  {img:"assets/imgs/class3.png",name:"",val:"class3"},
+  {img:"assets/imgs/class4.png",name:"",val:"class4"},];
+  class0 = [{img:"assets/imgs/class5.png",name:"",val:"class5"},
+  {img:"assets/imgs/class6.png",name:"",val:"class6"},
+  {img:"assets/imgs/class7.png",name:"",val:"class7"},
+  {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
+  items = [];
+  class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度"}];
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekhomePage');
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      for(let i=0;i<4;i++){
+        this.class[i].name = message[i].name;
+        this.items[i] = message[i].name;
+        this.items[i+4] = message[i+4].name;
+      }
+      for(let i=0;i<4;i++){
+        this.class0[i].name =message[i+4].name;
+      }
+      // this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+message[0].name).subscribe(data=>{
+      //   var message = JSON.parse(data['_body']);
+      //   for(var i=0;i<message.length;i++){
+      //     this.class1[i] = message[i];
+      //   }
+      // })
+    })   
   }
-  icons='1';
-  searchQuery: string = '';
-  items: string[];
-  list=[{title:'天猫销售运营加运营助理',
-         price:'3K-5K',
-         msg:'北京怡沁电子商务有限公司',
-        locate:'桥西区',
-        icon:'assets/imgs/1.jpg',
-        },
-        {title:'腾讯销售运营加运营助理',
-         price:'3K-5K',
-         msg:'北京怡沁电子商务有限公司',
-        locate:'桥西区',
-        icon:'assets/imgs/1.jpg',
-        },
-        {title:'阿里销售运营加运营助理',
-         price:'3K-5K',
-         msg:'北京怡沁电子商务有限公司',
-        locate:'桥西区',
-        icon:'assets/imgs/1.jpg',
-        },
-];
-list2=[{title:'天猫客服运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯客服运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里客服运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list3=[{title:'天猫餐饮运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯餐饮运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里餐饮运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list4=[{title:'天猫计算机运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯计算机运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里计算机运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list5=[{title:'天猫财务运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯财务运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里财务运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list6=[{title:'天猫医疗运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯医疗运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里医疗运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list7=[{title:'天猫金融运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯金融售运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里金融运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-list8=[{title:'天猫其他运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'腾讯其他运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-{title:'阿里其他运营加运营助理',
-price:'3K-5K',
-msg:'北京怡沁电子商务有限公司',
-locate:'桥西区',
-icon:'assets/imgs/1.jpg',
-},
-];
-  initializeItems() {
-    this.items = [
-      '快递员',
-      '美团外卖',
-      '滴滴接送',
-      '发传单',
-    ]
+  sort(item){
+    // this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
+    //     var message = JSON.parse(data['_body']);
+    //     console.log(message);
+    //     for(var i=0;i<message.length;i++){
+    //       this.class1 = [];
+    //       this.class1[i] = message[i];
+    //     }
+    // })
   }
-  goto(item){
-    this.navCtrl.push('SeekinfoPage',{all:item});
+  job(item){
+    // this.navCtrl.push('RecseekerPage',{title:item});
   }
-
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-    else{
-      this.items=[];
-    }
+//延时加载
+  doInfinite(infiniteScoll){
+    setTimeout(()=>{
+      infiniteScoll.complete();
+      if(this.class1.length>50){
+        infiniteScoll.enable(false);
+      }
+    },500);
   }
 }

@@ -14,6 +14,10 @@ function AdminR(admin){
     this.password = admin.password;
     this.age = admin.age;
     this.status = admin.status;
+    this.name = admin.name;
+    this.job = admin.job;
+    this.phone = admin.phone;
+    this.email = admin.email;
 };
 module.exports = AdminR;
 
@@ -76,29 +80,19 @@ pool.getConnection(function(err, connection) {
     }
 
     //修改数据
-    AdminR.prototype.updateData = function updateData(username,property,updata,callback){
+    AdminR.prototype.updateData = function updateData(username,data,callback){
         pool.getConnection(function(err,connection){
+            
+            var updateUser_Sql = "UPDATE user_recruit SET phone = ?,email = ?,password =? where username =?";
 
-            var updateUser_Sql = "UPDATE user_seeker SET "+property+" = ? WHERE username = ?";
-            var userModSql_Params;
-
-            if(updata.password){
-                userModSql_Params = [updata.password,username];
-            }
-            if(updata.age){
-                userModSql_Params = [updata.age,username];
-            }
-
-            connection.query(updateUser_Sql,userModSql_Params,function (err, result) {
-
+            connection.query(updateUser_Sql,[data.phone,data.email,data.password,username],function (err, result) {
+              
                 if(err){
-                      console.log('[UPDATE ERROR] - ',err.message);   
+                      console.log('[UPDATE ERROR] - ',err.message);  
                       return;
-                }
-             
-               console.log('----------UPDATE-------------');
+                }            
                console.log('UPDATE affectedRows',result.affectedRows);
-               console.log('******************************');
+               callback(err,result);
             })
         })
     }
@@ -160,5 +154,44 @@ pool.getConnection(function(err, connection) {
             }
         });
     };
+
+ 
+
+    AdminR.getPeople = function(sort,callback){
+
+        pool.getConnection(function(err,connection){
+            var getPeople_sql = 'select * from msg_seeker where sort = ?';
+            connection.query(getPeople_sql, [sort], function (err, result) { 
+                if (err) {
+                    console.log("getUserByUserName Error: " + err.message);
+                    return;
+                }
+                callback(err, result);
+
+                connection.release();
+            })
+        })
+
+    }
+
+    AdminR.Label = function Label(callback){
+
+        pool.getConnection(function(err,connection){
+            var Label_sql = "select * from label";
+            connection.query(Label_sql,function(err,result){
+                connection.release();
+
+                if(err){
+                    console.log("Label Error:" + err.message);
+                    return;
+                }               
+                callback(err,result);
+            });
+        });
+
+    }
+
+
+    
  
 });

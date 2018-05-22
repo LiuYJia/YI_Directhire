@@ -131,6 +131,24 @@ module.exports = {
         })
     },
 
+    //删除反馈信息
+    delFeedback:function delFeedback(id){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var delFeedback_sql = 'delete from feedback where id =?';
+                connection.query(delFeedback_sql,id,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    }
+
 
 
 

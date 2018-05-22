@@ -28,26 +28,42 @@
       
     <div [ngSwitch]="near">
       <ion-list *ngSwitchCase="'fast'" class="classify" >
-          <ion-item *ngFor="let item of fastitem" class="seeker" (click)="seeker(item)" >
-              <ion-thumbnail item-start>
-                  <img src="{{item.img}}">
-              </ion-thumbnail>
-              <h2>{{item.name}}</h2>
-              <h3><i>{{item.sex}}</i><i>{{item.age}}</i><i>本科</i></h3>
-              <div><p>应聘:网页设计师</p><p class="sal">薪资:5k-7k</p></div>
-              <h4>{{item.infor}}</h4>
+          <ion-item *ngFor="let item of fastitem"  class="seeker" (click)="seeker(item)">
+              <ion-item>
+                  <ion-avatar item-start>
+                    <img src="{{item.img}}">
+                  </ion-avatar>
+                  <h2>{{item.name}}</h2>
+                  <h3><i class="iconfont">&#xe624;</i>{{item.schooling}} 
+                    <i class="iconfont">&#xe522;</i>{{item.age}}
+                    <i class="iconfont">&#xe62b;</i>{{item.sex}}
+                  </h3>
+                  <p>{{item.mes}}</p>
+                </ion-item>
+                <ion-item>
+                    <p><i style="font-style:normal">期望薪资:</i><i id="money">3000-5000</i></p>
+                    <p><i style="font-style:normal">期望职位:</i><i id="position">助理</i></p>
+                </ion-item>
           </ion-item>
       </ion-list>
     
       <ion-list *ngSwitchCase="'high'" class="classify">
-          <ion-item class="seeker" (click)="seeker()">
-              <ion-thumbnail item-start>
-                  <img src="assets/imgs/class3.png">
-              </ion-thumbnail>
-              <h2>Luna</h2>
-              <h3><i>女</i><i>27岁</i><i>本科</i></h3>
-              <div><p>应聘:网页设计师</p><p class="sal">薪资:5k-7k</p></div>
-              <h4>个人简介:...</h4>
+          <ion-item *ngFor="let item of highitem"  class="seeker" (click)="seeker(item)">
+              <ion-item>
+                  <ion-avatar item-start>
+                    <img src="{{item.img}}">
+                  </ion-avatar>
+                  <h2>{{item.name}}</h2>
+                  <h3><i class="iconfont">&#xe624;</i>{{item.schooling}} 
+                    <i class="iconfont">&#xe522;</i>{{item.age}}
+                    <i class="iconfont">&#xe62b;</i>{{item.sex}}
+                  </h3>
+                  <p>{{item.mes}}</p>
+                </ion-item>
+                <ion-item>
+                    <p><i style="font-style:normal">期望薪资:</i><i id="money">3000-5000</i></p>
+                    <p><i style="font-style:normal">期望职位:</i><i id="position">助理</i></p>
+                </ion-item>
           </ion-item>
       </ion-list>
     </div>

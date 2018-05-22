@@ -1,113 +1,173 @@
 page-seekhome {
-    .btn{
-        width: 100%;
-        height: auto;
-        background-color: white;
-        font-size: 110%;
-        padding: 20%;
-        // border-bottom:2px solid lightblue;
+
+    #body{
+        background-color: #f2f2f2;
     }
-    .grid{
-    
-        border: none;
+    #grid{
+        margin-left:4px;
+    }
+    #slides{
+        height:30%;
+    }
+    .slide img{
+        margin-left:0;
+        margin-top:0px;
+    }
+    .col{
+        width:25%;
+        height:110px;
+        border:2px solid #e6e6e6;
+        margin-left:-2px;
+        margin-top:-2px;
+        text-align: center
+    }
+    .segment-md .segment-button{
+        color:black;
+    }
+    #class img{
+         width:85%;
+        //margin-left:10%;
+        border-radius: 50%;
+    }
+    .spe{
+        margin-top:8px;
     }
     .iconfont{
-        font-size:60px;
-        line-height: 1em;
+        color:#1990ef;
+        margin-left:5px;
     }
-    segment-md-dark .segment-button.activated, .segment-md-dark .segment-button.segment-activated {
-    border-color: #222;
-    color: #222;
-    opacity: 1;
-}
-.segment-ios-dark .segment-button.segment-activated {
-    color: #fff;
-    background-color: #1990ef;
-}
-.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
-    border-color: #1990ef;
-    opacity: 1;
-}
-.segment-md-dark .segment-button {
-    color: #222;
-}
-.segment-md .segment-button {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 0;
-    height: auto;
-    border:2px solid darkgray;
-    font-weight: 500;
-    text-transform: uppercase;
-    background-color: transparent;
-    opacity: 0.7;
-    -webkit-transition: 100ms all linear;
-    transition: 100ms all linear;
-    padding: 0 6px;
-    font-size: 1.3em;
-    line-height: 3em;
-}
-.segment-lg .segment-button {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 0;
-    height: auto;
-    border:2px solid darkgray;
-    font-weight: 500;
-    text-transform: uppercase;
-    background-color: transparent;
-    opacity: 0.7;
-    -webkit-transition: 100ms all linear;
-    transition: 100ms all linear;
-    padding: 0 6px;
-    font-size: 1.3em;
-    line-height: 3em;
-}
-.segment-sm .segment-button {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 0;
-    height: auto;
-    border:2px solid darkgray;
-    font-weight: 500;
-    text-transform: uppercase;
-    background-color: transparent;
-    opacity: 0.7;
-    -webkit-transition: 100ms all linear;
-    transition: 100ms all linear;
-    padding: 0 6px;
-    font-size: 1.3em;
-    line-height: 3em;
-}
-.segment-ios .segment-button {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 0;
-    height: auto;
-    border-width: 1px;
-    border-style: solid;
-    font-size: 1.3em;
-    line-height: 3em;
-    background-color: transparent;
-}
- h4 {
-    margin-top: 0;
-    margin-bottom: 1em;
-    font-weight: 500;
-    line-height: 1.2;
-}
-.item-ios ion-avatar ion-img, .item-ios ion-avatar img {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 70px;
-    height: 70px;
-}
+    #money{
+        font-style: normal;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
+    }
+    #position{
+        font-style: normal;
+        margin-left:10px;
+        font-size:18px;
+    }
+    .segment-ios .segment-button{
+        line-height: 1rem;
+        color: black;
+    }
+    .segment-button{
+        width:25%;
+        white-space: normal;
+    }
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+//     .btn{
+//         width: 100%;
+//         height: auto;
+//         background-color: white;
+//         font-size: 110%;
+//         padding: 20%;
+//         // border-bottom:2px solid lightblue;
+//     }
+//     .grid{
+    
+//         border: none;
+//     }
+//     .iconfont{
+//         font-size:60px;
+//         line-height: 1em;
+//     }
+//     segment-md-dark .segment-button.activated, .segment-md-dark .segment-button.segment-activated {
+//     border-color: #222;
+//     color: #222;
+//     opacity: 1;
+// }
+// .segment-ios-dark .segment-button.segment-activated {
+//     color: #fff;
+//     background-color: #1990ef;
+// }
+// .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+//     border-color: #1990ef;
+//     opacity: 1;
+// }
+// .segment-md-dark .segment-button {
+//     color: #222;
+// }
+// .segment-md .segment-button {
+//     -webkit-box-flex: 1;
+//     -webkit-flex: 1;
+//     -ms-flex: 1;
+//     flex: 1;
+//     width: 0;
+//     height: auto;
+//     border:2px solid darkgray;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     background-color: transparent;
+//     opacity: 0.7;
+//     -webkit-transition: 100ms all linear;
+//     transition: 100ms all linear;
+//     padding: 0 6px;
+//     font-size: 1.3em;
+//     line-height: 3em;
+// }
+// .segment-lg .segment-button {
+//     -webkit-box-flex: 1;
+//     -webkit-flex: 1;
+//     -ms-flex: 1;
+//     flex: 1;
+//     width: 0;
+//     height: auto;
+//     border:2px solid darkgray;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     background-color: transparent;
+//     opacity: 0.7;
+//     -webkit-transition: 100ms all linear;
+//     transition: 100ms all linear;
+//     padding: 0 6px;
+//     font-size: 1.3em;
+//     line-height: 3em;
+// }
+// .segment-sm .segment-button {
+//     -webkit-box-flex: 1;
+//     -webkit-flex: 1;
+//     -ms-flex: 1;
+//     flex: 1;
+//     width: 0;
+//     height: auto;
+//     border:2px solid darkgray;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     background-color: transparent;
+//     opacity: 0.7;
+//     -webkit-transition: 100ms all linear;
+//     transition: 100ms all linear;
+//     padding: 0 6px;
+//     font-size: 1.3em;
+//     line-height: 3em;
+// }
+// .segment-ios .segment-button {
+//     -webkit-box-flex: 1;
+//     -webkit-flex: 1;
+//     -ms-flex: 1;
+//     flex: 1;
+//     width: 0;
+//     height: auto;
+//     border-width: 1px;
+//     border-style: solid;
+//     font-size: 1.3em;
+//     line-height: 3em;
+//     background-color: transparent;
+// }
+//  h4 {
+//     margin-top: 0;
+//     margin-bottom: 1em;
+//     font-weight: 500;
+//     line-height: 1.2;
+// }
+// .item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+//     border-radius: 50%;
+//     overflow: hidden;
+//     width: 70px;
+//     height: 70px;
+// }
 }

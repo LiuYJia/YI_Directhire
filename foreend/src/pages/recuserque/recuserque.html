@@ -14,13 +14,14 @@
 
 
 <ion-content padding id="body">
-    <input type="radio" name="identity" value="技术问题" checked="checked" class="radio"/>技术问题
-    <input type="radio" name="identity" value="内容错误" class="radio"/>内容错误
-    <input type="radio" name="identity" value="产品建议" class="radio"/>产品建议
-    <input type="radio" name="identity" value="其他" class="radio"/>其他
+    <input type="radio" name="identity" value="技术问题" class="radio" [(ngModel)]="sort"/>技术问题
+    <input type="radio" name="identity" value="内容错误" class="radio" [(ngModel)]="sort"/>内容错误
+    <input type="radio" name="identity" value="产品建议" class="radio" [(ngModel)]="sort"/>产品建议
+    <input type="radio" name="identity" value="其他" class="radio" [(ngModel)]="sort"/>其他
     <h6>问题描述或建议：</h6>
-    <textarea id="area" rows="10" placeholder="请在此处填写您的问题描述或建议..."></textarea>
+    <textarea id="area" rows="10" placeholder="请在此处填写您的问题描述或建议..." [(ngModel)]="txt"></textarea>
+    <p id="mes">{{mes}}</p>
     <h6>联系方式：</h6>
-    <input type="text" id="text" placeholder="输入电话或邮箱">
+    <input type="text" id="text" placeholder="输入电话或邮箱" [(ngModel)]="tel">
     <button ion-button color="none" (click)="sub()" id="but1">一键反馈</button>
 </ion-content>

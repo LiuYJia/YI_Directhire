@@ -9,6 +9,7 @@ var delLabel = require('../../method/admin').delLabel;
 var addLabel = require('../../method/admin').addLabel;
 var delUser_seeker = require('../../method/admin').delUser_seeker;
 var delUser_recruit = require('../../method/admin').delUser_recruit;
+var delFeedback = require('../../method/admin').delFeedback;
 
 //编辑管理员页面
 router.get('/edit',function(req,res){
@@ -139,6 +140,22 @@ router.post('/delUser_seeker',function(req,res){
     }).catch(function(err){
         console.log(err);
     })
+});
+
+//删除反馈信息
+
+router.post('/delFeedback',function(req,res){
+    var id = req.body['d_feed'];
+
+    delFeedback(id).then(function(result){
+        if(result){
+            console.log('删除成功');
+            res.redirect('/admin/msg');
+        }
+    }).catch(function(err){
+        console.log(err);
+    })
+
 });
 
 

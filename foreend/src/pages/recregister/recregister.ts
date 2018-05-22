@@ -40,23 +40,42 @@ export class RecregisterPage {
   } 
   username='';
   password='';
-  mes='';
+  secondpw='';
+  mes1='';
+  mes2='';
+  mes3='';
 
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   
   reg(){
-   
-    this.http.post('http://127.0.0.1:3000/user/admin-recruit',JSON.stringify({status:'register',username:this.username,password:this.password}),{headers:this.headers}).subscribe(data=>{
-    console.log(data);
-    if(data['_body']==1){
-      this.mes="";
-      this.showAlert();
-    }     
-    if(data['_body']==2){
-      this.mes="用户名已存在";
+    if(this.password.length>=6){
+      if(this.password==this.secondpw){
+        this.http.post('http://127.0.0.1:3000/user/admin-recruit',JSON.stringify({status:'register',username:this.username,password:this.password}),{headers:this.headers}).subscribe(data=>{
+          console.log(data);
+          if(data['_body']==1){
+            this.mes1="";
+            this.mes2="";
+            this.mes3="";
+            this.showAlert();
+          }     
+          if(data['_body']==2){
+            this.mes2="";
+            this.mes3="";
+            this.mes1="用户名已存在";
+          }
+        });
+      }else{
+          this.mes1="";
+          this.mes3="";
+          this.mes2 = "两次输入的密码不一致";
+      }
+    }else{
+        this.mes1='';
+        this.mes2='';
+        this.mes3='密码不可少于6位';
     }
-  });
-
-}
+   
+    
+  }
     
 }

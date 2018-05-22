@@ -20,19 +20,34 @@ page-rechome {
         margin-top:-2px;
         text-align: center
     }
+    .segment-md .segment-button{
+        color:black;
+    }
     #class img{
          width:85%;
         //margin-left:10%;
         border-radius: 50%;
     }
-    #more{
-        line-height: 64px;
+    #class p{
+        //margin-top:-3px;
     }
-    #more img{
-        width:50%;
-        margin-left:25%;
-        margin-top:50%;
-        display: block;
+    .spe{
+        margin-top:8px;
+    }
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
+    }
+    #money{
+        font-style: normal;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
+    }
+    #position{
+        font-style: normal;
+        margin-left:10px;
+        font-size:18px;
     }
     .segment-ios .segment-button{
         line-height: 1rem;
@@ -41,5 +56,9 @@ page-rechome {
     .segment-button{
         width:25%;
         white-space: normal;
+    }
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
     }
 }

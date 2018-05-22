@@ -4,8 +4,6 @@ var express = require('express'),
     crypto = require('crypto');
 
 router.get('/', function(req, res) {
-    // res.setHeader("Access-Control-Allow-Origin", "*");
-
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -48,9 +46,6 @@ router.get('/', function(req, res) {
         else{
           //获取用户信息
           AdminR.getUserByUserName(newUser.username,function(err,results){
-            // console.log('用户名'+newUser.username);
-            // console.log('密码1:'+newUser.password);
-            // console.log('密码2:'+results[0].password);
             if(newUser.password === results[0].password){
               res.send('1');
               console.log('登陆成功');
