@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+declare var BMap;
 /**
  * Generated class for the SeeknearPage page.
  *
@@ -14,10 +14,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'seeknear.html',
 })
 export class SeeknearPage {
-
+  map: any;
+  point:any;
+  @ViewChild('map1') map_container1: ElementRef;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  ionViewDidEnter() {
+    this.load();
+  };
+  load(){
+    var map = new BMap.Map(this.map_container1.nativeElement);
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+    function myFun(result){
+      var cityName = result.name;
+      console.log(result);
+      alert("当前定位城市:"+cityName);
+      // console.log(cityName);
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+    console.log(myCity.cityName);
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeeknearPage');
   }
