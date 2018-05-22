@@ -30,10 +30,10 @@ export class RecmyallpubPage {
       for(var i=0;i<message.length;i++){
         this.all[i] = message[i];
       }
-      console.log(this.all);
     })
   }
   gorecpub_set(item){
+    console.log(item.id);
     this.navCtrl.push("RecpubsetPage",{title:item});
   }
 }

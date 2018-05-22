@@ -21,8 +21,9 @@ export class SeeknearPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeeknearPage');
   }
-  info=[{job:'服务员',price:'￥80/小时',time:'2017/12/27',location:'空中花园'},
-{job:'服务员',price:'￥80/小时',time:'2017/12/27',location:'空中花园'},
-{job:'服务员',price:'￥80/小时',time:'2017/12/27',location:'空中花园'},{job:'服务员',price:'￥80/小时',time:'2017/12/27',location:'空中花园'}];
+  info=[{job:'服务员',price:'￥80/天',time:'2017/12/27',location:'空中花园',name:'XXX'},
+        {job:'服务员',price:'￥80/天',time:'2017/12/27',location:'空中花园',name:'XXX'},
+        {job:'服务员',price:'￥80/天',time:'2017/12/27',location:'空中花园',name:'XXX'},
+        {job:'服务员',price:'￥80/小时',time:'2017/12/27',location:'空中花园'}];
 
 }

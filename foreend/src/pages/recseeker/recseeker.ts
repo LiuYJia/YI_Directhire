@@ -15,7 +15,7 @@ import { Http } from '@angular/http';
   templateUrl: 'recseeker.html',
 })
 export class RecseekerPage {
-  img;name;sex;age;email;school;job;money;detail;
+  img;name;sex;age;email;tel;school;job;money;detail;
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
     this.img = navParams.get('title').img;
     this.name = navParams.get('title').name;
@@ -28,7 +28,7 @@ export class RecseekerPage {
       this.name = message[0].name;
       this.sex = message[0].sex;
       this.age = message[0].age;
-      this.email = message[0].email;
+      this.tel = message[0].tel;
       this.school = message[0].school;
       this.job = message[0].job;
       this.money = message[0].money;

@@ -53,8 +53,8 @@ export class RechomePage {
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
         console.log(message);
+        this.class1 = [];
         for(var i=0;i<message.length;i++){
-          this.class1 = [];
           this.class1[i] = message[i];
         }
     })
