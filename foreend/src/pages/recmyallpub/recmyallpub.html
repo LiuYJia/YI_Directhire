@@ -33,8 +33,9 @@
           <ion-item *ngFor="let item of all" (click)="gorecpub_set(item)">
             <ion-thumbnail item-start><img src="assets/imgs/logo.png"></ion-thumbnail>
             <h2 class="pos">{{item.job}}</h2>
-            <h3 class="money">{{item.money}}</h3>
+            <h2 class="money">{{item.money}}</h2>
             <p><i>{{item.address}}</i><i>{{item.age}}</i><i>{{item.school}}</i></p>
+            <p class="time">起止日期</p>
             <p>公司：<i class="name">{{item.name}}</i></p>
             <p>{{item.detail}}</p>
           </ion-item>

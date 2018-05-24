@@ -1,0 +1,54 @@
+<!--
+  Generated template for the Seekmesinfo1Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title text-center>修改基本信息</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content id="body">
+    <ion-list>
+        <ion-item>
+            <label>姓　　名:</label>
+            <input type="text" [(ngModel)]="name">
+        </ion-item>
+        <ion-item>
+            <label>性　　别:</label>
+            <input type="text" [(ngModel)]="sex">  
+        </ion-item>  
+        <ion-item>
+            <label>年　　龄:</label>
+            <input type="text" [(ngModel)]="age">
+        </ion-item>
+        <ion-item>
+            <label>电　　话:</label>
+            <input type="text" [(ngModel)]="tel">
+        </ion-item>
+        <ion-item>
+            <label>学　　历:</label>
+            <input type="text" [(ngModel)]="school">
+        </ion-item>
+        <ion-item>
+            <label>期望职业:</label>
+            <input type="text" [(ngModel)]="job">
+        </ion-item>
+        <ion-item>
+            <label>期望薪资:</label>
+            <input type="text" [(ngModel)]="money">  
+        </ion-item>  
+        <ion-item>个人介绍：</ion-item>
+        <ion-item>
+            <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+        </ion-item>
+        <ion-item>兴趣爱好：</ion-item>
+        <ion-item>
+            <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+        </ion-item>
+        <button ion-button color="none" id="but" (click)="submit()">确认修改</button>
+    </ion-list>
+</ion-content>

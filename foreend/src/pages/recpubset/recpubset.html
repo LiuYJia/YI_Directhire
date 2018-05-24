@@ -25,6 +25,10 @@
               <select style="width:110px;margin-left:5px;height:25px" [(ngModel)]='sort'> 
                 <option *ngFor="let item of items" value="{{item}}">{{item}}</option>    
               </select>  
+            </ion-item>
+            <ion-item>
+                <label>起止日期:</label>
+                <input type="text" [(ngModel)]="time">
             </ion-item>  
             <ion-item>
                 <label>所属公司:</label>
@@ -50,9 +54,9 @@
                 <label>联系方式:</label>
                 <input type="text" [(ngModel)]="tel">
             </ion-item>
-            <ion-item>职位要求：</ion-item>
             <ion-item>
-                <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+                <label>职位要求:</label>
+                <textarea rows="10" id="area" [(ngModel)]="detail" style="display:block"></textarea>
             </ion-item>
             <button ion-button color="none" id="but" (click)="submit()">确认修改</button>
         </ion-list>

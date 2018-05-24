@@ -37,19 +37,23 @@
           <p>{{username}}Luan</p>     
       </div>
       <ion-list id="list">
-          <button ion-item *ngFor="let item of list">
+          <!-- <button ion-item *ngFor="let item of list">
             {{item}}
-          </button>
+          </button> -->
+          <button ion-item (click)="goseekmymes()">个人简历</button>
+          <button ion-item (click)="goseekmygrab()">已抢职位</button>
+          <button ion-item (click)="goseekmystore()">收藏职位</button>         
       </ion-list>
   
-      <!-- <button  ion-item >
-        <p class="i">
-          关于易直聘<i class="gr" style="font-style:normal;float:right">目前已是最新版本</i>
-        </p>
-    </button>
-      <button  ion-item (click)="gorecuserque()">
-        <p class="i">用户反馈</p>
-    </button> -->
+      <button ion-item (click)="remove()">清除缓存</button> 
+      <button  ion-item >
+          <p class="i">
+            关于易直聘<i class="gr" style="font-style:normal;float:right">目前已是最新版本</i>
+          </p>
+        </button>
+        <button  ion-item (click)="gorecuserque()">
+          <p class="i">用户反馈</p>
+        </button>
       <button ion-button round color="none" (click)="leave()" id="but1">退出登录</button>
   </ion-content>
   

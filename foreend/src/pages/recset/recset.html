@@ -19,11 +19,12 @@
     <hr/> -->
 
     <ion-list>
-        <!-- <ion-item>
+        <form>
+        <ion-item>        
           <ion-label fixed>头像</ion-label>
-          //<ion-input type="image" src="assets/imgs/class3.png" style="width:10%"></ion-input> 
-          <ion-input type="file" id="photo" [(ngModel)]="img"></ion-input>
-        </ion-item>     -->
+          <ion-input type="file" id="photo" ></ion-input>
+          <button ion-button item-end>确认提交</button>
+        </ion-item> </form> 
         <ion-item>
           <ion-label fixed>用户名</ion-label>
           <ion-input type="text" [(ngModel)]="username"  disabled></ion-input>
