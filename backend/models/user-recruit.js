@@ -119,7 +119,7 @@ pool.getConnection(function(err, connection) {
 
     //根据用户名得到用户信息
     AdminR.getUserByUserName = function getUserByUserName(username, callback) {
-        console.log('use database admin-recruit');
+        // console.log('use database admin-recruit');
         pool.getConnection(function (err, connection) {
             var getUserByUserName_Sql = "SELECT * FROM user_recruit WHERE username = ?";
             var getUserByUserName_Sql1 = "SELECT * FROM user_recruit";

@@ -1,14 +1,22 @@
 var express = require('express');
 var router = express.Router();
 var GetFeedback = require('../../method/Ruser').GetFeedback;
+var num_Feedback = require('../../method/admin').num_Feedback;
 
 router.get('/',function(req,res){
-    var u_no =  req.session.username;
 
     GetFeedback().then(function(result){
-        // console.log(data);
+        var u_no =  req.session.username;
         if(result){
-            res.render('index',{title:'用户反馈',page:'msg',username:u_no,data:result});
+            res.render('index',{
+                title:'用户反馈',
+                page:'msg',
+                username:u_no,
+                data:result,
+                pagecount:8,
+                pagesize:5,
+                currentpage:1,
+            });
         }    
         
         }).catch(function(err){
@@ -18,5 +26,6 @@ router.get('/',function(req,res){
 
     
 });
+
 
 module.exports = router;
