@@ -1,0 +1,113 @@
+<div class="container">
+        <h2><%= title %></h2>
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active sort"><a href="#recruit" data-toggle="tab">招聘信息</a></li>
+        <li class="sort"><a href="#seeker" data-toggle="tab">求职信息</a></li>
+        <form role="form" class="search">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <button class="btn btn-info">搜索用户</button>
+                </div>
+        </form>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="recruit">
+
+            <table class="table  table-hover table-condensed usertable ">
+                <thead>
+                    <tr>
+                        <th>类别</th>
+                        <th>用户名</th>
+                        <th>商家</th>
+                        <th>岗位</th>
+                        <th>人数</th>
+                        <th>年龄</th>
+                        <th>工资</th>                        
+                        <th>学历</th>
+                        <th>联系方式</th>
+                        <th>要求</th>
+                        <th>权限</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data1.forEach(function(item){ %>
+                        <tr>
+                            <td><%= item.sort %></td>
+                            <td><%= item.username %></td>
+                            <td><%= item.name %></td>
+                            <td><%= item.job %></td>
+                            <td><%= item.num %></td>
+                            <td><%= item.age %></td>
+                            <td><%= item.money %></td>
+                            <td><%= item.school %></td>
+                            <td><%= item.tel %></td>
+                            <td><%= item.detail %></td>
+                            <td>
+                                <form action="/admin/all/delMsg_recruit" id="<%= item.id %>" method="post">
+                                    <input type="hidden" name="d_msg_r" value="<%= item.id %>">
+                                </form>
+                                <button class="btn btn-danger btn-sm"  onclick="if(confirm('你确定将用户<%= item.usernam %>发布彻底删除吗？')){
+                                    document.getElementById('<%= item.id %>').submit();
+                                    event.preventDefault(); }">删除     
+                                </button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                    
+                </tbody>
+            </table>
+               
+
+        </div>
+
+        <div class="tab-pane fade" id="seeker">
+            <table class="table  table-hover table-condensed usertable">
+                <thead>
+                    <tr>
+                        <th>类别</th>
+                        <th>用户名</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>年龄</th>
+                        <th>岗位</th>
+                        <th>工资</th>                       
+                        <th>学历</th>
+                        <th>联系方式</th>
+                        <th>要求</th>
+                        <th>权限</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data2.forEach(function(item){ %>
+                        <tr>
+                            <td><%= item.sort %></td>
+                            <td><%= item.username %></td>
+                            <td><%= item.name %></td>
+                            <td><%= item.sex %></td>
+                            <td><%= item.age %></td>
+                            <td><%= item.job %></td>
+                            <td><%= item.money %></td>
+                            <td><%= item.school %></td>
+                            <td><%= item.tel %></td>
+                            <td><%= item.detail %></td>
+                            <td>
+                                <form action="/admin/all/delMsg_seeker" id="<%= item.id %>" method="post">
+                                    <input type="hidden" name="d_msg_s" value="<%= item.id %>">
+                                </form>
+                                <button class="btn btn-danger btn-sm"  onclick="if(confirm('你确定将用户<%= item.username %>发布彻底删除吗？')){
+                                    document.getElementById('<%= item.id %>').submit();
+                                    event.preventDefault(); }">删除     
+                                </button>
+                            </td>
+                        </tr>
+                    <% }) %>
+                   
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+                
+
+</div>

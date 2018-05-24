@@ -97,7 +97,7 @@ pool.getConnection(function(err, connection) {
     User.totalSeekerNum = function totalSeekerNum(callback){
         pool.getConnection(function(err,connection){
 
-            var totalSeekerNum_Sql = "SELECT COUNT(*) AS num_seeker FROM user_seekercase";
+            var totalSeekerNum_Sql = "SELECT COUNT(*) AS num_seeker FROM user_seeker";
             connection.query(totalSeekerNum_Sql,function(err,result){
                 connection.release();
                 if(err){
@@ -115,7 +115,7 @@ pool.getConnection(function(err, connection) {
     User.totalRecruitNum = function totalRecruitNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalRecruitNum_sql = "select count(*) as num_recruit from user_recruitcase";
+            var totalRecruitNum_sql = "select count(*) as num_recruit from user_recruit";
             connection.query(totalRecruitNum_sql,function(err,result){
                 connection.release();
 
@@ -133,7 +133,7 @@ pool.getConnection(function(err, connection) {
     User.totalManNum = function totalManNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalManNum_sql = "select count(sex) as num_man from user_seekercase  where sex='男'";
+            var totalManNum_sql = "select count(sex) as num_man from msg_seeker  where sex='男'";
             connection.query(totalManNum_sql,function(err,result){
                 connection.release();
 
@@ -152,7 +152,7 @@ pool.getConnection(function(err, connection) {
     User.totalWomanNum = function totalWomanNum(callback){
 
         pool.getConnection(function(err,connection){
-            var totalWomanNum_sql = "select count(sex) as num_woman from user_seekercase  where sex='女'";
+            var totalWomanNum_sql = "select count(sex) as num_woman from msg_seeker  where sex='女'";
             connection.query(totalWomanNum_sql,function(err,result){
                 connection.release();
 
@@ -205,7 +205,7 @@ pool.getConnection(function(err, connection) {
     User.Seeker = function Seeker(callback){
 
         pool.getConnection(function(err,connection){
-            var Seeker_sql = "select * from user_seekercase";
+            var Seeker_sql = "select * from user_seeker";
             connection.query(Seeker_sql,function(err,result){
                 connection.release();
 
@@ -222,7 +222,7 @@ pool.getConnection(function(err, connection) {
     User.Recruit = function Recruit(callback){
 
         pool.getConnection(function(err,connection){
-            var Recruit_sql = "select * from user_recruitcase";
+            var Recruit_sql = "select * from user_recruit";
             connection.query(Recruit_sql,function(err,result){
                 connection.release();
 

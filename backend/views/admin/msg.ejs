@@ -1,7 +1,9 @@
 <div class="container">
     <h2><%= title %></h2>
 
-    <table class="table table-bordered table-condensed mastertable">
+    <!-- <ul class="pagination" id="pagination">  
+    </ul>   -->
+    <table class="table table-bordered table-condensed mastertable table-hover"   style="overflow-y:auto;">
         <thead>
             <tr>
                 <td>用户名</td>
@@ -32,4 +34,45 @@
             <% }) %>
         </tbody>
     </table>
+     
 </div>
+<!-- <script>
+ 
+    $(document).ready(function() {  
+        
+    if($("#pagination")){  
+        var pagecount = '<%= locals.pagecount %>';  
+        var pagesize = '<%= locals.pagesize %>';  
+        var currentpage = '<%= locals.currentpage %>';  
+
+        var counts,pagehtml="";  
+        if(pagecount%pagesize==0){  
+            counts = parseInt(pagecount/pagesize);  
+        }else{  
+            counts = parseInt(pagecount/pagesize)+1;  
+        }  
+        //只有一页内容  
+        if(pagecount<=pagesize){pagehtml="";}  
+        //大于一页内容  
+        if(pagecount>pagesize){  
+            if(currentpage>1){  
+                pagehtml+= '<li><a href="/admin/msg/'+(currentpage-1)+'">上一页</a></li>';  
+            }  
+            for(var i=0;i<counts;i++){  
+                if(i>=(currentpage-3) && i<(currentpage+3)){  
+                    if(i==currentpage-1){  
+                        pagehtml+= '<li class="active"><a href="/admin/msg/'+(i+1)+'">'+(i+1)+'</a></li>';  
+                    }else{  
+                        pagehtml+= '<li><a href="/admin/msg/'+(i+1)+'">'+(i+1)+'</a></li>';  
+                    }  
+                      
+                }  
+            }  
+            if(currentpage<counts){  
+                pagehtml+= '<li><a href="/admin/msg/'+(currentpage+1)+'">下一页</a></li>';  
+            }  
+        }  
+        $("#pagination").html(pagehtml);  
+    }  
+});  
+</script> -->

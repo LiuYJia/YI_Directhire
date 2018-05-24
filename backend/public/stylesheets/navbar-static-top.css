@@ -1,3 +1,7 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
 .navbar-static-top img{
   width: 50px;
   height: 50px;
@@ -12,30 +16,51 @@
 .li{
   float: left;
 }
+.navbar{
+  height: 12%;
+  padding:0em 1em!important;
+}
+.container-fluid{
+  height: 88%;
+}
+.maintxtrow{
+  height: 100%;
+}
 /* 导航栏 */
 .navleft{
   background-color: rgb(57, 68, 96);
-  height: 561px;
+  position: fixed;
+  top: 12%;
+  width: 50%;
+  z-index: 1000;
+  height: 100%;
+  
 }
+
 .navleft a{
   color: white;
+  
 }
 .navlist{
   margin-top: 10%;
   margin-left: 20%;
 }
 .navlist li{
-  margin-top: 10%;
+  margin-top: 17%;
 }
 /* 主内容 */
 .maintxt{
   background-color: whitesmoke;
-  height:561px;
+  height:auto;
   text-align: center; 
+  position: absolute;
+  right: 0;
+  margin-top: 5.5%;
+  height: 88%;
+  overflow: auto;
 }
-.maintxt .maintxtrow{
-  border: 1px solid black;
-  height: 561px; 
+.maintxtrow{
+  height: 88%; 
 }
 h2{
   margin: 2% auto;
@@ -73,4 +98,5 @@ h2{
 .mastertable{
   margin-top: -1%;
 }
+
 

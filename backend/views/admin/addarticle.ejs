@@ -1,0 +1,15 @@
+<div class="container">
+    <h2><%= title %></h2>
+
+    <form class="form-horizontal" id="article-form" style="width: 40%;margin: 0 auto" action="" method="POST" action="/admin/all/addArticle">
+
+        <input type="text" name='sort' placeholder="类型" class="input-lg form-control"><br>
+        <input type="text" name='title' placeholder="标题" class="input-lg form-control"><br>
+        <div class="form-group">
+            <textarea class="form-control" rows="10" placeholder="内容(不多于600字)" name="content"></textarea>
+        </div>
+
+        <button class="btn btn-success" type="button" onclick="if(true){document.getElementById('article-form').submit();}">保存</button>
+
+    </form>
+</div>

@@ -27,7 +27,7 @@ app.use(cookieParser('Wilson'));
 app.use(session({ secret: 'wilson'}));
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use('/',routes);
+
 
 routes(app);
 

@@ -9,6 +9,14 @@
         </li>
 
         <li class="nav-item">
+                <a <% if (locals.page == 'master') { %>
+                    class="nav-link active"
+                <% } else { %>
+                        class="nav-link"
+                <% } %> href="/admin/master">管&nbsp;&nbsp;理&nbsp;&nbsp;员</a>
+            </li>
+
+        <li class="nav-item">
             <a <% if (locals.page == 'users') { %>
                 class="nav-link active"
             <% } else { %>
@@ -17,12 +25,13 @@
         </li>
 
         <li class="nav-item">
-            <a <% if (locals.page == 'master') { %>
-                class="nav-link active"
-            <% } else { %>
-                    class="nav-link"
-            <% } %> href="/admin/master">管&nbsp;&nbsp;理&nbsp;&nbsp;员</a>
+                <a <% if (locals.page == 'detail') { %>
+                    class="nav-link active"
+                <% } else { %>
+                        class="nav-link"
+                <% } %> href="/admin/detail">信息管理</a>
         </li>
+        
 
         <li class="nav-item">
             <a <% if (locals.page == 'file') { %>

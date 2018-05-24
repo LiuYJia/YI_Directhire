@@ -5,6 +5,9 @@ var express = require('express'),
     TITLE_REG = '获取recruit信息';
 var PublishMe = require('../../method/Ruser').PublishMe;
 var GetMsg = require('../../method/Ruser').GetMsg;
+var Msg_Publishme = require('../../method/Ruser').Msg_Publishme;
+var getImg_recruit = require('../../method/Ruser').getImg_recruit;
+var getArticle = require('../../method/admin').getArticle;
  
 router.get('/',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -19,7 +22,7 @@ router.get('/',function(req,res){
         return;
     }
     if(results){
-      console.log(results);
+      console.log('获取成功');
       res.send(results);
     }
   })
@@ -30,12 +33,15 @@ router.get('/getpeople',function(req,res){
 
   res.setHeader("Access-Control-Allow-Origin", "*");
   var sort = req.query.sort;    
+  
 
   AdminR.getPeople(sort,function(err,result){
-    console.log(result);
+    // console.log(result);
     if(result){
       res.send(result);
+      // console.log(result);
       console.log('查询相关人员成功');
+      
     }else{
       res.send('2');
       console.log('查询相关人员失败');
@@ -44,7 +50,7 @@ router.get('/getpeople',function(req,res){
 
 
 });
-
+//设置注册信息
 router.get('/settingMsg',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -57,14 +63,14 @@ router.get('/settingMsg',function(req,res){
         return;
     }
     if(results){
-      console.log(results);
+      // console.log(results);
       res.send(results);
       console.log('获取详细信息成功');
     }
   })
 
 });
-
+//获取分类
 router.get('/getSort',function(req,res){
 
   res.header("Access-Control-Allow-Origin", "*");
@@ -84,7 +90,7 @@ router.get('/getSort',function(req,res){
   })
   
 });
-
+//我发布地
 router.get('/publishme',function(req,res){
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -106,6 +112,7 @@ router.get('/publishme',function(req,res){
 
 })
 
+//求职人员详情
 router.get('/getmsg',function(req,res){
   res.header("Access-Control-Allow-Origin", "*");
   var username = req.query.username;
@@ -117,6 +124,56 @@ router.get('/getmsg',function(req,res){
     }
   }).catch(function(err){
     console.log('err');
+    res.send('2');
+  })
+
+})
+
+//我发布的详细信息信息获取
+router.get('/msg_publishme',function(req,res){
+  res.header("Access-Control-Allow-Origin", "*");
+  var id = req.query.id;
+  console.log(id);
+
+  Msg_Publishme(id).then(function(data){
+    if(data){
+      res.send(data);
+      console.log('获取成功');
+    }
+  }).catch(function(err){
+    console.log('err');
+    res.send('2');
+  })
+
+})
+
+//轮播图
+router.get('/getimg_recruit',function(req,res){
+  res.header("Access-Control-Allow-Origin", "*");
+
+  getImg_recruit().then(function(data){
+    if(data){
+      res.send(data);
+      console.log('获取图片成功');
+    }
+  }).catch(function(err){
+    console.log(err);
+    res.send('2');
+  })
+
+})
+
+//文章推荐
+router.get('/getarticle',function(req,res){
+  res.header("Access-Control-Allow-Origin", "*");
+
+  getArticle().then(function(data){
+    if(data){
+      res.send(data);
+      console.log('获取文章成功');
+    }
+  }).catch(function(err){
+    console.log(err);
     res.send('2');
   })
 
