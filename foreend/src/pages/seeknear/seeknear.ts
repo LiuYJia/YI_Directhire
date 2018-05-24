@@ -100,6 +100,9 @@ export class SeeknearPage {
      console.log(point);
       data_info[i].distance='距离您当前位置:'+(map.getDistance(pm,data_info[i].dst)).toFixed(2)+' 米。';
       console.log(data_info[i].distance);
+      if((map.getDistance(pm,data_info[i].dst)).toFixed(2)<50){
+        console.log(data_info[i].location+'在50米内');
+    }
       var marker = new BMap.Marker(new BMap.Point(data_info[i].lng,data_info[i].lat));  // 创建标注
       var content = data_info[i].location+'<br/>'+data_info[i].info+'<br/>'+data_info[i].distance;
       console.log(content);
