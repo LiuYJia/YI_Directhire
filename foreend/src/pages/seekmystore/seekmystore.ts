@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SeekremessagePage page.
+ * Generated class for the SeekmystorePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-seekremessage',
-  templateUrl: 'seekremessage.html',
+  selector: 'page-seekmystore',
+  templateUrl: 'seekmystore.html',
 })
-export class SeekremessagePage {
-  name;
-  img;
+export class SeekmystorePage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.name = navParams.get('all').title;
-    this.img = navParams.get('all').icon;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SeekremessagePage');
+    console.log('ionViewDidLoad SeekmystorePage');
   }
 
 }

@@ -29,4 +29,9 @@
     <ion-item><p>本公司位于...<p></ion-item>
   </ion-list>
 
+  <div id="bottom">
+    <button ion-button color="primary">投递简历</button>
+    <ion-icon ios="ios-star-outline" md="md-star-outline" (click)="star()" [ngClass]="{true:'star1',false:'star2'}[false]"></ion-icon>
+  </div>
 </ion-content>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>

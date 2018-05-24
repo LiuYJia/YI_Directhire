@@ -37,11 +37,17 @@ export class RecmyPage {
   set(){
     this.navCtrl.push('RecsetPage',{user:this.user});
   }
+  gorecmyseeker(){
+    this.navCtrl.push('RecmyseekerPage');
+  }
   gorecmypub(){
     this.navCtrl.push('RecmypubPage');
   }
   gorecmyallpub(){
     this.navCtrl.push('RecmyallpubPage');
+  }
+  remove(){
+
   }
   gorecuserque(){
     this.navCtrl.push('RecuserquePage');

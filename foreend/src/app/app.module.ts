@@ -49,7 +49,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StartPage,
     AnimationPage,
    
-   
   ],
   imports: [
     BrowserModule,
@@ -58,6 +57,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
       backButtonText:'',
+      ionMode:'ios',
+      mode:'ios',
       pageTransition:'ios-transition',
       backButtonIcon:"arrow-back"
     })
@@ -83,7 +84,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecloginPage,
     StartPage,
     AnimationPage,
-  
    
   ],
   providers: [

@@ -25,5 +25,12 @@ export class SeekjobmesPage {
     console.log('ionViewDidLoad SeekjobmesPage');
     console.log(this.job);
   }
+  Ctr($scope) {
+    $scope.isSelected = false;
+  }
+
+  star(){
+    
+  }
 
 }
