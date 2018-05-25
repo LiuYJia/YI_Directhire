@@ -184,6 +184,23 @@ module.exports = {
                 })
             })
         })
+    },
+
+    //头像存储
+    imgSave:function imgSave(username,savepath){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var imgSave_sql = 'update msg_recruit set img =? where username = ?';
+                connection.query(imgSave_sql,[savepath,username],function(err,result){
+                    if(err){
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        console.log(result.affectedRows);
+                    }
+                })
+            })
+        })
     }
 
 }

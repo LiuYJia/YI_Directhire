@@ -28,8 +28,6 @@ module.exports = function (app) {
     app.use('/user/admin-recruit',require('./user/admin-recruit'));
     app.use('/user/getMessage_seeker',require('./user/getMessage_seeker'));
     app.use('/user/getMessage_recruit',require('./user/getMessage_recruit'));
-    app.use('/user/deleteSeeker',require('./user/deleteSeeker'));
-    app.use('/user/deleteRecruit',require('./user/deleteRecruit'));
     app.use('/user/updateSeeker',require('./user/updateSeeker'));
     app.use('/user/updateRecruit',require('./user/updateRecruit'));
    
