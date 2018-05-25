@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { RecmyPage } from '../recmy/recmy';
 //import { RecpubsetPage } from '../recpubset/recpubset';
 
 /**
@@ -32,7 +33,13 @@ export class RecmyallpubPage {
       }
     })
   }
+  //进入修改职位信息页
   gorecpub_set(item){
     this.navCtrl.push("RecpubsetPage",{title:item});
+  }
+  //返回
+  back(){
+    this.navCtrl.push(RecmyPage);
+    console.log("back");
   }
 }

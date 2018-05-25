@@ -41,6 +41,7 @@ export class RecpubsetPage {
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/msg_publishme?id='+this.id).subscribe(data=>{
       var message = JSON.parse(data['_body'])[0];
       console.log(message);
+      this.id = message.id;
       this.job = message.job;
       this.sort = message.sort;
       this.name = message.name;
@@ -52,6 +53,12 @@ export class RecpubsetPage {
       this.detail = message.detail;
     })
   }
+  //返回
+  back(){
+    this.navCtrl.push('RecmyallpubPage');
+    console.log("back");
+  }
+  //提交弹出框
   showAlert1() {
     let alert = this.alertCtrl.create({
       subTitle: '修改成功！',
@@ -74,6 +81,36 @@ export class RecpubsetPage {
       //console.log(data);
       if(data['_body']==1) this.showAlert1();
       if(data['_body']==2) this.showAlert2();
+    });
+  }
+  //删除弹出框
+  del1() {
+    let alert = this.alertCtrl.create({
+      subTitle: '删除成功！',
+      buttons: ['确定']
+    });
+   alert.present();
+  } 
+  del2() {
+    let alert = this.alertCtrl.create({
+      subTitle: '删除失败！',
+      buttons: ['确定']
+    });
+   alert.present();
+  }
+  showConfirm(data) {
+    let confirm = this.alertCtrl.create({
+      title: '确认删除本职位信息?',
+      buttons: [{text: '取消',handler: () => {console.log('Disagree clicked');}},
+        {text: '确认', handler: () => {if(data['_body']==1) this.del1();
+           if(data['_body']==2) this.del2();}}]
+    });
+    confirm.present();
+  }
+  //删除
+  delete(){
+    this.http.post('http://127.0.0.1:3000/user/updateRecruit/delmsg',JSON.stringify({id:this.id}),{headers:this.headers}).subscribe(data=>{
+      this.showConfirm(data);
     });
   }
 }

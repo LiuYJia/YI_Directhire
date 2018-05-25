@@ -27,12 +27,19 @@ export class SeekmyPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MePage');
   }
+  //设置
+  set(){
+    this.navCtrl.push('SeekmysetPage');
+  }
+  //个人简历
   goseekmymes(){
     this.navCtrl.push('SeekmymesPage');
   }
+  //已抢职位
   goseekmygrab(){
     this.navCtrl.push('SeekmygrabPage');
   }
+  //收藏职位
   goseekmystore(){
     this.navCtrl.push('SeekmystorePage');
   }

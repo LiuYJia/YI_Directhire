@@ -41,13 +41,13 @@
             <label>期望薪资:</label>
             <input type="text" [(ngModel)]="money">  
         </ion-item>  
-        <ion-item>个人介绍：</ion-item>
         <ion-item>
-            <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+            <label>个人介绍:</label>
+            <textarea rows="10" class="area" [(ngModel)]="info1" style="display:block"></textarea>
         </ion-item>
-        <ion-item>兴趣爱好：</ion-item>
         <ion-item>
-            <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+            <label>兴趣爱好:</label>
+            <textarea rows="10" class="area" [(ngModel)]="info2" style="display:block"></textarea>
         </ion-item>
         <button ion-button color="none" id="but" (click)="submit()">确认修改</button>
     </ion-list>
