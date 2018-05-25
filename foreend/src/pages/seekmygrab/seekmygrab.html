@@ -13,16 +13,19 @@
 
 <ion-content id="body">
   <ion-list>
-    <ion-item *ngFor="let item of info" class="spe" (click)="job(item)">
-        <ion-item style="display:inline">
+    <ion-item *ngFor="let item of info" class="spe">
+
+        <ion-item style="display:inline" (click)="jobinfo(item)">
           <h2>{{item.job}} <span id="time">{{item.time}}</span></h2>
           <p><i style="font-style:normal">薪资:</i><i id="money">{{item.price}}</i></p>       
         </ion-item>
+
         <ion-item>
-          <p><i style="font-style:normal">需求人数:</i><i id="position">{{item.name}}</i></p>
+          <p><i style="font-style:normal">需求人数:</i><i id="position">{{item.num}}</i></p>
           <p>地　　点：{{item.location}}</p>         
-          <button id="but" color="danger"  ion-button item-end (click)="grab()">取消抢单</button>
-        </ion-item>       
+          <button id="but" color="danger"  ion-button item-end (click)="del(item)">取消抢单</button>
+        </ion-item>  
+
     </ion-item>
   </ion-list>
 </ion-content>

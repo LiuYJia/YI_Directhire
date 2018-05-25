@@ -22,28 +22,29 @@ page-recmyallpub {
     #more{
         margin-top:10%;
     }
-    .pos{
-        display: inline;
+    .single{
+        margin-top:5px;
     }
-    .money{
-        display: inline;
-        float: right;
-        color: red;
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
     }
-    p i{
+    #money{
         font-style: normal;
-        margin-right: 10px;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
     }
-    .time{
-        float: right;
-    }
-    .name{
+    #position{
         font-style: normal;
+        margin-left:10px;
+        font-size:18px;
     }
-    .delete{
-        //color: red;
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
     }
-    ion-item{
-        height:100px;
+    #del{
+        width:20%;
     }
 }

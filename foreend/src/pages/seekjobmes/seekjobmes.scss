@@ -2,6 +2,16 @@ page-seekjobmes {
     #body{
         background-color: #f2f2f2;
     }
+    #slides{
+        height:30%;
+    }
+    .slide img{
+        margin-left:0;
+        margin-top:0px;
+    }
+    #list{
+        margin-top:6px;
+    }
     .list-ios .item-block .item-inner{
         border: none;
     }

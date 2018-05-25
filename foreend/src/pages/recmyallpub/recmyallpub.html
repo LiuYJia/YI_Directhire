@@ -30,19 +30,36 @@
       </div> -->
       
       <div [ngSwitch]="position" id="more">
-        <ion-list *ngSwitchCase="'all'">
+        <!-- <ion-list *ngSwitchCase="'all'">
           <ion-item *ngFor="let item of all" (click)="gorecpub_set(item)">
             <ion-thumbnail item-start><img src="assets/imgs/logo.png"></ion-thumbnail>
             <h2 class="pos">{{item.job}}</h2>
             <h2 class="money" ion-end>{{item.money}}</h2>
             <p><i>{{item.address}}</i><i>{{item.age}}</i><i>{{item.school}}</i></p>
-            <!-- <p class="time">起止日期</p> -->
             <p>公司：<i class="name">{{item.name}}</i></p>
             <p>{{item.detail}}</p>
           </ion-item>
+        </ion-list> -->
+        <ion-list>      
+            <ion-item *ngFor="let item of all"  class="single">
+                <ion-item (click)="gorecpub_set(item)">
+                  <ion-avatar item-start>
+                    <img src="assets/imgs/class1.png">
+                  </ion-avatar>
+                  <h2>{{item.job}}</h2>
+                  <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                    <i class="iconfont">&#xe522;</i>{{item.num}}
+                  </h3>
+                  <p><i style="font-style:normal">要求:</i><i id="position">{{item.detail}}</i></p>
+                </ion-item>
+                <ion-item>
+                    <p><i style="font-style:normal">薪资:</i><i id="money">{{item.money}}</i></p>
+                    <button ion-button item-end color="danger" id="del" (click)="del(item)">删除</button>
+                </ion-item>
+            </ion-item>
         </ion-list>
       
-        <ion-list *ngSwitchCase="'viewed'">
+        <!-- <ion-list *ngSwitchCase="'viewed'">
           <ion-item>
             <ion-thumbnail item-start>
               <img src="img/thumbnail-kitten-1.jpg">
@@ -60,7 +77,7 @@
               <h2>Luna</h2>
             </ion-item>
             ...
-          </ion-list>
+          </ion-list> -->
       </div>
 
 </ion-content>

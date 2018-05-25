@@ -2,6 +2,9 @@ page-recmypub {
     #body{
         background-color: #f2f2f2;
     }
+    #title{
+        color:#1990ef;
+    }
     .item{
         background-color:#f2f2f2;
     }
@@ -9,17 +12,16 @@ page-recmypub {
         margin-left:5px; 
         border:1px solid #aaa;
     }
-    .left{
-        width:26%;
-    }
-    .right{
-        width:26%;
+    .error{
+        color:red;
+        text-align: center;
+        font-size: 1em;
     }
     #area{
         width:100%;
         border:1px solid #aaa;
     }
-    #but{
+    .but{
         width:80%;
         margin-left: 10%;
         background-color: #1990ef;

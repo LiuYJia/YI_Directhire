@@ -2,12 +2,17 @@ page-seeknearmes {
     #body{
         background-color: #f2f2f2;
     }
+    //轮播图样式
     #slides{
         height:30%;
     }
     .slide img{
         margin-left:0;
         margin-top:0px;
+    }
+    //列表样式
+    #list{
+        margin-top:6px;
     }
     .list-ios .item-block .item-inner{
         border: none;
@@ -24,6 +29,7 @@ page-seeknearmes {
        color:  #1990ef;
        margin-top:5px;
     }
+    //底部按钮样式
     #bottom{ 
         background-color:gainsboro;
         height:53px;
@@ -35,6 +41,7 @@ page-seeknearmes {
         width: 60%;
         margin-left:10%;
     }
+    //底部收藏样式
     .star1{
         color: #1990ef;
         font-size: 3em;

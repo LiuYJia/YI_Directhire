@@ -85,11 +85,7 @@ export class RecpubsetPage {
   }
   //删除弹出框
   del1() {
-    let alert = this.alertCtrl.create({
-      subTitle: '删除成功！',
-      buttons: ['确定']
-    });
-   alert.present();
+   this.navCtrl.push("RecmyallpubPage");
   } 
   del2() {
     let alert = this.alertCtrl.create({

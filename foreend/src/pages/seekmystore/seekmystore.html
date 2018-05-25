@@ -5,14 +5,43 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>seekmystore</ion-title>
+  <ion-navbar color="primary">
+    <ion-title text-center>收藏职位</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content id="body">
+    <div padding>
+        <ion-segment [(ngModel)]="store">
+          <ion-segment-button value="daily">
+            一般职位
+          </ion-segment-button>
+          <ion-segment-button value="grab">
+            可抢职位
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="store">
+        <ion-list *ngSwitchCase="'daily'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-puppy-1.jpg">
+            </ion-thumbnail>
+            <h2>Ruby</h2>
+          </ion-item>
+          ...
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'grab'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-kitten-1.jpg">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+          ...
+        </ion-list>
+      </div>
 </ion-content>

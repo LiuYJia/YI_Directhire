@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RecmyPage } from '../recmy/recmy';
+import { Headers } from '@angular/http';
+import { AlertController } from 'ionic-angular';
 //import { RecpubsetPage } from '../recpubset/recpubset';
 
 /**
@@ -18,7 +20,7 @@ import { RecmyPage } from '../recmy/recmy';
 })
 export class RecmyallpubPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public alertCtrl:AlertController) {
   }
 
   all = [];
@@ -41,5 +43,32 @@ export class RecmyallpubPage {
   back(){
     this.navCtrl.push(RecmyPage);
     console.log("back");
+  }
+  //删除弹出框
+  del1() {
+   this.navCtrl.push('RecmyallpubPage');
+  } 
+  del2() {
+    let alert = this.alertCtrl.create({
+      subTitle: '删除失败！',
+      buttons: ['确定']
+    });
+   alert.present();
+  }
+  showConfirm(data) {
+    let confirm = this.alertCtrl.create({
+      title: '确认删除本职位信息?',
+      buttons: [{text: '取消',handler: () => {console.log('Disagree clicked');}},
+        {text: '确认', handler: () => {if(data['_body']==1) this.del1();
+           if(data['_body']==2) this.del2();}}]
+    });
+    confirm.present();
+  }
+  //删除
+  headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+  del(item){
+    this.http.post('http://127.0.0.1:3000/user/updateRecruit/delmsg',JSON.stringify({id:item.id}),{headers:this.headers}).subscribe(data=>{
+      this.showConfirm(data);
+    });   
   }
 }
