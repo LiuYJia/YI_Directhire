@@ -201,6 +201,55 @@ module.exports = {
                 })
             })
         })
+    },
+    //获取简历
+    getRelation:function getRelation(r_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var getRelation_sql = 'select * from resume where r_username =?';
+                connection.query(getRelation_sql,r_username,function(err,result){
+                    if(err){
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        // console.log(result);
+                    }
+                })
+            })
+        })
+    },
+    getResume:function getResume(s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var getResume_sql = 'select * from msg_seeker where username =?';
+                connection.query(getResume_sql,s_username,function(err,result){
+                    if(err){
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        // console.log(result);
+                    }
+                })
+            })
+        })
+    },
+    //删除简历
+    delResume:function delResume(s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var delResume_sql = 'delete from resume where s_username =?';
+                connection.query(delResume_sql,s_username,function(err,result){
+                    if(err){
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        console.log(result.affectedRows);
+                    }
+                })
+            })
+        })
     }
+
+
 
 }

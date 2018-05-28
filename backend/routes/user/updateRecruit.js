@@ -9,7 +9,7 @@ var GetFeedback = require('../../method/Ruser').GetFeedback;
 var Updatepubme = require('../../method/Ruser').Updatepubme;
 var Delmsg = require('../../method/Ruser').Delmsg;
 var imgSave = require('../../method/Ruser').imgSave;
-
+var delResume = require('../../method/Ruser').delResume;
 
 //修改注册用户信息
 router.post('/',function(req,res){
@@ -184,11 +184,31 @@ router.post('/delmsg',function(req,res){
         res.send('2');
     })
 
+});
+//删除简历
+router.post('/delResume',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+
+    var data = req.body,s_username;
+    for(key in data){
+        s_username = JSON.parse(key).s_username;
+    }
+    delResume(s_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('删除成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
 })
 
-//文件上传
+//头像上传
 router.post('/upload',function(req,res){
-    // console.log(222);
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
