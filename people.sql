@@ -67,6 +67,54 @@ INSERT INTO `article` VALUES (1,'IT/互联网','最新编程语言排行榜','TI
 UNLOCK TABLES;
 
 --
+-- Table structure for table `collect_recruit`
+--
+
+DROP TABLE IF EXISTS `collect_recruit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `collect_recruit` (
+  `id` int(11) NOT NULL,
+  `r_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  `s_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `collect_recruit`
+--
+
+LOCK TABLES `collect_recruit` WRITE;
+/*!40000 ALTER TABLE `collect_recruit` DISABLE KEYS */;
+/*!40000 ALTER TABLE `collect_recruit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `collect_seeker`
+--
+
+DROP TABLE IF EXISTS `collect_seeker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `collect_seeker` (
+  `id` int(11) NOT NULL,
+  `s_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  `r_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `collect_seeker`
+--
+
+LOCK TABLES `collect_seeker` WRITE;
+/*!40000 ALTER TABLE `collect_seeker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `collect_seeker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `feedback`
 --
 
@@ -171,7 +219,7 @@ CREATE TABLE `msg_recruit` (
 
 LOCK TABLES `msg_recruit` WRITE;
 /*!40000 ALTER TABLE `msg_recruit` DISABLE KEYS */;
-INSERT INTO `msg_recruit` VALUES (1,'11','5-7人','IT/互联网','node.js','8k','本科','百度','15133334444','20-50','好好学习，天天向上','/imgRecruit/0.41774720641329566.jpg'),(2,'22','1人','教师','数学','6k','本科','师大','03180125489','不限','好好学习，天天向上','/imgRecruit/0.3556006815969768.jpg'),(3,'33','2人','销售','营销人员','10k','本科','索像','25345354345','30','好好学习，天天向上','/imgRecruit/0.6471711321480378.jpg'),(4,'44','6人','客服咨询','话务员','5k','本科','中国移动','54343535743','40以下','好好学习，天天向上','/imgRecruit/0.26132655010210293.jpg'),(5,'55','2-4人','金融','宣传员','7k','本科','阳光易贷','5345343543','不限','好好学习，天天向上','/imgRecruit/0.47717673997035015.jpg'),(6,'66','5人','物流','快递员','7k','本科','中通','343573573','28','好好学习，天天向上','/imgRecruit/0.3245283927998741.jpg'),(7,'77','3人','医药','研发','9k','本科','哈药','535737537','30','好好学习，天天向上','/imgRecruit/0.9472916131780731.jpg'),(8,'88','1人','网络传媒','记者','5k','本科','星空媒体','527537357','40以下','好好学习，天天向上','/imgRecruit/0.47732691112093195.jpg'),(9,'11','8人','IT/互联网','测试','8k','本科','百度','243455465','25-30','好好学习，天天向上','/imgRecruit/0.41774720641329566.jpg'),(10,'11','2人','IT/互联网','JAVA','10k','本科','百度','34546576','30','好好学习，天天向上','/imgRecruit/0.41774720641329566.jpg'),(12,'11','3人','金融','管理岗','9k','本科','中国银行','22','20','22','/imgRecruit/0.41774720641329566.jpg');
+INSERT INTO `msg_recruit` VALUES (1,'11','5-7人','IT/互联网','node.js','8k','本科','百度','15133334444','20-50','好好学习，天天向上','/imgRecruit/0.15747365327555407.jpg'),(2,'22','1人','教师','数学','6k','本科','师大','03180125489','不限','好好学习，天天向上','/imgRecruit/0.3556006815969768.jpg'),(3,'33','2人','销售','营销人员','10k','本科','索像','25345354345','30','好好学习，天天向上','/imgRecruit/0.6471711321480378.jpg'),(4,'44','6人','客服咨询','话务员','5k','本科','中国移动','54343535743','40以下','好好学习，天天向上','/imgRecruit/0.26132655010210293.jpg'),(5,'55','2-4人','金融','宣传员','7k','本科','阳光易贷','5345343543','不限','好好学习，天天向上','/imgRecruit/0.47717673997035015.jpg'),(6,'66','5人','物流','快递员','7k','本科','中通','343573573','28','好好学习，天天向上','/imgRecruit/0.3245283927998741.jpg'),(7,'77','3人','医药','研发','9k','本科','哈药','535737537','30','好好学习，天天向上','/imgRecruit/0.9472916131780731.jpg'),(8,'88','1人','网络传媒','记者','5k','本科','星空媒体','527537357','40以下','好好学习，天天向上','/imgRecruit/0.47732691112093195.jpg'),(9,'11','8人','IT/互联网','测试','8k','本科','百度','243455465','25-30','好好学习，天天向上','/imgRecruit/0.15747365327555407.jpg'),(10,'11','2人','IT/互联网','JAVA','10k','本科','百度','34546576','30','好好学习，天天向上','/imgRecruit/0.15747365327555407.jpg'),(12,'11','3人','金融','管理岗','9k','本科','中国银行','22','20','22','/imgRecruit/0.15747365327555407.jpg');
 /*!40000 ALTER TABLE `msg_recruit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,4 +345,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-28 20:57:25
+-- Dump completed on 2018-05-29 16:28:24

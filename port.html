@@ -140,7 +140,7 @@
                 <td>方式</td>
             </tr>
             <tr>
-                <td>password,phone,email</td>
+                <td>password,phone,email,username</td>
                 <td>成功:1  失败：2</td>
                 <td>post</td>
             </tr>
@@ -200,6 +200,49 @@
                 <td>username,sort,txt,tel</td>
                 <td>成功：1  失败：2</td>
                 <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>收藏职位：http://127.0.0.1:3000/user/updateSeeker/Collect_seeker</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>s_username,r_username</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>取消收藏：http://127.0.0.1:3000/user/updateSeeker/delCollect</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>r_username</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取收藏列表：http://127.0.0.1:3000/user/getMessage_seeker/getCollect</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>s_username</td>
+                <td>成功：result  失败：2</td>
             </tr>
     </table>
     <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
@@ -487,6 +530,49 @@
                 <td>file,username</td>
                 <td>成功:1  失败：2</td>
                 <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>收藏职位：http://127.0.0.1:3000/user/updateRecruit/Collect_recruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>r_username,s_username</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>取消收藏：http://127.0.0.1:3000/user/updateRecruit/delCollect</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>s_username</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取收藏列表：http://127.0.0.1:3000/user/getMessage_recruit/getCollect</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>r_username</td>
+                <td>成功：result  失败：2</td>
             </tr>
     </table>
     

@@ -248,7 +248,74 @@ module.exports = {
                 })
             })
         })
-    }
+    },
+    //收藏
+    Collect_recruit:function Collect_recruit(r_username,s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Collect_recruit_sql = 'insert into collect_recruit(r_username,s_username) values(?,?)';
+                connection.query(Collect_recruit_sql,[r_username,s_username],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    //获取收藏列表
+    getCollect_seeker:function getCollect_seeker(r_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var getCollect_seeker_sql = 'select * from collect_recruit where r_username = ?';
+                connection.query(getCollect_seeker_sql,[r_username],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    getCollect_msg:function getCollect_msg(s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var getCollect_msg_sql = 'select * from msg_seeker where username = ?';
+                connection.query(getCollect_msg_sql,[s_username],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    //取消收藏
+    delCollect:function delCollect(s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var delCollect_sql = 'delete from collect_recruit where s_username =?';
+                connection.query(delCollect_sql,[s_username],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
 
 
 

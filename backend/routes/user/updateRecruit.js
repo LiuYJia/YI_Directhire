@@ -10,6 +10,8 @@ var Updatepubme = require('../../method/Ruser').Updatepubme;
 var Delmsg = require('../../method/Ruser').Delmsg;
 var imgSave = require('../../method/Ruser').imgSave;
 var delResume = require('../../method/Ruser').delResume;
+var Collect_recruit = require('../../method/Ruser').Collect_recruit;
+var delCollect = require('../../method/Ruser').delCollect;
 
 //修改注册用户信息
 router.post('/',function(req,res){
@@ -200,6 +202,49 @@ router.post('/delResume',function(req,res){
         if(data != 0){
             res.send('1');
             console.log('删除成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
+})
+//收藏
+router.post('/Collect_recruit',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var r_username,s_username,data = req.body;
+    for(key in data){
+        r_username = JSON.parse(key).r_username;
+        s_username = JSON.parse(key).s_username;
+    }
+    Collect_recruit(r_username,s_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('收藏成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
+})
+
+//取消收藏
+router.post('/delCollect',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var s_username,data = req.body;
+    for(key in data){
+        s_username = JSON.parse(key).s_username;
+    }
+
+    delCollect(s_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('取消成功');
         }
     }).catch(function(err){
         res.send('2');

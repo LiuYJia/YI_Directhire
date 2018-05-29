@@ -5,6 +5,8 @@ var UpdateSet = require('../../method/Suser').UpdateSet;
 var UpdateResume = require('../../method/Suser').UpdateResume;
 var UpdateImg = require('../../method/Suser').UpdateImg;
 var SendResume = require('../../method/Suser').SendResume;
+var Collect_seeker = require('../../method/Suser').Collect_seeker;
+var delCollect = require('../../method/Suser').delCollect;
 
 //修改注册信息
 router.post('/UpdateSet',function(req,res){
@@ -17,6 +19,7 @@ router.post('/UpdateSet',function(req,res){
         password = JSON.parse(key).password;
         phone = JSON.parse(key).phone;
         email = JSON.parse(key).email;
+        username = JSON.parse(key).username;
     };
     UpdateSet({password:password,phone:phone,email:email},username).then(function(data){
         if(data){
@@ -46,7 +49,7 @@ router.post('/UpdateResume',function(req,res){
         name = JSON.parse(key).name;
         username = JSON.parse(key).username;
     };
-    UpdateSet({sex:sex,sort:sort,job:job,money:money,school:school,tel:tel,age:age,detail:detail,name:name},username).then(function(data){
+    UpdateResume({sex:sex,sort:sort,job:job,money:money,school:school,tel:tel,age:age,detail:detail,name:name},username).then(function(data){
         if(data){
           res.send('1');
         }
@@ -71,6 +74,50 @@ router.post('/SendResume',function(req,res){
         if(data != 0){
             res.send('1');
             console.log('投递成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
+})
+
+//收藏
+router.post('/Collect_seeker',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var r_username,s_username,data = req.body;
+    for(key in data){
+        r_username = JSON.parse(key).r_username;
+        s_username = JSON.parse(key).s_username;
+    }
+    Collect_seeker(s_username,r_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('收藏成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
+})
+
+//取消收藏
+router.post('/delCollect',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var r_username,data = req.body;
+    for(key in data){
+        r_username = JSON.parse(key).r_username;
+    }
+
+    delCollect(r_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('取消成功');
         }
     }).catch(function(err){
         res.send('2');
