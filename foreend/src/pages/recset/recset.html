@@ -16,15 +16,18 @@
 <ion-content id="body">
     <!-- <p id="title"><ion-icon name="arrow-back" id="back" (click)="back()"></ion-icon>个人资料</p>
 
-    <hr/> -->
+      
 
+    <hr/> -->
     <ion-list>
-        <form>
+      <form id="img-form" enctype="multipart/form-data" method="POST">
         <ion-item>        
           <ion-label fixed>头像</ion-label>
-          <ion-input type="file" id="photo" ></ion-input>
-          <button ion-button item-end>确认提交</button>
-        </ion-item> </form> 
+          <ion-input type="file" id="photo" name="img_recruit" [(ngModel)]="imgupload"></ion-input>
+          <ion-input type="hidden" value={{username}} name="username"></ion-input>
+          <button ion-button item-end (click)="submitImg()">确认提交</button>
+        </ion-item>       
+      </form> 
         <ion-item>
           <ion-label fixed>用户名</ion-label>
           <ion-input type="text" [(ngModel)]="username"  disabled></ion-input>

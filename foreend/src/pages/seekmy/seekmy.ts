@@ -24,8 +24,11 @@ export class SeekmyPage {
   retreat(){
     this.app.getRootNavs()[0].setRoot(LoginPage);
   }
+  username = '';
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MePage');
+    console.log('ionViewDidLoad SeekmyPage');
+    console.log(localStorage.getItem("login"));
+    this.username = localStorage.getItem("login");
   }
   //设置
   set(){

@@ -28,11 +28,23 @@ export class SeekhomePage {
   {img:"assets/imgs/class6.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
-  items = [];
-  class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度",detail:'具有一定的工作经验'}];
+  items = [];slide=[];slide1;slide2;slide3;
+  //class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度",detail:'具有一定的工作经验'}];
+  class1=[];
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekhomePage');
-    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
+    //获取轮播图
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getimg_recruit').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      for(let i=0;i<message.length;i++){
+        this.slide[i] = message[i].img;
+      }
+      this.slide1 = 'http://127.0.0.1:3000'+this.slide[1];
+      this.slide2 = 'http://127.0.0.1:3000'+this.slide[2];
+      this.slide3 = 'http://127.0.0.1:3000'+this.slide[3];
+    })
+    //获取分类信息
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getsort').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       for(let i=0;i<4;i++){
         this.class[i].name = message[i].name;
@@ -42,24 +54,25 @@ export class SeekhomePage {
       for(let i=0;i<4;i++){
         this.class0[i].name =message[i+4].name;
       }
-      // this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+message[0].name).subscribe(data=>{
-      //   var message = JSON.parse(data['_body']);
-      //   for(var i=0;i<message.length;i++){
-      //     this.class1[i] = message[i];
-      //   }
-      // })
+      this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+message[0].name).subscribe(data=>{
+        var message = JSON.parse(data['_body']);
+        console.log(message);
+        for(var i=0;i<message.length;i++){
+          this.class1[i] = message[i];
+        }
+      })
     })   
   }
-  sort(item){
-    // this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
-    //     var message = JSON.parse(data['_body']);
-    //     console.log(message);
-     //       this.class1 = [];
-    //     for(var i=0;i<message.length;i++){
-    //       this.class1[i] = message[i];
-    //     }
-    // })
-  }
+  // sort(item){
+  //   this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+item.name).subscribe(data=>{
+  //       var message = JSON.parse(data['_body']);
+  //       console.log(message);
+  //       this.class1 = [];
+  //       for(var i=0;i<message.length;i++){
+  //         this.class1[i] = message[i];
+  //       }
+  //   })
+  // }
 //职位详情
   job(item){
      this.navCtrl.push('SeekjobmesPage',{item:item});

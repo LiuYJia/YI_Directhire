@@ -16,7 +16,7 @@ import { SeekmessagePage } from '../pages/seekmessage/seekmessage';
 })
 export class MyApp {
   rootPage:any = TabsPage;
-  //rootPage:any = RecmyPage;
+  //rootPage:any = RecloginPage;
   //rootPage:any = LoginPage;
   //rootPage:any = StartPage;
 

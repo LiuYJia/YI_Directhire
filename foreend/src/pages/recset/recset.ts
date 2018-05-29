@@ -1,3 +1,4 @@
+///<reference path="../../services/jquery.d.ts"/>  
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
@@ -17,7 +18,7 @@ import { Headers } from '@angular/http';
   templateUrl: 'recset.html',
 })
 export class RecsetPage {
-  username='';name;img;phone;job;age;email;password;
+  username='';name;imgupload;phone;job;age;email;password;
 
   constructor(public platform: Platform,
     public toastCtrl: ToastController,
@@ -61,7 +62,7 @@ export class RecsetPage {
   cgpwd(){
     this.navCtrl.push('ReccgpwdPage');
   }
-
+//提交全部
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   submit(){
     this.http.post('http://127.0.0.1:3000/user/updateRecruit',JSON.stringify({username:localStorage.getItem("login"),password:this.password,phone:this.phone,email:this.email}),{headers:this.headers}).subscribe(data=>{
@@ -70,5 +71,56 @@ export class RecsetPage {
       if(data['_body']==2) this.showAlert2();
     });
   }
-  
+  //提交头像信息
+  showAlert3() {
+    let alert = this.alertCtrl.create({
+      subTitle: '请上传图片！',
+      buttons: ['确定']
+    });
+   alert.present();
+  }
+  // submitImg(){
+  //     if(this.imgupload==undefined){
+  //       this.showAlert3();
+  //     }else{
+  //       var option = {
+  //           url:"http://127.0.0.1:3000/user/updateRecruit/Upload",
+  //           timeout:3000,
+  //           success:function(data){console.log(data)},
+  //           error:function(err){console.log(err)},
+  //           complete:function(XMLHttpRequest,status){
+  //             if(status=='timeout'){alert("服务器繁忙")}
+  //           },
+  //       }
+  //       $('#img-form').ajaxSubmit(option);
+  //       //$('#img-form').resetForm();
+  //       return false;
+  //     }
+  // }
+  upload(){
+    if(this.imgupload == undefined){
+      this.showAlert3();
+    }else{
+      var option={
+        url:"http://localhost:3000/user/updateRecruit/upload",  
+        timeout: 3000,   
+        success:function(data){
+          console.log(data);                            
+        },
+        error:function(err){
+          console.log(err);
+        },
+        complete:function(XMLHttpRequest,status){ 
+  　　　　if(status=='timeout'){
+  　　　　　  alert("服务器繁忙");
+  　　　　}
+  　　  },
+      }    
+      $('#img-form').ajaxSubmit(option);  
+      $('#img-form').resetForm();    
+      return false;
+    }
+
+  }
+
 }
