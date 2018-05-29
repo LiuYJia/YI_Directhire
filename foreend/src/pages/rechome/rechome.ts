@@ -27,10 +27,22 @@ export class RechomePage {
   class0 = [{img:"assets/imgs/class5.png",name:"",val:"class5"},
   {img:"assets/imgs/class6.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
-  {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
-  items = [];class1=[];
+  {img:"assets/imgs/class8.png",name:"",val:"class8"}];
+  items = [];class1=[];slide=[];slide1;slide2;slide3;
   ionViewDidLoad() {
     console.log('ionViewDidLoad RechomePage');
+    //获取轮播图
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getimg_recruit').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      for(let i=0;i<message.length;i++){
+        this.slide[i] = message[i].img;
+      }
+      this.slide1 = 'http://127.0.0.1:3000'+this.slide[1];
+      this.slide2 = 'http://127.0.0.1:3000'+this.slide[2];
+      this.slide3 = 'http://127.0.0.1:3000'+this.slide[3];
+      console.log(this.slide1);
+    })
+    //获取分类
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       for(let i=0;i<4;i++){
@@ -41,6 +53,7 @@ export class RechomePage {
       for(let i=0;i<4;i++){
         this.class0[i].name =message[i+4].name;
       }
+      //获取默认分类项
       this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+message[0].name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
         for(var i=0;i<message.length;i++){
@@ -49,6 +62,7 @@ export class RechomePage {
       })
     })   
   }
+  //获取各个分类项
   sort(item){
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
@@ -59,6 +73,7 @@ export class RechomePage {
         }
     })
   }
+  //求职者详情页
   seeker(item){
     this.navCtrl.push('RecseekerPage',{title:item});
   }

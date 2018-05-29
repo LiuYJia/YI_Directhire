@@ -1,7 +1,8 @@
-page-seekjobmes {
+page-seeknearmes {
     #body{
         background-color: #f2f2f2;
     }
+    //轮播图样式
     #slides{
         height:30%;
     }
@@ -9,6 +10,7 @@ page-seekjobmes {
         margin-left:0;
         margin-top:0px;
     }
+    //列表样式
     #list{
         margin-top:6px;
     }
@@ -18,6 +20,7 @@ page-seekjobmes {
     #money{
         color: red;
         font-size:20px;
+        font-style: normal;
     }
     .iconfont{
         color:#0f72c4;
@@ -26,6 +29,7 @@ page-seekjobmes {
        color:  #1990ef;
        margin-top:5px;
     }
+    //底部按钮样式
     #bottom{ 
         background-color:gainsboro;
         height:53px;
@@ -37,6 +41,7 @@ page-seekjobmes {
         width: 60%;
         margin-left:10%;
     }
+    //底部收藏样式
     .star1{
         color: #1990ef;
         font-size: 3em;

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>接口说明</title>
+    <style type="text/css">
+    	td,th{
+    		height: 40px;
+    	}
+    </style>
+</head>
+<body style="margin:auto;width:700px;">
+    <h2 style="text-align:center">Seeker用户</h2>
+
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=2>seeker用户登录：http://127.0.0.1:3000/user/admin-seeker</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>status:login</td>
+                <td>用户名不存在：0</td>
+            </tr>
+            <tr>
+                <td>userName用户名</td>
+                <td>用户名或密码不正确：2</td>
+            </tr>
+            <tr>
+                <td>userPwd密码</td>
+                <td>登录成功：1</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=2>seeker用户注册：http://127.0.0.1:3000/user/admin-seeker</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>status:login</td>
+                <td>用户名不存在：0</td>
+            </tr>
+            <tr>
+                <td>userName用户名</td>
+                <td>用户名或密码不正确：2</td>
+            </tr>
+            <tr>
+                <td>userPwd密码</td>
+                <td>登录成功：1</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取分类：http://127.0.0.1:3000/user/getMessage_seeker/getsort</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取相关职业：http://127.0.0.1:3000/user/getMessage_seeker/getRecruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>sort</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取职业详情：http://127.0.0.1:3000/user/getMessage_seeker/detail_Recruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取seeker用户注册信息：http://127.0.0.1:3000/user/getMessage_seeker/set_Recruit
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username用户名</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取简历详情：http://127.0.0.1:3000/user/getMessage_seeker/ResumeMsg
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username用户名</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取轮播图：http://127.0.0.1:3000/user/getMessage_seeker/getImg_seeker
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>修改注册信息：http://127.0.0.1:3000/user/updateSeeker/UpdateSet
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>password,phone,email</td>
+                <td>成功:1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>更新简历：http://127.0.0.1:3000/user/updateSeeker/UpdateResume
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>sex,sort,job,money,school,tel,age,detail,name,username</td>
+                <td>成功:1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>投递简历：http://127.0.0.1:3000/user/updateSeeker/SendResume
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>r_username,s_username</td>
+                <td>成功:1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>更新头像：http://127.0.0.1:3000/user/updateSeeker/UpdateImg
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>file,username</td>
+                <td>成功:1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>用户反馈：http://127.0.0.1:3000/user/updateRecruit/feedback</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>username,sort,txt,tel</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>文章推荐：http://127.0.0.1:3000/user/getMessage_recruit/getarticle
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table><br />
+    
+
+    <h2 style="text-align:center">Recruit用户</h2>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=2>recruit用户登录：http://127.0.0.1:3000/user/admin-recruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>status:login</td>
+                <td>用户名不存在：0</td>
+            </tr>
+            <tr>
+                <td>userName用户名</td>
+                <td>用户名或密码不正确：2</td>
+            </tr>
+            <tr>
+                <td>userPwd密码</td>
+                <td>登录成功：1</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>recruit用户注册：http://127.0.0.1:3000/user/admin-recruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>status:register</td>
+                <td>注册成功：1</td>
+            </tr>
+            <tr>
+                <td>userName用户名</td>
+                <td>用户名已存在：2</td>
+            </tr>
+            <tr>
+                <td>userPwd密码</td>
+                <td></td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取recruit用户注册信息：http://127.0.0.1:3000/user/getMessage_recruit/settingMsg</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username用户名</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取recruit类相关人员：http://127.0.0.1:3000/user/getMessage_recruit/getpeople</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>sort</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取recruit分类：http://127.0.0.1:3000/user/getMessage_recruit/getSort</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取recruit我发布地：http://127.0.0.1:3000/user/getMessage_recruit/publishme</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>获取求职人员详情：http://127.0.0.1:3000/user/getMessage_recruit/getmsg</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>成功:Object对象   失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>修改recruit用户注册信息：http://127.0.0.1:3000/user/updateRecruit</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>username,password,phone,email</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>发布职位：http://127.0.0.1:3000/user/updateRecruit/publish</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>username,name,sort,num,job,money,school,age,detail,tel</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>修改已发布信息：http://127.0.0.1:3000/user/updateRecruit/updatepubme</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>job,sort,name,num,money,age,school,tel,detail</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>删除已发布：http://127.0.0.1:3000/user/updateRecruit/delmsg</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>用户反馈：http://127.0.0.1:3000/user/updateRecruit/feedback</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>username,sort,txt,tel</td>
+                <td>成功：1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>用户详情：http://127.0.0.1:3000/user/getMessage_recruit/getmsg</th>
+            </tr>
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>我发布的详细信息信息获取：http://127.0.0.1:3000/user/getMessage_recruit/msg_publishme
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>轮播图：http://127.0.0.1:3000/user/getMessage_recruit/getimg_recruit
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>文章推荐：http://127.0.0.1:3000/user/getMessage_recruit/getarticle
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>无</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>收到的简历：http://127.0.0.1:3000/user/getMessage_recruit/getResume
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+            </tr>
+            <tr>
+                <td>r_username</td>
+                <td>成功：result 失败：2</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>删除简历：http://127.0.0.1:3000/user/getMessage_recruit/delResume
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>s_username</td>
+                <td>成功：result 失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    <table border='1' cellspacing='0' cellpadding=0 style="width:100%">
+            <tr>
+                <th colspan=3>更新头像：http://127.0.0.1:3000/user/updateSeeker/UpdateImg
+            <tr>
+                <td style="width:60%">参数</td>
+                <td>返回值</td>
+                <td>方式</td>
+            </tr>
+            <tr>
+                <td>file,username</td>
+                <td>成功:1  失败：2</td>
+                <td>post</td>
+            </tr>
+    </table>
+    
+    
+</body>
+</html>

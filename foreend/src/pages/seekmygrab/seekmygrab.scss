@@ -1,3 +1,32 @@
 page-seekmygrab {
-
+    #body{
+        background-color: #f2f2f2;
+    }
+    #title{
+        margin-left: 20px;
+    }
+    .spe{
+        margin-top:8px;
+    }
+    #time{
+        color: gray;
+        float: right;
+    }
+    #money{
+        font-style: normal;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
+    }
+    #position{
+        font-style: normal;
+        margin-left:10px;
+        font-size:18px;
+    }
+    #but{
+        float: right;
+        width:100px;
+        height:30px;
+        display: inline;
+    }
 }

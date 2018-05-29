@@ -8,7 +8,8 @@ var AddFeedback = require('../../method/Ruser').AddFeedback;
 var GetFeedback = require('../../method/Ruser').GetFeedback;
 var Updatepubme = require('../../method/Ruser').Updatepubme;
 var Delmsg = require('../../method/Ruser').Delmsg;
-
+var imgSave = require('../../method/Ruser').imgSave;
+var delResume = require('../../method/Ruser').delResume;
 
 //修改注册用户信息
 router.post('/',function(req,res){
@@ -183,71 +184,89 @@ router.post('/delmsg',function(req,res){
         res.send('2');
     })
 
+});
+//删除简历
+router.post('/delResume',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+
+    var data = req.body,s_username;
+    for(key in data){
+        s_username = JSON.parse(key).s_username;
+    }
+    delResume(s_username).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('删除成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    })
 })
 
-//文件上传
+//头像上传
 router.post('/upload',function(req,res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
 
-    res.send('1');
+    var username;
+    var form = new formidable.IncomingForm();   
+        form.encoding = 'utf-8';        
+        form.uploadDir = 'public' + '/imgRecruit/';     
+        form.keepExtensions = true;     
+        form.maxFieldsSize = 2 * 1024 * 1024;   
 
-    // var img = req.body;
-    // console.log(img)
+    form.parse(req, function(err, fields, files) {
+        username = fields["username"];
+        console.log(username);
 
-    // var data = req.body,img;
-    
-    // for(key in data){
-    //     img = JSON.parse(key).img;
-    // }
-    // console.log(img);
-    // console.log('222');
-    // var form = new formidable.IncomingForm();   
-    //   form.encoding = 'utf-8';        
-    //   form.uploadDir = 'public' + AVATAR_UPLOAD_FOLDER;     
-    //   form.keepExtensions = true;     
-    //   form.maxFieldsSize = 2 * 1024 * 1024;   
-
-    // form.parse(req, function(err, img, files) {
-        
-    //     console.log(files);
-    //     console.log('ssssssssss');
-    //     console.log(req.body); 
+        if(err){
+            return res.send('2')
+        }     
        
-    //     var extName = '';  
-    //     switch (files.fulAvatar.type) {
-    //         case 'image/pjpeg':
-    //             extName = 'jpg';
-    //             break;
-    //         case 'image/jpeg':
-    //             extName = 'jpg';
-    //             break;         
-    //         case 'image/png':
-    //             extName = 'png';
-    //             break;
-    //         case 'image/x-png':
-    //             extName = 'png';
-    //             break;         
-    //     }
+        var extName = '';  
+        switch (files.img_recruit.type) {
+            case 'image/pjpeg':
+                extName = 'jpg';
+                break;
+            case 'image/jpeg':
+                extName = 'jpg';
+                break;         
+            case 'image/png':
+                extName = 'png';
+                break;
+            case 'image/x-png':
+                extName = 'png';
+                break;         
+        }
 
-    //     if(extName.length == 0){
-    //           res.locals.error = '只支持png和jpg格式图片';
-    //           res.render('index', { title: TITLE,page:'file',username:u_no });
-    //           return;                   
-    //     }
+        if(extName.length == 0){
+              return res.send('0');       
+              console.log('只支持png和jpg格式图片');          
+        }
 
-    //     var avatarName = Math.random() + '.' + extName;
-    //     var newPath = form.uploadDir + avatarName;
+        var newName = Math.random() + '.' + extName;
+        var newPath = form.uploadDir + newName;
+        var savePath = '/imgRecruit/'+ newName;
+        fs.renameSync(files.img_recruit.path, newPath);
 
-    //     console.log(newPath);
-    //     console.log('111111111111',files.fulAvatar.path);
-    //     console.log('222222222222',files.fulAvatar.type);
-    //     fs.renameSync(files.fulAvatar.path, newPath);
-    // });
+        imgSave(username,savePath).then(function(data){
+            if(data != 0){                
+                console.log('上传成功');
+                res.send('1');
+            }
+        }).catch(function(err){
+            res.send('2');
+            console.log(err);
+        });
 
-    // res.locals.success = '上传成功';
+    });
+
 })
 
   

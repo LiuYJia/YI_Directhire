@@ -58,9 +58,7 @@ router.post('/', function(req, res) {
         var newPath = form.uploadDir + avatarName;
         fs.renameSync(files.fulAvatar.path, newPath);  //重命名
         var savePath = folder + avatarName;
-        // console.log(savePath);        
-        // console.log(files.fulAvatar.path);
-        // console.log(newPath);
+
         Uploadimg_admin(savePath).then(function(result){
             if(result != 0){
                 console.log('上传图片成功');            

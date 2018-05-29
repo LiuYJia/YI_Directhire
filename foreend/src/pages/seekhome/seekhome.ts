@@ -29,7 +29,7 @@ export class SeekhomePage {
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
   items = [];
-  class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度"}];
+  class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度",detail:'具有一定的工作经验'}];
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekhomePage');
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
@@ -60,6 +60,7 @@ export class SeekhomePage {
     //     }
     // })
   }
+//职位详情
   job(item){
      this.navCtrl.push('SeekjobmesPage',{item:item});
   }
