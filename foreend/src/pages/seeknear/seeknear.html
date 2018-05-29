@@ -15,9 +15,9 @@
     <div #map1 id="map_container1"></div>
     <h5><strong>附近商家推荐：</strong></h5>
     <ion-list>
-        <ion-item *ngFor="let item of data_info" class="spe" >
+        <ion-item *ngFor="let item of list" class="spe" >
             <ion-item style="display:inline">
-              <h2><span id="time"></span></h2>
+              <h2><span id="time">{{item}}</span></h2>
               <p><i style="font-style:normal"></i><i id="money"></i></p>       
             </ion-item>
             <ion-item>
