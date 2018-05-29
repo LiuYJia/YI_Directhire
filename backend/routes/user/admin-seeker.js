@@ -22,8 +22,8 @@ router.get('/', function(req, res) {
       
   
       //密码加密
-      //let md5 = crypto.createHash("md5");
-      //let newPas = md5.update(userPwd).digest("hex");
+      var md5 = crypto.createHash("md5");
+      
     
       //创建UserS对象
       var newUser = new AdminS({
@@ -47,7 +47,9 @@ router.get('/', function(req, res) {
           else{
             //获取用户信息
             AdminS.getUserByUserName(newUser.username,function(err,results){
-              if(newUser.password === results[0].password){
+
+              var newPass = md5.update(newUser.password).digest("hex");
+              if(newPass === results[0].password){
                 res.send('1');
                 console.log('登陆成功');
               }
@@ -77,9 +79,7 @@ router.post('/', function(req, res) {
       username=JSON.parse(key).username;
       password=JSON.parse(key).password;
     }
-    //密码加密
-    //let md5 = crypto.createHash("md5");
-    //let newPas = md5.update(userPwd).digest("hex");
+    
   
     //创建UserS对象
     var newUser = new AdminS({
@@ -91,6 +91,9 @@ router.post('/', function(req, res) {
     console.log('用户名:'+newUser.username);    
     console.log('密码:'+newUser.password);
 
+    //密码加密
+    var md5 = crypto.createHash("md5");
+    var newPass = md5.update(newUser.password).digest("hex");
 
     AdminS.getUserNumByName(newUser.username,function(err,results){
 
@@ -100,7 +103,7 @@ router.post('/', function(req, res) {
           if(results[0]['num'] == 0){
     
               //向数据库存储数据
-              newUser.save({username:newUser.username,userpass:newUser.password},function(err,results){
+              newUser.save({username:newUser.username,userpass:newPass},function(err,results){
                 if(err){
                   res.locals.error = err;
                   return;

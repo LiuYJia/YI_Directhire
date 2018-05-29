@@ -11,6 +11,7 @@ var ResumeMsg = require('../../method/Suser').ResumeMsg;
 var getImg_seeker = require('../../method/Suser').getImg_seeker;
 var getCollect_seeker = require('../../method/Suser').getCollect_seeker;
 var getCollect_msg = require('../../method/Suser').getCollect_msg;
+var Search = require('../../method/Suser').Search;
 //获取分类
 router.get('/getsort',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -122,6 +123,23 @@ router.get('/getCollect',function(req,res){
     res.send('2');
     console.log(err);
   })
+})
+router.get('/search',function(req,res){
+  res.header("Access-Control-Allow-Origin", "*");
+
+  var keyword = req.query.keyword;
+  // console.log(JSON.stringify(keyword));
+  Search(keyword).then(function(data){
+    if(data){
+      res.send(data);
+      console.log('搜索成功');
+    }
+  }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  });
+
+
 })
 
 module.exports = router;

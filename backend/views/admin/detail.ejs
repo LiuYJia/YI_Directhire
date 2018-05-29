@@ -3,12 +3,12 @@
     <ul class="nav nav-tabs nav-justified">
         <li class="active sort"><a href="#recruit" data-toggle="tab">招聘信息</a></li>
         <li class="sort"><a href="#seeker" data-toggle="tab">求职信息</a></li>
-        <form role="form" class="search">
+        <!-- <form role="form" class="search">
                 <div class="input-group">
                     <input type="text" class="form-control">
                     <button class="btn btn-info">搜索用户</button>
                 </div>
-        </form>
+        </form> -->
     </ul>
 
     <div class="tab-content">
@@ -17,6 +17,7 @@
             <table class="table  table-hover table-condensed usertable ">
                 <thead>
                     <tr>
+                        <th>头像</th>
                         <th>类别</th>
                         <th>用户名</th>
                         <th>商家</th>
@@ -33,6 +34,7 @@
                 <tbody>
                     <% data1.forEach(function(item){ %>
                         <tr>
+                            <td><img src="<%= item.img %>" alt="headimg" style="height: 35px;width: 35px"></td>
                             <td><%= item.sort %></td>
                             <td><%= item.username %></td>
                             <td><%= item.name %></td>
@@ -65,6 +67,7 @@
             <table class="table  table-hover table-condensed usertable">
                 <thead>
                     <tr>
+                        <th>头像</th>
                         <th>类别</th>
                         <th>用户名</th>
                         <th>姓名</th>
@@ -81,6 +84,7 @@
                 <tbody>
                     <% data2.forEach(function(item){ %>
                         <tr>
+                            <td><img src="<%= item.img %>" alt="headimg" style="height: 35px;width: 35px"></td>
                             <td><%= item.sort %></td>
                             <td><%= item.username %></td>
                             <td><%= item.name %></td>

@@ -12,6 +12,7 @@ var getRelation = require('../../method/Ruser').getRelation;
 var getResume = require('../../method/Ruser').getResume;
 var getCollect_recruit = require('../../method/Ruser').getCollect_recruit;
 var getCollect_msg = require('../../method/Ruser').getCollect_msg;
+var Search = require('../../method/Ruser').Search;
  
 router.get('/',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -246,6 +247,25 @@ router.get('/getCollect',function(req,res){
     res.send('2');
     console.log(err);
   })
+})
+
+//搜索
+router.get('/search',function(req,res){
+  res.header("Access-Control-Allow-Origin", "*");
+
+  var keyword = req.query.keyword;
+  // console.log(JSON.stringify(keyword));
+  Search(keyword).then(function(data){
+    if(data){
+      res.send(data);
+      console.log('搜索成功');
+    }
+  }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  });
+
+
 })
 
 

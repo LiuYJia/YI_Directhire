@@ -241,4 +241,21 @@ module.exports = {
             })
         })
     },
+    //搜索
+    Search:function Search(keyword){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Search_sql = "select * from msg_reruit where username like '%"+keyword+"%' or job like'%"+keyword+"%'";
+                connection.query(Search_sql,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    }
 }
