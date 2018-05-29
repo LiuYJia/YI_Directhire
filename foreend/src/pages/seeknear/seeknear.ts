@@ -18,6 +18,7 @@ export class SeeknearPage {
   map: any;
   point:any;
   rs;
+  list=[];
 @ViewChild('map1') map_container1: ElementRef;
 
 
@@ -28,11 +29,17 @@ export class SeeknearPage {
   };
   load(){
     // 百度地图的IP地址定位
+    // this.list.push(4);
+    // console.log(this.list);
+    
     var map = new BMap.Map(this.map_container1.nativeElement);
     var point = new BMap.Point(114.529086,38.0034898);
     map.centerAndZoom(point,19);
     // map.setMapStyle({style:'hardedge'});
+    var that = this;
     function myFun(result){
+      // that.list.push(5);
+      // console.log(that.list);
       var Lng=result.center.lng+0.0086166387;
       var Lat=result.center.lat-0.044986796757;
       var pm=new BMap.Point(Lng,Lat);
@@ -86,7 +93,7 @@ export class SeeknearPage {
                      {distance:'',dst:'',lng:114.527747,lat:38.005104,location:'地址:河北师大新校区国际文化交流学院',info:'职位要求:算法工程师5人,￥50/小时'},   
                      {distance:'',dst:'',lng:114.529845,lat:38.003589,location:'地址:河北师大新校区-理科群一号楼',info:'职位要求:测试工程师5人,￥50/小时'},                 
                      {distance:'',dst:'',lng:114.529118,lat:38.004057,location:'地址:师大新校区-移动物联网研究学院',info:'职位要求:测试工程师5人,￥50/小时'},
-                      
+
                       ];
                       
     var opts = {
@@ -102,6 +109,10 @@ export class SeeknearPage {
       console.log(data_info[i].distance);
       if((map.getDistance(pm,data_info[i].dst)).toFixed(2)<50){
         console.log(data_info[i].location+'在50米内');
+        console.log(data_info[i]);       
+        that.list.push(data_info[i].info);
+        
+        console.log(that.list);
     }
       var marker = new BMap.Marker(new BMap.Point(data_info[i].lng,data_info[i].lat));  // 创建标注
       var content = data_info[i].location+'<br/>'+data_info[i].info+'<br/>'+data_info[i].distance;
