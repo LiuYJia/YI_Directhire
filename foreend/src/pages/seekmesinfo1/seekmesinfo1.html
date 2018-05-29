@@ -40,7 +40,17 @@
         <ion-item>
             <label>期望薪资:</label>
             <input type="text" [(ngModel)]="money">  
-        </ion-item>  
+        </ion-item> 
+        <ion-item>
+            <label>用户名:</label>
+            <input type="text" [(ngModel)]="username">  
+        </ion-item>
+        <ion-item>
+            <label>求职类别:</label>
+            <select style="width:110px;margin-left:5px;height:25px" [(ngModel)]='sort'> 
+                <option *ngFor="let item of items" value="{{item}}">{{item}}</option>    
+            </select>
+        </ion-item> 
         <ion-item>
             <label>个人介绍:</label>
             <textarea rows="10" class="area" [(ngModel)]="info1" style="display:block"></textarea>

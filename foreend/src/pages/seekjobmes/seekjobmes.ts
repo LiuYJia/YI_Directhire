@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { AlertController } from 'ionic-angular';
+import { Headers } from '@angular/http';
 
 /**
  * Generated class for the SeekjobmesPage page.
@@ -15,22 +18,50 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeekjobmesPage {
 
-  job = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.job = navParams.get("item");
+  all = [];job;school;num;name;money;age;detail;tel;username;
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public http:Http,
+    public alertCtrl: AlertController) {
+    this.all = navParams.get("item");
+    this.job = navParams.get("item").job;
+    this.school = navParams.get("item").school;
+    this.num = navParams.get("item").num;
+    this.name = navParams.get("item").name;
+    this.money = navParams.get("item").money;
+    this.age = navParams.get("item").age;
+    this.detail = navParams.get("item").detail;
+    this.tel = navParams.get("item").tel;
+    this.username = navParams.get("item").username;
   }
 
-  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekjobmesPage');
-    console.log(this.job);
-  }
-  Ctr($scope) {
-    $scope.isSelected = false;
   }
 
-  star(){
-    
+  showAlert1() {
+    let alert = this.alertCtrl.create({
+      subTitle: '投递成功！',
+      buttons: ['确定']
+    });
+   alert.present();
+  } 
+  showAlert2() {
+    let alert = this.alertCtrl.create({
+      subTitle: '投递失败！',
+      buttons: ['确定']
+    });
+   alert.present();
   }
+//投递简历
+  headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+  sub(){
+    this.http.post('http://127.0.0.1:3000/user/updateSeeker/SendResume',JSON.stringify({s_username:localStorage.getItem("login"),r_username:this.username}),{headers:this.headers}).subscribe(data=>{
+      console.log(data);
+      if(data['_body']==1) this.showAlert1();
+      if(data['_body']==2) this.showAlert2();
+    });
+  }
+  star(){}
 
 }

@@ -34,7 +34,7 @@ export class SeekhomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekhomePage');
     //获取轮播图
-    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getimg_recruit').subscribe(data=>{
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getImg_seeker').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       for(let i=0;i<message.length;i++){
         this.slide[i] = message[i].img;
@@ -63,16 +63,16 @@ export class SeekhomePage {
       })
     })   
   }
-  // sort(item){
-  //   this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+item.name).subscribe(data=>{
-  //       var message = JSON.parse(data['_body']);
-  //       console.log(message);
-  //       this.class1 = [];
-  //       for(var i=0;i<message.length;i++){
-  //         this.class1[i] = message[i];
-  //       }
-  //   })
-  // }
+  sort(item){
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+item.name).subscribe(data=>{
+        var message = JSON.parse(data['_body']);
+        console.log(message);
+        this.class1 = [];
+        for(var i=0;i<message.length;i++){
+          this.class1[i] = message[i];
+        }
+    })
+  }
 //职位详情
   job(item){
      this.navCtrl.push('SeekjobmesPage',{item:item});

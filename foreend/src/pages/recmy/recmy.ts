@@ -33,25 +33,30 @@ export class RecmyPage {
 
   items = ["发布职位信息","我发布的","清除缓存"];
   user = {img:"assets/imgs/class3.png",username:"a",name:"Luan",num:"13145878888",job:"人事经理",age:"25岁",email:"123@163.com",password:"123456"};
-  
+  //个人信息设置
   set(){
     this.navCtrl.push('RecsetPage',{user:this.user});
   }
+  //收到的简历
   gorecmyseeker(){
     this.navCtrl.push('RecmyseekerPage');
   }
+  //发布职位信息
   gorecmypub(){
     this.navCtrl.push('RecmypubPage');
   }
+  //我发布的
   gorecmyallpub(){
     this.navCtrl.push('RecmyallpubPage');
   }
   remove(){
 
   }
+  //用户反馈
   gorecuserque(){
     this.navCtrl.push('RecuserquePage');
   }
+  //退出登录
   leave(){
     this.app.getRootNavs()[0].setRoot(RecloginPage);
     localStorage.removeItem('login');
