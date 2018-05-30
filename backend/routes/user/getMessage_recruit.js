@@ -10,7 +10,7 @@ var getImg_recruit = require('../../method/Ruser').getImg_recruit;
 var getArticle = require('../../method/admin').getArticle;
 var getRelation = require('../../method/Ruser').getRelation;
 var getResume = require('../../method/Ruser').getResume;
-var getCollect_recruit = require('../../method/Ruser').getCollect_recruit;
+var getCollect_seeker = require('../../method/Ruser').getCollect_seeker;
 var getCollect_msg = require('../../method/Ruser').getCollect_msg;
 var Search = require('../../method/Ruser').Search;
  
@@ -221,13 +221,14 @@ router.get('/getResume',function(req,res){
 router.get('/getCollect',function(req,res){
   res.header("Access-Control-Allow-Origin", "*");
   var r_username = req.query.r_username;
+  console.log(r_username);
   var finaldata=[];
 
-  getCollect_recruit(r_username).then(function(data){
+  getCollect_seeker(r_username).then(function(data){
 
       for(var i =0;i<data.length;i++){
         !function(i){
-          getCollect_msg(data[i].s_username).then(function(result){
+          getCollect_msg(data[i].s_id).then(function(result){
           
             if(result){
               finaldata.push(result[0]);
@@ -237,6 +238,7 @@ router.get('/getCollect',function(req,res){
             }
             if(i==data.length-1){
               res.send(finaldata);
+              console.log(finaldata);
               console.log('获取收藏成功');
             }
           })
@@ -244,8 +246,9 @@ router.get('/getCollect',function(req,res){
       }
 
     }).catch(function(err){
-    res.send('2');
-    console.log(err);
+
+      res.send('2');
+      console.log(err);
   })
 })
 

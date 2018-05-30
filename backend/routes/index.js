@@ -22,6 +22,7 @@ module.exports = function (app) {
     app.use('/admin/msg',require('./admin/msg'));
     app.use('/admin/users',require('./admin/users'));
     app.use('/admin/detail',require('./admin/detail'));
+    app.use('/admin/search',require('./admin/search'));
 
 
     app.use('/user/admin-seeker',require('./user/admin-seeker'));

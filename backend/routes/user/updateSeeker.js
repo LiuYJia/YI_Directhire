@@ -87,12 +87,12 @@ router.post('/Collect_seeker',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
-    var r_username,s_username,data = req.body;
+    var r_id,s_username,data = req.body;
     for(key in data){
-        r_username = JSON.parse(key).r_username;
+        r_id = JSON.parse(key).r_id;
         s_username = JSON.parse(key).s_username;
     }
-    Collect_seeker(s_username,r_username).then(function(data){
+    Collect_seeker(s_username,r_id).then(function(data){
         if(data != 0){
             res.send('1');
             console.log('收藏成功');
@@ -109,12 +109,12 @@ router.post('/delCollect',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
-    var r_username,data = req.body;
+    var r_id,data = req.body;
     for(key in data){
-        r_username = JSON.parse(key).r_username;
+        r_id = JSON.parse(key).r_id;
     }
 
-    delCollect(r_username).then(function(data){
+    delCollect(r_id).then(function(data){
         if(data != 0){
             res.send('1');
             console.log('取消成功');
@@ -171,7 +171,7 @@ router.post('/UpdateImg',function(req,res){
 
         var newName = Math.random() + '.' + extName;
         var newPath = form.uploadDir + newName;
-        var savePath = '/imgRecruit/'+ newName;
+        var savePath = '/imgSeeker/'+ newName;
         fs.renameSync(files.img_recruit.path, newPath);
 
         UpdateImg(username,savePath).then(function(data){

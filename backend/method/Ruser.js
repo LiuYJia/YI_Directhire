@@ -250,11 +250,11 @@ module.exports = {
         })
     },
     //收藏
-    Collect_recruit:function Collect_recruit(r_username,s_username){
+    Collect_recruit:function Collect_recruit(r_username,s_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var Collect_recruit_sql = 'insert into collect_recruit(r_username,s_username) values(?,?)';
-                connection.query(Collect_recruit_sql,[r_username,s_username],function(err,result){
+                var Collect_recruit_sql = 'insert into collect_recruit(r_username,s_id) values(?,?)';
+                connection.query(Collect_recruit_sql,[r_username,s_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
@@ -270,6 +270,7 @@ module.exports = {
     getCollect_seeker:function getCollect_seeker(r_username){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
+                console.log('11111111');
                 var getCollect_seeker_sql = 'select * from collect_recruit where r_username = ?';
                 connection.query(getCollect_seeker_sql,[r_username],function(err,result){
                     if(err){
@@ -277,22 +278,24 @@ module.exports = {
                         reject(err);
                     }else{
                         resolve(result);
+                        console.log(result);
                     }
                     connection.release();
                 })
             })
         })
     },
-    getCollect_msg:function getCollect_msg(s_username){
+    getCollect_msg:function getCollect_msg(s_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var getCollect_msg_sql = 'select * from msg_seeker where username = ?';
-                connection.query(getCollect_msg_sql,[s_username],function(err,result){
+                var getCollect_msg_sql = 'select * from msg_seeker where id = ?';
+                connection.query(getCollect_msg_sql,[s_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
                     }else{
                         resolve(result);
+                        // console.log(result);
                     }
                     connection.release();
                 })
@@ -300,11 +303,11 @@ module.exports = {
         })
     },
     //取消收藏
-    delCollect:function delCollect(s_username){
+    delCollect:function delCollect(s_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var delCollect_sql = 'delete from collect_recruit where s_username =?';
-                connection.query(delCollect_sql,[s_username],function(err,result){
+                var delCollect_sql = 'delete from collect_recruit where s_id =?';
+                connection.query(delCollect_sql,[s_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);

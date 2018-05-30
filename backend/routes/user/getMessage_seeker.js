@@ -103,7 +103,7 @@ router.get('/getCollect',function(req,res){
 
       for(var i =0;i<data.length;i++){
         !function(i){
-          getCollect_msg(data[i].r_username).then(function(result){
+          getCollect_msg(data[i].r_id).then(function(result){
           
             if(result){
               finaldata.push(result[0]);
@@ -124,6 +124,8 @@ router.get('/getCollect',function(req,res){
     console.log(err);
   })
 })
+
+//搜索
 router.get('/search',function(req,res){
   res.header("Access-Control-Allow-Origin", "*");
 

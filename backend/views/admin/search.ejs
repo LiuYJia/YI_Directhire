@@ -1,0 +1,25 @@
+<div class="container">
+    <h2><%= title %></h2><br>
+
+
+    <form class="form-horizontal" id="search-form" style="width: 30%;margin: 0 auto" method="POST" action="/admin/all/searchdata">
+
+        
+        <div class="radio">
+            <label for="">请选择搜索范围：</label>
+            <label>
+                <input type="radio" name="radio" id="seeker" value="option1" checked>
+                求职人员
+            </label>
+            <label>
+                <input type="radio" name="radio" id="recruit" value="option2">
+                招聘人员
+            </label>
+        </div><br>
+
+        <input type="text" class="input-lg form-control" placeholder="请输入职业或用户名" name="txt" id="txt"><br>
+
+        <button class="btn btn-success" type="button" onclick="if(true){document.getElementById('search-form').submit();}">搜索</button>
+
+    </form>
+</div>

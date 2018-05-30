@@ -16,7 +16,46 @@ var addArticle = require('../../method/admin').addArticle;
 var updateArticle = require('../../method/admin').updateArticle;
 var delArticle = require('../../method/admin').delArticle;
 var msgArticle = require('../../method/admin').msgArticle;
+var SearchS = require('../../method/Ruser').Search;
+var SearchR = require('../../method/Suser').Search;
 
+router.post('/searchdata',function(req,res){
+    var range = req.body.radio;
+    var data = req.body.txt;
+    var name =  req.session.username;
+    console.log(range,data);
+    if(range=='option1'){
+        SearchS(data).then(function(data){
+            // console.log(data[0].id);
+            if(data){
+                res.render('index',{
+                    title:'搜索结果',
+                    page:'searchdata',
+                    item:data,
+                    username:name
+                })
+            }
+        }).catch(function(err){
+            console.log(err);
+        });
+
+    }else{
+        SearchR(data).then(function(data){
+            // console.log(data[0].id);
+            if(data){
+                res.render('index',{
+                    title:'搜索结果',
+                    page:'searchdata',
+                    item:data,
+                    username:name
+                })
+            }
+        }).catch(function(err){
+            console.log(err);
+        });
+
+    }
+})
 
 
 //编辑管理员页面

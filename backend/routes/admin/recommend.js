@@ -5,8 +5,7 @@ var getArticle = require('../../method/admin').getArticle;
 router.get('/',function(req,res){
     var u_no =  req.session.username,data;
     getArticle().then(function(result){
-        if(result){ 
-            // console.log(JSON.stringify(result));         
+        if(result){       
             console.log(result);
             res.render('index',{
                 title:'文章推荐',

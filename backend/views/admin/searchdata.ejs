@@ -1,0 +1,50 @@
+
+<div class="container">
+    <h2><%= title %></h2>
+
+    <table class="table  table-hover table-condensed usertable ">
+        <thead>
+            <tr>
+                <th>头像</th>
+                <th>类别</th>
+                <th>用户名</th>
+                <th>商家</th>
+                <th>岗位</th>
+                <th>人数</th>
+                <th>年龄</th>
+                <th>工资</th>                        
+                <th>学历</th>
+                <th>联系方式</th>
+                <th>要求</th>
+                <th>权限</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% item.forEach(function(item){ %>
+                <tr>
+                    <td><img src="<%= item.img %>" alt="headimg" style="height: 35px;width: 35px"></td>
+                    <td><%= item.sort %></td>
+                    <td style="color: red"><%= item.username %></td>
+                    <td><%= item.name %></td>
+                    <td style="color: red"><%= item.job %></td>
+                    <td><%= item.num %></td>
+                    <td><%= item.age %></td>
+                    <td><%= item.money %></td>
+                    <td><%= item.school %></td>
+                    <td><%= item.tel %></td>
+                    <td><%= item.detail %></td>
+                    <td>
+                        <form action="/admin/all/delMsg_recruit" id="<%= item.id %>" method="post">
+                            <input type="hidden" name="d_msg_r" value="<%= item.id %>">
+                        </form>
+                        <button class="btn btn-danger btn-sm"  onclick="if(confirm('你确定将用户<%= item.usernam %>发布彻底删除吗？')){
+                            document.getElementById('<%= item.id %>').submit();
+                            event.preventDefault(); }">删除     
+                        </button>
+                    </td>
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+</div>

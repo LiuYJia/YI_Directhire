@@ -71,6 +71,14 @@
                       <% include ./admin/updatearticle %>
                     <% } %>
 
+                    <% if (locals.page == 'search') { %>
+                      <% include ./admin/search %>
+                    <% } %>
+
+                    <% if (locals.page == 'searchdata') { %>
+                      <% include ./admin/searchdata %>
+                    <% } %>
+
 
                   
                 </div>

@@ -214,12 +214,12 @@ router.post('/Collect_recruit',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
-    var r_username,s_username,data = req.body;
+    var r_username,s_id,data = req.body;
     for(key in data){
         r_username = JSON.parse(key).r_username;
-        s_username = JSON.parse(key).s_username;
+        s_id = JSON.parse(key).s_id;
     }
-    Collect_recruit(r_username,s_username).then(function(data){
+    Collect_recruit(r_username,s_id).then(function(data){
         if(data != 0){
             res.send('1');
             console.log('收藏成功');
@@ -236,12 +236,12 @@ router.post('/delCollect',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
-    var s_username,data = req.body;
+    var s_id,data = req.body;
     for(key in data){
-        s_username = JSON.parse(key).s_username;
+        s_id = JSON.parse(key).s_username;
     }
 
-    delCollect(s_username).then(function(data){
+    delCollect(s_id).then(function(data){
         if(data != 0){
             res.send('1');
             console.log('取消成功');

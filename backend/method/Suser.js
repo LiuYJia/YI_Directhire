@@ -175,11 +175,11 @@ module.exports = {
         })
     },
     //收藏
-    Collect_seeker:function Collect_seeker(s_username,r_username){
+    Collect_seeker:function Collect_seeker(s_username,r_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var Collect_seeker_sql = 'insert into collect_seeker(s_username,r_username) values(?,?)';
-                connection.query(Collect_seeker_sql,[s_username,r_username],function(err,result){
+                var Collect_seeker_sql = 'insert into collect_seeker(s_username,r_id) values(?,?)';
+                connection.query(Collect_seeker_sql,[s_username,r_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
@@ -208,11 +208,11 @@ module.exports = {
             })
         })
     },
-    getCollect_msg:function getCollect_msg(r_username){
+    getCollect_msg:function getCollect_msg(r_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var getCollect_msg_sql = 'select * from msg_recruit where username = ?';
-                connection.query(getCollect_msg_sql,[r_username],function(err,result){
+                var getCollect_msg_sql = 'select * from msg_recruit where id = ?';
+                connection.query(getCollect_msg_sql,[r_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
@@ -225,11 +225,11 @@ module.exports = {
         })
     },
     //取消收藏
-    delCollect:function delCollect(r_username){
+    delCollect:function delCollect(r_id){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var delCollect_sql = 'delete from collect_seeker where r_username =?';
-                connection.query(delCollect_sql,[r_username],function(err,result){
+                var delCollect_sql = 'delete from collect_seeker where r_id =?';
+                connection.query(delCollect_sql,[r_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
@@ -245,7 +245,7 @@ module.exports = {
     Search:function Search(keyword){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var Search_sql = "select * from msg_reruit where username like '%"+keyword+"%' or job like'%"+keyword+"%'";
+                var Search_sql = "select * from msg_recruit where username like '%"+keyword+"%' or job like'%"+keyword+"%'";
                 connection.query(Search_sql,function(err,result){
                     if(err){
                         console.log(err);
