@@ -41,6 +41,10 @@ export class RecmyPage {
   gorecmyseeker(){
     this.navCtrl.push('RecmyseekerPage');
   }
+  //我的收藏
+  gorecmystore(){
+    this.navCtrl.push('RecmystorePage');
+  }
   //发布职位信息
   gorecmypub(){
     this.navCtrl.push('RecmypubPage');

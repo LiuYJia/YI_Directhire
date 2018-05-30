@@ -34,7 +34,7 @@ export class SeekmygrabPage {
   }
   //删除弹出框
   del1() {
-    this.navCtrl.push('RecmyallpubPage');
+    this.navCtrl.push('SeekmygrabPage');
    } 
    del2() {
      let alert = this.alertCtrl.create({

@@ -6,32 +6,29 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title style="text-align:center;">
-     消息
-    </ion-title>
+    <ion-title text-center>消息</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content id="body">
-<ion-searchbar placeholder="搜索"></ion-searchbar>
-<ion-list>
-  <ion-item *ngFor='let item of list;'  (click)="goto(item)">
-    <ion-avatar item-start>
-        <img src="{{item.icon}}">
-    </ion-avatar>
-    <h2>{{item.title}}<span style="float:right">{{item.time}}</span></h2>
-    <p>{{item.ig}}</p>
+    <ion-searchbar placeholder="搜索"></ion-searchbar>
+    <!-- 消息列表 -->
+    <ion-list>
+      <ion-item *ngFor='let item of list'  (click)="goto(item)">
+        <ion-avatar item-start>
+            <img src="{{item.icon}}">
+        </ion-avatar>
+        <h2>{{item.title}}<span style="float:right">{{item.time}}</span></h2>
+        <p>{{item.ig}}</p>
 
-  </ion-item>
-</ion-list>
- <hr>
-<h1>商家推送：</h1>
-
-<ion-list *ngFor='let item of info;let i = index;'>
-  <ion-item (click)="goto(item)">
-     
-    <h3>商家名称:{{item.title}}<span style="float:right">{{item.time}}</span></h3>
-    <p>{{item.info}}</p>
-  </ion-item>
-</ion-list>
+      </ion-item>
+    </ion-list>
+    <!-- 文章推荐 -->
+    <ion-list>
+      <ion-list-header class="head">时文推荐</ion-list-header>
+      <ion-item (click)="goto(item)"  *ngFor='let item of info' class="info"> 
+        <ion-item><h3>{{item.sort}}：<span >{{item.title}}</span></h3></ion-item>
+        <ion-item><p>{{item.content}}</p></ion-item>         
+      </ion-item>
+    </ion-list>
 </ion-content>

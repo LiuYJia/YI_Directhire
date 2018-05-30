@@ -12,7 +12,28 @@
 
 
 <ion-content id="body">
-    <div padding>
+    <ion-list>
+        <ion-item *ngFor="let item of info;let i = index" class="spe">
+    
+            <ion-item (click)="gojobmes(item)">
+                <ion-avatar item-start>
+                  <img src="assets/imgs/class1.png">
+                </ion-avatar>
+                <h2>{{item.job}}</h2>
+                <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                  <i class="iconfont">&#xe522;</i>{{item.num}}
+                </h3>
+                <p>{{item.name}}</p>
+                <p id="money" item-end><i style="font-style:normal">薪资:</i>{{item.money}}</p>
+              </ion-item>
+              <ion-item>
+                  <p><i style="font-style:normal">薪资:</i><i id="money">{{item.money}}</i></p>
+                  <button id="but" color="danger"  ion-button item-end (click)="del(item,i)">取消收藏</button>
+              </ion-item>
+    
+        </ion-item>
+    </ion-list>
+    <!-- <div padding>
         <ion-segment [(ngModel)]="store">
           <ion-segment-button value="daily">
             一般职位
@@ -43,5 +64,5 @@
           </ion-item>
           ...
         </ion-list>
-      </div>
+      </div> -->
 </ion-content>

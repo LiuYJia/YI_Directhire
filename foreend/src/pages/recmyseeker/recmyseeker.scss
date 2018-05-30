@@ -21,7 +21,7 @@ page-recmyseeker {
         font-style: normal;
         margin-left:10px;
         font-size: 18px;
-        color: #1990ef;
+        color: red;
     }
     #position{
         font-style: normal;
@@ -34,10 +34,16 @@ page-recmyseeker {
         border-bottom: 0.55px solid #c8c7cc;
     }
     //去掉列表项下划线
-    .list-ios > .item-block .item-inner{
-        border: none;
-    }
+    // .list-ios > .item-block .item-inner{
+    //     border: none;
+    // }
     .list-ios > .item-block:last-child .item-inner{
         border: none;
+    }
+    #but{
+        float: right;
+        width:100px;
+        height:30px;
+        display: inline;
     }
 }

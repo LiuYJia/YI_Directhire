@@ -18,7 +18,7 @@ import { Headers } from '@angular/http';
 })
 export class SeekjobmesPage {
 
-  all = [];job;school;num;name;money;age;detail;tel;username;
+  all = [];job;school;num;name;money;age;detail;tel;username;id;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public http:Http,
@@ -33,6 +33,7 @@ export class SeekjobmesPage {
     this.detail = navParams.get("item").detail;
     this.tel = navParams.get("item").tel;
     this.username = navParams.get("item").username;
+    this.id = navParams.get('item').id;
   }
 
   ionViewDidLoad() {
@@ -56,12 +57,38 @@ export class SeekjobmesPage {
 //投递简历
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   sub(){
-    this.http.post('http://127.0.0.1:3000/user/updateSeeker/SendResume',JSON.stringify({s_username:localStorage.getItem("login"),r_username:this.username}),{headers:this.headers}).subscribe(data=>{
-      console.log(data);
+    this.http.post('http://127.0.0.1:3000/user/updateSeeker/SendResume',JSON.stringify({
+      s_username:localStorage.getItem("login"),r_username:this.username}),{headers:this.headers}).subscribe(data=>{
       if(data['_body']==1) this.showAlert1();
       if(data['_body']==2) this.showAlert2();
     });
   }
-  star(){}
+  showAlert3() {
+    let alert = this.alertCtrl.create({
+      subTitle: '收藏成功！',
+      buttons: ['确定']
+    });
+   alert.present();
+  } 
+  showAlert4() {
+    let alert = this.alertCtrl.create({
+      subTitle: '收藏失败！',
+      buttons: ['确定']
+    });
+   alert.present();
+  }
+  //收藏职位
+  f=false;
+  star(){
+    console.log(this.id);
+    this.f = true;
+    this.http.post('http://127.0.0.1:3000/user/updateSeeker/Collect_seeker',JSON.stringify({
+      s_username:localStorage.getItem("login"),r_id:this.id}),{headers:this.headers}).subscribe(data=>{
+      console.log(data);
+      if(data['_body']==1) this.showAlert3();
+      if(data['_body']==2) this.showAlert4();
+    })
+  }
+  
 
 }

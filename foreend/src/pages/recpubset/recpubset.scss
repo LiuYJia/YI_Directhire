@@ -2,26 +2,6 @@ page-recpubset {
     #body{
         background-color: #f2f2f2;
     }
-    #reg{
-        text-align: center;
-        color: white;
-        font-size: 18px;
-        background-color: #1990ef;
-        height:6%;
-        width:100%;
-        position: fixed;
-    }
-    #reg p{
-        margin-top:2%;
-    }
-    #back{
-        float:left;
-        margin-left:5%;
-        margin-top:2%;
-    }
-    #list{
-        margin-top:10%;
-    }
     input{
         margin-left:20%; 
         border:none;
@@ -40,7 +20,7 @@ page-recpubset {
         border:1px solid #aaa;
     }
     .but{
-        width:35%;
+        width:80%;
         margin-left: 10%;
         //background-color: #1990ef;
         margin-top:50px;

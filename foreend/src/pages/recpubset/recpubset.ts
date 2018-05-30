@@ -53,11 +53,6 @@ export class RecpubsetPage {
       this.detail = message.detail;
     })
   }
-  //返回
-  back(){
-    this.navCtrl.push('RecmyallpubPage');
-    console.log("back");
-  }
   //提交弹出框
   showAlert1() {
     let alert = this.alertCtrl.create({
@@ -83,30 +78,30 @@ export class RecpubsetPage {
       if(data['_body']==2) this.showAlert2();
     });
   }
-  //删除弹出框
-  del1() {
-   this.navCtrl.push("RecmyallpubPage");
-  } 
-  del2() {
-    let alert = this.alertCtrl.create({
-      subTitle: '删除失败！',
-      buttons: ['确定']
-    });
-   alert.present();
-  }
-  showConfirm(data) {
-    let confirm = this.alertCtrl.create({
-      title: '确认删除本职位信息?',
-      buttons: [{text: '取消',handler: () => {console.log('Disagree clicked');}},
-        {text: '确认', handler: () => {if(data['_body']==1) this.del1();
-           if(data['_body']==2) this.del2();}}]
-    });
-    confirm.present();
-  }
-  //删除
-  delete(){
-    this.http.post('http://127.0.0.1:3000/user/updateRecruit/delmsg',JSON.stringify({id:this.id}),{headers:this.headers}).subscribe(data=>{
-      this.showConfirm(data);
-    });
-  }
+  // //删除弹出框
+  // del1() {
+  //  this.navCtrl.push("RecmyallpubPage");
+  // } 
+  // del2() {
+  //   let alert = this.alertCtrl.create({
+  //     subTitle: '删除失败！',
+  //     buttons: ['确定']
+  //   });
+  //  alert.present();
+  // }
+  // showConfirm(data) {
+  //   let confirm = this.alertCtrl.create({
+  //     title: '确认删除本职位信息?',
+  //     buttons: [{text: '取消',handler: () => {console.log('Disagree clicked');}},
+  //       {text: '确认', handler: () => {if(data['_body']==1) this.del1();
+  //          if(data['_body']==2) this.del2();}}]
+  //   });
+  //   confirm.present();
+  // }
+  // //删除
+  // delete(){
+  //   this.http.post('http://127.0.0.1:3000/user/updateRecruit/delmsg',JSON.stringify({id:this.id}),{headers:this.headers}).subscribe(data=>{
+  //     this.showConfirm(data);
+  //   });
+  // }
 }

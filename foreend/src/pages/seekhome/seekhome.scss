@@ -6,11 +6,30 @@ page-seekhome {
         margin-left:4px;
     }
     #slides{
-        height:30%;
+        height:40%;
     }
     .slide img{
         margin-left:0;
         margin-top:0px;
+    }
+    //搜索
+    #search{
+        height:35px;
+        border:1px solid #f2f2f2;
+        width:80%; 
+        padding-left:15px;   
+    }
+    #searchbut{
+        height:30px;
+        display: inline;
+        width:15%;
+        float: right;
+        position: relative;
+        margin-top:-10%;
+        margin-right:3%;
+    }
+    .head{
+        font-size:1.3em;
     }
     .col{
         width:25%;

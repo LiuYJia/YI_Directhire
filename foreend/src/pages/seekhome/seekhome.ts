@@ -1,3 +1,4 @@
+///<reference path="../../services/jquery.d.ts"/> 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
@@ -28,8 +29,7 @@ export class SeekhomePage {
   {img:"assets/imgs/class6.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
-  items = [];slide=[];slide1;slide2;slide3;
-  //class1=[{job:'前端开发工程师',money:'5k',school:'本科',age:'不限',num:'10人',name:"百度",detail:'具有一定的工作经验'}];
+  items = [];slide=[];slide1;slide2;slide3;searchInfo;
   class1=[];
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekhomePage');
@@ -53,7 +53,7 @@ export class SeekhomePage {
       }
       for(let i=0;i<4;i++){
         this.class0[i].name =message[i+4].name;
-      }
+      }//加载时获取第一类分类信息
       this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+message[0].name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
         console.log(message);
@@ -63,7 +63,27 @@ export class SeekhomePage {
       })
     })   
   }
+  //搜索
+  search(){
+    console.log(this.searchInfo);
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/search?&keyword='+this.searchInfo).subscribe(data=>{
+      console.log(data);
+      var message = JSON.parse(data['_body']);
+      this.class1 = [];
+      this.items = [];
+      for(var i=0;i<message.length;i++){
+        this.class1[i] = message[i];
+      }
+    })
+  }
+  //点击获取不同分类
   sort(item){
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getsort').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      for(let i=0;i<8;i++){
+        this.items[i] = message[i].name;
+      }
+    }) 
     this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getRecruit?&sort='+item.name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
         console.log(message);

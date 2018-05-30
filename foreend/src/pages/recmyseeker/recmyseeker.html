@@ -43,20 +43,24 @@
             <p><i>期望薪资:</i><i id="money">5k</i></p>
             <p><i style="margin-left:5px">期望职位:</i><i id="position">job</i></p>
             <p item-end>15-5-21</p>
-        </ion-item> -->
-
-        <ion-item style="margin-top:3px" *ngFor="let item of items" (click)="goSeekmymes(item)">
-            <ion-avatar item-start>
-              <img src="assets/imgs/class2.png">
-            </ion-avatar>
-            <h2>{{item.name}}</h2>
-            <h3><i class="iconfont">&#xe624;</i>{{item.school}}
-              <i class="iconfont">&#xe522;</i>{{item.age}}
-              <i class="iconfont">&#xe62b;</i>{{item.sex}}
-            </h3>
-            <p><i>期望薪资:</i><i id="money">{{item.money}}</i></p>
-            <p><i style="margin-left:5px">期望职位:</i><i id="position">{{item.job}}</i></p>
-            <p item-end>15-5-21</p>
+        </ion-item> -->    
+        <ion-item *ngFor="let item of items" class="spe">
+            <ion-item  (click)="seeker(item)">
+              <ion-avatar item-start>
+                <img src="assets/imgs/class1.png">
+              </ion-avatar>
+              <h2>{{item.name}}</h2>
+              <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                <i class="iconfont">&#xe522;</i>{{item.age}}
+                <i class="iconfont">&#xe62b;</i>{{item.sex}}
+              </h3>
+              <p>{{item.mes}}</p>
+            </ion-item>
+            <ion-item>
+                <p><i style="font-style:normal">期望薪资:</i><i id="money">{{item.money}}</i></p><br>
+                <p><i style="font-style:normal">期望职位:</i><i id="position">{{item.job}}</i></p>
+                <button id="but" color="danger"  ion-button item-end (click)="del(item,i)">删除此简历</button>
+            </ion-item>
         </ion-item>
     </ion-list>
 </ion-content>

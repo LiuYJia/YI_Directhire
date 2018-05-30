@@ -37,7 +37,7 @@
       </ion-list>
     
       <div id="bottom">
-        <button ion-button color="primary">联系商家</button>
+        <button ion-button color="primary" (click)="chat()">联系商家</button>
         <ion-icon ios="ios-star-outline" md="md-star-outline" (click)="store()" [ngClass]="{true:'star1',false:'star2'}[false]"></ion-icon>
       </div>
     </ion-content>

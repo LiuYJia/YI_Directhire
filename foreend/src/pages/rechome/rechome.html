@@ -4,7 +4,8 @@
     <ion-title text-center>首页</ion-title>
   </ion-navbar>
   <ion-toolbar>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-searchbar [(ngModel)]="searchInfo" id="search" placeholder="请输入职位名称或用户名"></ion-searchbar>
+      <button ion-button id="searchbut" color="primary" (click)="search()">搜索</button>
   </ion-toolbar>
 </ion-header>
 
@@ -38,7 +39,7 @@
     
     <div [ngSwitch]="row1">
       <ion-list *ngSwitchCase="'class1'">
-          <ion-list-header>{{items[0]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[0]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
               <ion-item>
                 <ion-avatar item-start>
@@ -59,7 +60,7 @@
       </ion-list>
     
       <ion-list *ngSwitchCase="'class2'">
-          <ion-list-header>{{items[1]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[1]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -80,7 +81,7 @@
       </ion-list>
 
       <ion-list *ngSwitchCase="'class3'">
-          <ion-list-header>{{items[2]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[2]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -100,7 +101,7 @@
         </ion-item>
       </ion-list>
       <ion-list *ngSwitchCase="'class4'">
-          <ion-list-header>{{items[3]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[3]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -120,7 +121,7 @@
         </ion-item>
       </ion-list>
       <ion-list *ngSwitchCase="'class5'">
-          <ion-list-header>{{items[4]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[4]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -141,7 +142,7 @@
       </ion-list>
     
       <ion-list *ngSwitchCase="'class6'">
-          <ion-list-header>{{items[5]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[5]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -162,7 +163,7 @@
       </ion-list>
 
       <ion-list *ngSwitchCase="'class7'">
-          <ion-list-header>{{items[6]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[6]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>
@@ -183,7 +184,7 @@
       </ion-list>
 
       <ion-list *ngSwitchCase="'class8'">
-          <ion-list-header>{{items[7]}}</ion-list-header>       
+          <ion-list-header class="head">{{items[7]}}</ion-list-header>       
           <ion-item *ngFor="let item of class1" class="spe" (click)="seeker(item)">
             <ion-item>
               <ion-avatar item-start>

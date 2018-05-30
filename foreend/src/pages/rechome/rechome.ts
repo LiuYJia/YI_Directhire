@@ -28,7 +28,7 @@ export class RechomePage {
   {img:"assets/imgs/class6.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"",val:"class8"}];
-  items = [];class1=[];slide=[];slide1;slide2;slide3;
+  items = [];class1=[];slide=[];slide1;slide2;slide3;searchInfo;
   ionViewDidLoad() {
     console.log('ionViewDidLoad RechomePage');
     //获取轮播图
@@ -62,8 +62,27 @@ export class RechomePage {
       })
     })   
   }
+   //搜索
+   search(){
+    console.log(this.searchInfo);
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/search?&keyword='+this.searchInfo).subscribe(data=>{
+      console.log(data);
+      var message = JSON.parse(data['_body']);
+      this.class1 = [];
+      this.items = [];
+      for(var i=0;i<message.length;i++){
+        this.class1[i] = message[i];
+      }
+    })
+  }
   //获取各个分类项
   sort(item){
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      for(let i=0;i<8;i++){
+        this.items[i] = message[i].name;
+      }
+    }) 
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+item.name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
         console.log(message);

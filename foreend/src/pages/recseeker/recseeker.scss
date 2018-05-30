@@ -24,4 +24,30 @@ page-recseeker {
         display:inline;
         margin-left:10px
     }
+    //底部样式
+    #bottom{ 
+        background-color:gainsboro;
+        height:53px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    #bottom button{
+        width: 60%;
+        margin-left:10%;
+    }
+    .star1{
+        color: #1990ef;
+        font-size: 3em;
+        margin-left:8%;
+        margin-top:1.5%;
+        position: fixed;
+    }
+    .star2{
+        color: black;
+        font-size: 3em;
+        margin-left:8%;
+        margin-top:1.5%;
+        position: fixed;
+    }
 }
