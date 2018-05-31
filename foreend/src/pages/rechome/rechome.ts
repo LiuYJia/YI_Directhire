@@ -56,8 +56,10 @@ export class RechomePage {
       //获取默认分类项
       this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getpeople?&sort='+message[0].name).subscribe(data=>{
         var message = JSON.parse(data['_body']);
+        console.log(message);
         for(var i=0;i<message.length;i++){
           this.class1[i] = message[i];
+          this.class1[i].img = 'http://127.0.0.1:3000'+this.class1[i].img;
         }
       })
     })   
@@ -89,6 +91,7 @@ export class RechomePage {
         this.class1 = [];
         for(var i=0;i<message.length;i++){
           this.class1[i] = message[i];
+          this.class1[i].img = 'http://127.0.0.1:3000'+this.class1[i].img;
         }
     })
   }

@@ -13,6 +13,23 @@ var getResume = require('../../method/Ruser').getResume;
 var getCollect_seeker = require('../../method/Ruser').getCollect_seeker;
 var getCollect_msg = require('../../method/Ruser').getCollect_msg;
 var Search = require('../../method/Ruser').Search;
+var detailR = require('../../method/Ruser').detailR;
+
+router.get('/detailR',function(req,res){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  var username = req.query.username;
+  console.log(username);
+  detailR(username).then(function(data){
+    if(data){
+      res.send(data);
+      console.log('获取成功');
+    }
+  }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  })
+})
+
  
 router.get('/',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");

@@ -20,4 +20,13 @@ page-recset {
         background-color: #1990ef;
         margin-top:50px;
     }
+    #photo{
+        z-index: 5;
+        margin-left:0px;
+    }
+    #un{
+        z-index: 10;
+        width:1px;
+        float: right;
+    }
 }

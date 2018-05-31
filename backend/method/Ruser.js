@@ -335,7 +335,26 @@ module.exports = {
                 })
             })
         })
-    }
+    },
+    //招聘者详情
+    detailR:function detailR(username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var detailR_sql = "select * from msg_recruit where username =?";
+                connection.query(detailR_sql,username,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+
+
 
 
 

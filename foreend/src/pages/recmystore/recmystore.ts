@@ -26,12 +26,12 @@ export class RecmystorePage {
     console.log('ionViewDidLoad RecmystorePage');
     //获取我的收藏列表
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getCollect?r_username='+localStorage.getItem("login")).subscribe(data=>{
-      // var message = JSON.parse(data['_body']);
-      // console.log(message[0]);
-      // for(var i=0;i<message.length;i++){
-      //   this.items[i] = message[i];
-      // }
-      console.log(data);
+      var message = JSON.parse(data['_body']);
+      console.log(message[0]);
+      for(var i=0;i<message.length;i++){
+        this.items[i] = message[i];
+        this.items[i].img ='http://127.0.0.1:3000'+this.items[i].img;
+      }
     })
   }
 

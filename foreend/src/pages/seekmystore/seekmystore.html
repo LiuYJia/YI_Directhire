@@ -17,17 +17,17 @@
     
             <ion-item (click)="gojobmes(item)">
                 <ion-avatar item-start>
-                  <img src="assets/imgs/class1.png">
+                  <img src="{{item.img}}">
                 </ion-avatar>
                 <h2>{{item.job}}</h2>
                 <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
                   <i class="iconfont">&#xe522;</i>{{item.num}}
                 </h3>
-                <p>{{item.name}}</p>
+                <!-- <p>地点：{{item.name}}</p> -->
                 <p id="money" item-end><i style="font-style:normal">薪资:</i>{{item.money}}</p>
               </ion-item>
               <ion-item>
-                  <p><i style="font-style:normal">薪资:</i><i id="money">{{item.money}}</i></p>
+                  <p><i style="font-style:normal">地点:</i><i id="name">{{item.name}}</i></p>
                   <button id="but" color="danger"  ion-button item-end (click)="del(item,i)">取消收藏</button>
               </ion-item>
     

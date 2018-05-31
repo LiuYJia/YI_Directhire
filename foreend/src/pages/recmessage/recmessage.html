@@ -27,9 +27,13 @@
 
   <!-- 文章推荐 -->
   <ion-list>
-      <ion-list-header class="head">时文推荐</ion-list-header>
+      <ion-list-header id="head">时文推荐</ion-list-header>
       <ion-item (click)="goto(item)"  *ngFor='let item of info' class="info"> 
-        <ion-item><h3>{{item.sort}}：<span >{{item.title}}</span></h3></ion-item>
+        <ion-item>
+          <h3>{{item.sort}}：<span class="art">{{item.title}}</span></h3>
+          <h3>作者：<span class="art">{{item.author}}</span></h3>
+          <h3 item-end>{{item.date}}</h3>
+        </ion-item>
         <ion-item><p>{{item.content}}</p></ion-item>         
       </ion-item>
     </ion-list>

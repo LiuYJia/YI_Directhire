@@ -15,10 +15,10 @@ import { SeekmessagePage } from '../pages/seekmessage/seekmessage';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
-  //rootPage:any = RecloginPage;
+  //rootPage:any = TabsPage;
+  //rootPage:any = RectabsPage;
   //rootPage:any = LoginPage;
-  //rootPage:any = StartPage;
+  rootPage:any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

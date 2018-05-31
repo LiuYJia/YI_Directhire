@@ -34,6 +34,11 @@ export class SeekmessagePage {
   {title:'雷军',icon:'assets/imgs/20.jpg',ig:'买家不是职业采购，买家的判断来源于生活经验，而不是工程师学历。',time:'12:41'},
   {title:'刘强东',icon:'assets/imgs/21.jpg',ig:'页面漂亮的目的不是让买家爽心悦目，是为了让消费者信任你。',time:'13:01'},
   {title:'张朝阳',icon:'assets/imgs/22.jpg',ig:'每一单都要咨询客服才能成交，你得多失败啊。',time:'18:35'}];
+  //进入聊天页面
+  goseekchat(item){
+    this.navCtrl.push('SeekchatPage',{all:item});
+  }
+  //进入文章详情页
   goto(item){
     this.navCtrl.push('SeekremessagePage',{all:item});
   }

@@ -34,6 +34,7 @@ export class RecmyseekerPage {
       console.log(message);
       for(var i=0;i<message.length;i++){
         this.items[i] = message[i];
+        this.items[i].img ='http://127.0.0.1:3000'+this.items[i].img;
       }
     });
   }
@@ -69,7 +70,7 @@ export class RecmyseekerPage {
     for(var i = 0;i < list.length; i++) { 
       !function(i){
           if(list[i] == item){  
-            serve.post('http://127.0.0.1:3000/user/getMessage_recruit/delResume',JSON.stringify({s_id:item.id}),{headers:header}).subscribe(data=>{
+            serve.post('http://127.0.0.1:3000/user/updateRecruit/delResume',JSON.stringify({s_username:item.username}),{headers:header}).subscribe(data=>{
               showConfirm(data,i);             
             });            
           } 

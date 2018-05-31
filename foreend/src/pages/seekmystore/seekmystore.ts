@@ -31,6 +31,7 @@ export class SeekmystorePage {
       console.log(message);
       for(var i=0;i<message.length;i++){
         this.info[i] = message[i];
+        this.info[i].img = 'http://127.0.0.1:3000'+this.info[i].img;
       }
     })
   }
@@ -39,30 +40,6 @@ export class SeekmystorePage {
     this.navCtrl.push('SeekjobmesPage',{item:item});
   }
   
-   //删除弹出框
-  //  del1() {
-  //   let alert = this.alertCtrl.create({
-  //     subTitle: '删除成功！',
-  //     buttons: ['确定']
-  //   });
-  //  alert.present();
-  //  } 
-  //  del2() {
-  //    let alert = this.alertCtrl.create({
-  //      subTitle: '删除失败！',
-  //      buttons: ['确定']
-  //    });
-  //   alert.present();
-  //  }
-  //  showConfirm(data) {
-  //    let confirm = this.alertCtrl.create({
-  //      title: '确认删除本职位信息?',
-  //      buttons: [{text: '取消',handler: () => {console.log('Disagree clicked');}},
-  //        {text: '确认', handler: () => {if(data['_body']==1) this.del1();
-  //           if(data['_body']==2) this.del2();}}]
-  //    });
-  //    confirm.present();
-  //  }
    //取消收藏
    headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
    del(item){

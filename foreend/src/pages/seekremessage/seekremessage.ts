@@ -15,12 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeekremessagePage {
   name;
-  img;content;
+  img;content;author;date;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     console.log(navParams.get('all'));
     this.name = navParams.get('all').title;
     this.img = navParams.get('all').icon;
     this.content = navParams.get('all').content;
+    this.author = navParams.get('all').author;
+    this.date = navParams.get('all').date;
   }
 
   ionViewDidLoad() {

@@ -21,6 +21,7 @@ export class RecmessagePage {
   info=[];
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecmessagePage');
+    //获取文章列表
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       console.log(message);

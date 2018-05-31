@@ -195,9 +195,11 @@ router.post('/delResume',function(req,res){
     res.header('Access-Control-Allow-Headers', 'content-type');
 
     var data = req.body,s_username;
+    console.log(data);
     for(key in data){
         s_username = JSON.parse(key).s_username;
     }
+    console.log(s_username);
     delResume(s_username).then(function(data){
         if(data != 0){
             res.send('1');
@@ -236,10 +238,13 @@ router.post('/delCollect',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
+    console.log(2222);
     var s_id,data = req.body;
+    console.log(data);
     for(key in data){
-        s_id = JSON.parse(key).s_username;
+        s_id = JSON.parse(key).s_id;
     }
+    console.log(s_id);
 
     delCollect(s_id).then(function(data){
         if(data != 0){

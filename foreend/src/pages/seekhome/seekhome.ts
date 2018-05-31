@@ -59,6 +59,7 @@ export class SeekhomePage {
         console.log(message);
         for(var i=0;i<message.length;i++){
           this.class1[i] = message[i];
+          this.class1[i].img = 'http://127.0.0.1:3000' +this.class1[i].img;
         }
       })
     })   
@@ -90,6 +91,7 @@ export class SeekhomePage {
         this.class1 = [];
         for(var i=0;i<message.length;i++){
           this.class1[i] = message[i];
+          this.class1[i].img = 'http://127.0.0.1:3000' +this.class1[i].img;
         }
     })
   }

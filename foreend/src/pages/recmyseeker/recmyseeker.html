@@ -47,7 +47,7 @@
         <ion-item *ngFor="let item of items" class="spe">
             <ion-item  (click)="seeker(item)">
               <ion-avatar item-start>
-                <img src="assets/imgs/class1.png">
+                <img src="{{item.img}}">
               </ion-avatar>
               <h2>{{item.name}}</h2>
               <h3><i class="iconfont">&#xe624;</i>{{item.school}} 

@@ -2,15 +2,15 @@ page-seeknear {
     #body{
         background-color: #f2f2f2;
     }
-    #map_container1{
-        width: 100%;
-        height:80%;
+    #title{
+        margin-left: 20px;
     }
     .spe{
         margin-top:8px;
     }
     #time{
-        color: gray;       
+        color: gray;
+        float: right;
     }
     #money{
         font-style: normal;
@@ -29,4 +29,5 @@ page-seeknear {
         height:30px;
         display: inline;
     }
+
 }

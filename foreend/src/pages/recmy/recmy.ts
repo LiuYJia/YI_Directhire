@@ -21,13 +21,15 @@ export class RecmyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public app:App,public http:Http) {
   }
 
-  username = '';
-  ionViewDidLoad() {
+  username = '';img;
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmyPage');
     console.log(localStorage.getItem("login"));
     this.username = localStorage.getItem("login");
-    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit?userName='+localStorage.getItem("login")).subscribe(data=>{
-      console.log(data);
+    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/detailR?username='+localStorage.getItem("login")).subscribe(data=>{
+      var message = JSON.parse(data["_body"]);
+      console.log(message);
+      this.img = 'http://127.0.0.1:3000'+message[0].img;
     });
   }
 

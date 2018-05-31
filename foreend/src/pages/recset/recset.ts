@@ -55,10 +55,7 @@ export class RecsetPage {
     });
    alert.present();
   }
-  back(){
-    this.navCtrl.pop();
-    console.log("back");
-  }
+//修改密码
   cgpwd(){
     this.navCtrl.push('ReccgpwdPage');
   }
@@ -79,48 +76,66 @@ export class RecsetPage {
     });
    alert.present();
   }
-  // submitImg(){
-  //     if(this.imgupload==undefined){
-  //       this.showAlert3();
-  //     }else{
-  //       var option = {
-  //           url:"http://127.0.0.1:3000/user/updateRecruit/Upload",
-  //           timeout:3000,
-  //           success:function(data){console.log(data)},
-  //           error:function(err){console.log(err)},
-  //           complete:function(XMLHttpRequest,status){
-  //             if(status=='timeout'){alert("服务器繁忙")}
-  //           },
-  //       }
-  //       $('#img-form').ajaxSubmit(option);
-  //       //$('#img-form').resetForm();
-  //       return false;
-  //     }
-  // }
-  upload(){
-    if(this.imgupload == undefined){
-      this.showAlert3();
-    }else{
-      var option={
-        url:"http://localhost:3000/user/updateRecruit/upload",  
-        timeout: 3000,   
-        success:function(data){
-          console.log(data);                            
-        },
-        error:function(err){
-          console.log(err);
-        },
-        complete:function(XMLHttpRequest,status){ 
-  　　　　if(status=='timeout'){
-  　　　　　  alert("服务器繁忙");
-  　　　　}
-  　　  },
-      }    
-      $('#img-form').ajaxSubmit(option);  
-      $('#img-form').resetForm();    
-      return false;
-    }
-
+  showAlert4() {
+    let alert = this.alertCtrl.create({
+      subTitle: '请JPG或PNG格式图片！',
+      buttons: ['确定']
+    });
+   alert.present();
   }
+  showAlert5() {
+    let alert = this.alertCtrl.create({
+      subTitle: '服务器繁忙，请稍后操作！',
+      buttons: ['确定']
+    });
+   alert.present();
+  }
+  submitImg(){
+      var alert = this.alertCtrl;
+      function change1() {
+        let al = alert.create({subTitle: '修改成功！',buttons: ['确定']});
+        al.present();
+      } 
+      function change2() {
+        let al = alert.create({subTitle: '修改失败！',buttons: ['确定']});
+        al.present();
+      }
+      function showAlert4() {
+        let al = alert.create({
+          subTitle: '请JPG或PNG格式图片！',
+          buttons: ['确定']
+        });
+       al.present();
+      }
+      function showAlert5() {
+        let al = alert.create({
+          subTitle: '服务器繁忙，请稍后操作！',
+          buttons: ['确定']
+        });
+       al.present();
+      }
+      if(this.imgupload==undefined){
+        this.showAlert3();
+      }else{
+        var option = {
+            url:"http://127.0.0.1:3000/user/updateRecruit/Upload",
+            timeout:3000,
+            success:function(data){
+              console.log(data);
+              if(data==1)change1();
+              if(data==0)showAlert4();
+              if(data==2)change2();
+            },
+            error:function(err){console.log(err)},
+            complete:function(XMLHttpRequest,status){
+              if(status=='timeout')showAlert5();
+            },
+        }
+        $('#img-form').ajaxSubmit(option);
+        $('#img-form').resetForm();
+        return false;
+      }
+  }
+  
 
 }
