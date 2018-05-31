@@ -22,7 +22,7 @@ export class RecmystorePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public alertCtrl:AlertController) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmystorePage');
     //获取我的收藏列表
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getCollect?r_username='+localStorage.getItem("login")).subscribe(data=>{

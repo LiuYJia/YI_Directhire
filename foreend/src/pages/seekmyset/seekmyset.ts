@@ -23,7 +23,7 @@ export class SeekmysetPage {
     public alertCtrl: AlertController) {
   }
   username;phone;email;password;imgupload;
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad SeekmysetPage');
     this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/set_Recruit?username='+localStorage.getItem("login")).subscribe(data=>{
       var message = JSON.parse(data['_body']);

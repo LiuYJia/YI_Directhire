@@ -29,7 +29,7 @@ export class RecmyseekermesPage {
     this.img = navParams.get('item').img;
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmyseekermesPage');
   }
 

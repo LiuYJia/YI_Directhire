@@ -29,7 +29,7 @@ export class RechomePage {
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
   {img:"assets/imgs/class8.png",name:"",val:"class8"}];
   items = [];class1=[];slide=[];slide1;slide2;slide3;searchInfo;
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RechomePage');
     //获取轮播图
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getimg_recruit').subscribe(data=>{
@@ -74,6 +74,7 @@ export class RechomePage {
       this.items = [];
       for(var i=0;i<message.length;i++){
         this.class1[i] = message[i];
+        this.class1[i].img = 'http://127.0.0.1:3000'+this.class1[i].img;
       }
     })
   }

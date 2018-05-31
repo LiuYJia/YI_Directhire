@@ -29,7 +29,7 @@ export class RecmypubPage {
   position="publish";
   items = [];//类别
   sch = ['不限','实习生','大专','大专及以上','本科','本科及以上','研究生','研究生及以上'];
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmypubPage');   
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{
       var message = JSON.parse(data['_body']);

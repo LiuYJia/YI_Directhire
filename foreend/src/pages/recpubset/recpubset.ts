@@ -27,7 +27,7 @@ export class RecpubsetPage {
     this.id = navParams.get('title').id;
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecpubsetPage');
     //获取类别选项
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{

@@ -25,7 +25,7 @@ export class RecmyallpubPage {
 
   all = [];
   position="all";
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmyallpubPage');
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/publishme?username='+localStorage.getItem("login")).subscribe(data=>{
       var message = JSON.parse(data['_body']);

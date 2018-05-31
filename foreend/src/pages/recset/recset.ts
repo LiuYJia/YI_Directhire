@@ -29,7 +29,7 @@ export class RecsetPage {
       //this.username = navParams.get('user').username;
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecsetPage');
     console.log(localStorage.getItem('login'));
     this.username = localStorage.getItem('login');

@@ -19,7 +19,7 @@ export class SeekmessagePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
   }
   info=[];
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad SeekmessagePage');
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
       var message = JSON.parse(data['_body']);

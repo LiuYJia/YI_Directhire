@@ -24,7 +24,7 @@ export class Seekmesinfo1Page {
     public alertCtrl: AlertController) {
   }
   name;sex;age;tel;school;job;money;info1;username;sort;items = [];//类别
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad Seekmesinfo1Page');
     //获取职位类别
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getSort').subscribe(data=>{

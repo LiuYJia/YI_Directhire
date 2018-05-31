@@ -40,7 +40,7 @@ export class RecseekerPage {
     });
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecseekerPage');
   }
    //收藏求职者

@@ -28,7 +28,7 @@ export class RecnearPage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecnearPage');
   }
 

@@ -31,7 +31,7 @@ export class SeekhomePage {
   {img:"assets/imgs/class8.png",name:"计算机",val:"class8"}];
   items = [];slide=[];slide1;slide2;slide3;searchInfo;
   class1=[];
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad SeekhomePage');
     //获取轮播图
     this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/getImg_seeker').subscribe(data=>{
@@ -74,6 +74,7 @@ export class SeekhomePage {
       this.items = [];
       for(var i=0;i<message.length;i++){
         this.class1[i] = message[i];
+        this.class1[i].img = 'http://127.0.0.1:3000'+this.class1[i].img;
       }
     })
   }

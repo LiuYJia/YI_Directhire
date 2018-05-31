@@ -25,7 +25,7 @@ export class RecmyseekerPage {
   }
   username;sort=[];items=[];
   name;school;age;sex;money;job;
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmyseekerPage');
     //获取简历列表
     this.username = localStorage.getItem("login");
