@@ -37,7 +37,7 @@ export class SeeknearPage {
       buttons: ['OK']
     });
     alert.present();
-    
+    this.list.pop();
   }
   load(){
     // 百度地图的IP地址定位
