@@ -45,8 +45,8 @@ module.exports = {
     AddFeedback:function AddFeedback(data){
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var AddFeedback_sql = 'insert into feedback(username,sort,txt,tel) values (?,?,?,?)';
-                connection.query(AddFeedback_sql,[data.username,data.sort,data.txt,data.tel],function(err,data){
+                var AddFeedback_sql = 'insert into feedback(username,sort,txt,tel,people) values (?,?,?,?,?)';
+                connection.query(AddFeedback_sql,[data.username,data.sort,data.txt,data.tel,data.people],function(err,data){
                     if(err){
                         console.log(err);
                         reject(err);

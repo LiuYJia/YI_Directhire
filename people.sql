@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'Liu','698d51a19d8a121ce581499d7b701668'),(2,'111','698d51a19d8a121ce581499d7b701668'),(3,'22','b6d767d2f8ed5d21a44b0e5886680cb9');
+INSERT INTO `admin` VALUES (1,'Liu','698d51a19d8a121ce581499d7b701668'),(2,'111','698d51a19d8a121ce581499d7b701668');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +80,7 @@ CREATE TABLE `collect_recruit` (
   `r_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
   `s_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `collect_recruit` (
 
 LOCK TABLES `collect_recruit` WRITE;
 /*!40000 ALTER TABLE `collect_recruit` DISABLE KEYS */;
-INSERT INTO `collect_recruit` VALUES (2,'11',2),(3,'11',3),(12,'11',1);
+INSERT INTO `collect_recruit` VALUES (17,'11',3),(18,'11',8);
 /*!40000 ALTER TABLE `collect_recruit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +105,7 @@ CREATE TABLE `collect_seeker` (
   `s_username` varchar(64) CHARACTER SET utf8 DEFAULT NULL,
   `r_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,7 +114,7 @@ CREATE TABLE `collect_seeker` (
 
 LOCK TABLES `collect_seeker` WRITE;
 /*!40000 ALTER TABLE `collect_seeker` DISABLE KEYS */;
-INSERT INTO `collect_seeker` VALUES (54,'11',1),(55,'11',2),(56,'11',1);
+INSERT INTO `collect_seeker` VALUES (55,'11',2),(59,'11',6);
 /*!40000 ALTER TABLE `collect_seeker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,8 +131,9 @@ CREATE TABLE `feedback` (
   `sort` varchar(64) DEFAULT NULL,
   `txt` varchar(255) DEFAULT NULL,
   `tel` varchar(64) DEFAULT NULL,
+  `people` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +142,7 @@ CREATE TABLE `feedback` (
 
 LOCK TABLES `feedback` WRITE;
 /*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
-INSERT INTO `feedback` VALUES (3,'11','技术问题','11','111'),(5,'11','产品建议','祝越来越好','15132858043');
+INSERT INTO `feedback` VALUES (9,'22','产品建议','还有很多需要完善的地方','15132584689','招聘人员'),(10,'11','内容错误','信息显示不全','13356894578','求职人员');
 /*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +181,7 @@ CREATE TABLE `label` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +190,7 @@ CREATE TABLE `label` (
 
 LOCK TABLES `label` WRITE;
 /*!40000 ALTER TABLE `label` DISABLE KEYS */;
-INSERT INTO `label` VALUES (1,'IT/互联网'),(2,'教师'),(4,'销售'),(5,'客服咨询'),(18,'金融'),(19,'物流'),(20,'医药'),(21,'网络传媒');
+INSERT INTO `label` VALUES (1,'IT/互联网'),(2,'教师'),(18,'金融'),(22,'文职人员'),(23,'家政服务'),(24,'药剂师'),(25,'医生'),(26,'建筑师');
 /*!40000 ALTER TABLE `label` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +215,7 @@ CREATE TABLE `msg_recruit` (
   `detail` varchar(64) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,7 +224,7 @@ CREATE TABLE `msg_recruit` (
 
 LOCK TABLES `msg_recruit` WRITE;
 /*!40000 ALTER TABLE `msg_recruit` DISABLE KEYS */;
-INSERT INTO `msg_recruit` VALUES (1,'11','5-7人','IT/互联网','node.js','8k','本科','百度','15133334444','20-50','好好学习，天天向上','/imgRecruit/0.9249298684682403.jpg'),(2,'22','1人','教师','数学','6k','本科','师大','03180125489','不限','好好学习，天天向上','/imgRecruit/0.3556006815969768.jpg'),(3,'33','2人','销售','营销人员','10k','本科','索像','25345354345','30','好好学习，天天向上','/imgRecruit/0.6471711321480378.jpg'),(4,'44','6人','客服咨询','话务员','5k','本科','中国移动','54343535743','40以下','好好学习，天天向上','/imgRecruit/0.26132655010210293.jpg'),(5,'55','2-4人','金融','宣传员','7k','本科','阳光易贷','5345343543','不限','好好学习，天天向上','/imgRecruit/0.47717673997035015.jpg'),(6,'66','5人','物流','快递员','7k','本科','中通','343573573','28','好好学习，天天向上','/imgRecruit/0.3245283927998741.jpg'),(7,'77','3人','医药','研发','9k','本科','哈药','535737537','30','好好学习，天天向上','/imgRecruit/0.9472916131780731.jpg'),(8,'88','1人','网络传媒','记者','5k','本科','星空媒体','527537357','40以下','好好学习，天天向上','/imgRecruit/0.47732691112093195.jpg'),(9,'11','8人','IT/互联网','测试','8k','本科','百度','243455465','25-30','好好学习，天天向上','/imgRecruit/0.9249298684682403.jpg'),(10,'11','2','IT/互联网','2','2','本科','2','2','2','2','/imgRecruit/0.9249298684682403.jpg');
+INSERT INTO `msg_recruit` VALUES (1,'11','5-7人','IT/互联网','node.js','8k','本科','百度','15133334444','20-50','好好学习，天天向上','/imgRecruit/0.3556006815969768.jpg'),(2,'22','1人','教师','数学','6k','本科','师大','03180125489','不限','好好学习，天天向上','/imgRecruit/0.3556006815969768.jpg'),(3,'33','2人','文职人员','营销人员','10k','本科','索像','25345354345','30','好好学习，天天向上','/imgRecruit/0.6471711321480378.jpg'),(4,'44','6人','家政服务','话务员','5k','本科','中国移动','54343535743','40以下','好好学习，天天向上','/imgRecruit/0.26132655010210293.jpg'),(5,'55','2-4人','金融','宣传员','7k','本科','阳光易贷','5345343543','不限','好好学习，天天向上','/imgRecruit/0.47717673997035015.jpg'),(6,'66','5人','药剂师','快递员','7k','本科','中通','343573573','28','好好学习，天天向上','/imgRecruit/0.3245283927998741.jpg'),(7,'77','3人','医生','研发','9k','本科','哈药','535737537','30','好好学习，天天向上','/imgRecruit/0.9472916131780731.jpg'),(8,'88','1人','建筑师','记者','5k','本科','星空媒体','527537357','40以下','好好学习，天天向上','/imgRecruit/0.47732691112093195.jpg');
 /*!40000 ALTER TABLE `msg_recruit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,7 +258,7 @@ CREATE TABLE `msg_seeker` (
 
 LOCK TABLES `msg_seeker` WRITE;
 /*!40000 ALTER TABLE `msg_seeker` DISABLE KEYS */;
-INSERT INTO `msg_seeker` VALUES (1,'11','男','IT/互联网','Node.js','8k','本科','1513333888','22','好好学习，天天向上','小刘','/imgSeeker/0.47095634055067404.jpg'),(2,'22','男','教师','数学','6k','本科','03180125489','22','好好学习，天天向上','小赵','/imgSeeker/0.5880396868760518.jpg'),(3,'33','男','销售','售货员','8k','本科','25345354345','23','好好学习，天天向上','小李','/imgSeeker/0.7462698355686377.jpg'),(4,'44','女','客服咨询','话务员','5k','本科','54343535743','24','好好学习，天天向上','小冯','/imgSeeker/0.8605092510473284.jpg'),(5,'55','女','金融','基金','7k','本科','5345343543','35','好好学习，天天向上','小陈','/imgSeeker/0.6304186778823913.jpg'),(6,'66','男','物流','快递员','7k','本科','343573573','28','好好学习，天天向上','小王','/imgSeeker/0.35292249066078174.jpg'),(7,'77','女','医药','研发人员','9k','本科','535737537','30','好好学习，天天向上','小白','/imgSeeker/0.3068699224611151.jpg'),(8,'88','男','网络传媒','记者','5k','本科','527537357','40','好好学习，天天向上','小孙','/imgSeeker/0.31451574370141144.jpg'),(9,'99','男','IT/互联网','JAVA','10k','本科','5657645342','30','好好学习，天天向上','小张','/imgSeeker/0.10093049626332729.jpg'),(10,'aa','女','IT/互联网','测试','7k','本科','324421435','24','好好学习，天天向上','小杨','/imgSeeker/0.3068699224611151.jpg'),(11,'bb','男','教师','英语','8k','本科','345356432','28','好好学习，天天向上','小刘','/imgSeeker/0.8536641718854978.jpg'),(12,'cc','男','物流','分货员','8k','本科','8765434566','30','好好学习，天天向上','小晓','/imgSeeker/0.30136868924611804.jpg'),(13,'dd','女','医药','技术人员','8k','本科','23567765','29','好好学习，天天向上','小崔','/imgSeeker/0.9257085813159478.jpg'),(14,'ee','男','网络传媒','摄影师','9k','本科','1234565432','20','好好学习，天天向上','小赵','/imgSeeker/0.740690924975969.jpg'),(15,'ff','男','金融','证券','8k','本科','6437445456','28','好好学习，天天向上','小李','/imgSeeker/0.6304186778823913.jpg'),(16,'kk','女','IT/互联网','前端开发','10k','本科','23566534235','25','好好学习，天天向上','小丁','/imgSeeker/0.35292249066078174.jpg');
+INSERT INTO `msg_seeker` VALUES (1,'11','男','IT/互联网','Node.js','8k','本科','1513333889','22','好好学习，天天向上','小刘','/imgSeeker/0.8499021103806801.jpg'),(2,'22','男','教师','数学','6k','本科','03180125489','22','好好学习，天天向上','小赵','/imgSeeker/0.5880396868760518.jpg'),(3,'33','男','文职人员','售货员','8k','本科','25345354345','23','好好学习，天天向上','小李','/imgSeeker/0.7462698355686377.jpg'),(4,'44','女','建筑师','话务员','5k','本科','54343535743','24','好好学习，天天向上','小冯','/imgSeeker/0.8605092510473284.jpg'),(5,'55','女','金融','基金','7k','本科','5345343543','35','好好学习，天天向上','小陈','/imgSeeker/0.6304186778823913.jpg'),(6,'66','男','家政服务','快递员','7k','本科','343573573','28','好好学习，天天向上','小王','/imgSeeker/0.35292249066078174.jpg'),(7,'77','女','医生','研发人员','9k','本科','535737537','30','好好学习，天天向上','小白','/imgSeeker/0.3068699224611151.jpg'),(8,'88','男','药剂师','记者','5k','本科','527537357','40','好好学习，天天向上','小孙','/imgSeeker/0.31451574370141144.jpg'),(9,'99','男','IT/互联网','JAVA','10k','本科','5657645342','30','好好学习，天天向上','小张','/imgSeeker/0.10093049626332729.jpg'),(10,'aa','女','IT/互联网','测试','7k','本科','324421435','24','好好学习，天天向上','小杨','/imgSeeker/0.3068699224611151.jpg'),(11,'bb','男','教师','英语','8k','本科','345356432','28','好好学习，天天向上','小刘','/imgSeeker/0.8536641718854978.jpg'),(12,'cc','男','金融','分货员','8k','本科','8765434566','30','好好学习，天天向上','小晓','/imgSeeker/0.30136868924611804.jpg'),(13,'dd','女','医生','技术人员','8k','本科','23567765','29','好好学习，天天向上','小崔','/imgSeeker/0.9257085813159478.jpg'),(14,'ee','男','文职人员','摄影师','9k','本科','1234565432','20','好好学习，天天向上','小赵','/imgSeeker/0.740690924975969.jpg'),(15,'ff','男','金融','证券','8k','本科','6437445456','28','好好学习，天天向上','小李','/imgSeeker/0.6304186778823913.jpg'),(16,'kk','女','IT/互联网','前端开发','10k','本科','23566534235','25','好好学习，天天向上','小丁','/imgSeeker/0.35292249066078174.jpg');
 /*!40000 ALTER TABLE `msg_seeker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -273,7 +274,7 @@ CREATE TABLE `resume` (
   `r_username` varchar(10) NOT NULL,
   `s_username` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +283,6 @@ CREATE TABLE `resume` (
 
 LOCK TABLES `resume` WRITE;
 /*!40000 ALTER TABLE `resume` DISABLE KEYS */;
-INSERT INTO `resume` VALUES (2,'11','22'),(3,'11','33'),(4,'11','11');
 /*!40000 ALTER TABLE `resume` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +336,7 @@ CREATE TABLE `user_seeker` (
 
 LOCK TABLES `user_seeker` WRITE;
 /*!40000 ALTER TABLE `user_seeker` DISABLE KEYS */;
-INSERT INTO `user_seeker` VALUES (19,'11','6512bd43d9caa6e02c990b0a82652dca','678476545463','dnsjg@qq.com'),(20,'22','bcbe3365e6ac95ea2c0343a2395834dd','454685857','sft456@sohu.com'),(21,'33','182be0c5cdcd5072bb1864cdee4d3d6e','325463748','dfgs@193.com'),(22,'44','f7177163c833dff4b38fc8d2872f1ec6','356475485','dfgs@193.com'),(23,'55','b53b3a3d6ab90ce0268229151c9bde11','8674564','46tfdg@qq.com'),(24,'66','3295c76acbf4caaed33c36b1b5fc2cb1','3425364758','dsg456@qq.com'),(25,'77','28dd2c7955ce926456240b2ff0100bde','45436547658','3456dfg@sohu.com'),(26,'88','2a38a4a9316c49e5a833517c45d31070','4353657465','45dsg@qq.com'),(27,'99','ac627ab1ccbdb62ec96e702f07f6425b','5658464','dfhj456567@193.com'),(28,'aa','4124bc0a9335c27f086f24ba207a4912','654634534','467dgfhd@sohu.com'),(29,'bb','21ad0bd836b90d08f4cf640b4c298e7c','568654534','564fg@qq.com'),(30,'cc','e0323a9039add2978bf5b49550572c7c','4567876546','34565@sohu.com'),(31,'dd','1aabac6d068eef6a7bad3fdf50a05cc8','436478574','fg3546@193.com'),(32,'ee','08a4415e9d594ff960030b921d42b91e','34547389876','45dfg@sohu.com'),(33,'ff','633de4b0c14ca52ea2432a3c8a5c4c31','435475546','435@193.com'),(34,'kk','dc468c70fb574ebd07287b38d0d0676d','3546758657','sdfdg@sohu.com');
+INSERT INTO `user_seeker` VALUES (19,'11','6512bd43d9caa6e02c990b0a82652dca','6784765454','dnsjg@qq.com'),(20,'22','bcbe3365e6ac95ea2c0343a2395834dd','454685857','sft456@sohu.com'),(21,'33','182be0c5cdcd5072bb1864cdee4d3d6e','325463748','dfgs@193.com'),(22,'44','f7177163c833dff4b38fc8d2872f1ec6','356475485','dfgs@193.com'),(23,'55','b53b3a3d6ab90ce0268229151c9bde11','8674564','46tfdg@qq.com'),(24,'66','3295c76acbf4caaed33c36b1b5fc2cb1','3425364758','dsg456@qq.com'),(25,'77','28dd2c7955ce926456240b2ff0100bde','45436547658','3456dfg@sohu.com'),(26,'88','2a38a4a9316c49e5a833517c45d31070','4353657465','45dsg@qq.com'),(27,'99','ac627ab1ccbdb62ec96e702f07f6425b','5658464','dfhj456567@193.com'),(28,'aa','4124bc0a9335c27f086f24ba207a4912','654634534','467dgfhd@sohu.com'),(29,'bb','21ad0bd836b90d08f4cf640b4c298e7c','568654534','564fg@qq.com'),(30,'cc','e0323a9039add2978bf5b49550572c7c','4567876546','34565@sohu.com'),(31,'dd','1aabac6d068eef6a7bad3fdf50a05cc8','436478574','fg3546@193.com'),(32,'ee','08a4415e9d594ff960030b921d42b91e','34547389876','45dfg@sohu.com'),(33,'ff','633de4b0c14ca52ea2432a3c8a5c4c31','435475546','435@193.com'),(34,'kk','dc468c70fb574ebd07287b38d0d0676d','3546758657','sdfdg@sohu.com');
 /*!40000 ALTER TABLE `user_seeker` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -349,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-31 18:49:36
+-- Dump completed on 2018-05-31 20:15:54

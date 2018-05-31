@@ -53,7 +53,7 @@ export class SeekmyPage {
   }
   //用户反馈
   gorecuserque(){
-    this.navCtrl.push('RecuserquePage');
+    this.navCtrl.push('SeekuserquePage');
   }
   //退出登录
   leave(){

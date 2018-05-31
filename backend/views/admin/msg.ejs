@@ -6,6 +6,7 @@
     <table class="table table-bordered table-condensed mastertable table-hover"   style="overflow-y:auto;">
         <thead>
             <tr>
+                <td>来源</td>
                 <td>用户名</td>
                 <td>类型</td>
                 <td>内容</td>
@@ -15,7 +16,8 @@
         </thead>
         <tbody>
             <% data.forEach(function(item){ %>                
-                <tr>                    
+                <tr>    
+                    <td><%= item.people %></td>                
                     <td><%= item.username %></td>
                     <td><%= item.sort %></td>
                     <td><%= item.txt %></td>

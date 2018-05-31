@@ -13,9 +13,6 @@ router.get('/',function(req,res){
                 page:'msg',
                 username:u_no,
                 data:result,
-                pagecount:8,
-                pagesize:5,
-                currentpage:1,
             });
         }    
         

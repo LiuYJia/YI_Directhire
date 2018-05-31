@@ -5,7 +5,7 @@ import { AlertController } from 'ionic-angular';
 import { Headers } from '@angular/http';
 
 /**
- * Generated class for the RecuserquePage page.
+ * Generated class for the SeekuserquePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,10 +13,10 @@ import { Headers } from '@angular/http';
 
 @IonicPage()
 @Component({
-  selector: 'page-recuserque',
-  templateUrl: 'recuserque.html',
+  selector: 'page-seekuserque',
+  templateUrl: 'seekuserque.html',
 })
-export class RecuserquePage {
+export class SeekuserquePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public alertCtrl: AlertController) {
   }
@@ -42,7 +42,6 @@ export class RecuserquePage {
   sort;txt;tel;mes;people;
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   sub(){
-    // console.log(this.people);
     if(this.txt == null){
       this.mes = "请填写问题描述或建议";
     }else{

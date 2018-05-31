@@ -109,16 +109,17 @@ router.post('/feedback',function(req,res){
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
     
-    var username,sort,txt,tel,data=req.body;
+    var username,sort,txt,tel,people,data=req.body;
     for(key in data){
         username=JSON.parse(key).username;
         sort=JSON.parse(key).sort;
         txt=JSON.parse(key).txt;
         tel=JSON.parse(key).tel;
+        people=JSON.parse(key).people;
     }
-    console.log(username,sort,txt,tel);
+    console.log(username,sort,txt,tel,people);
 
-    AddFeedback({username:username,sort:sort,txt:txt,tel:tel}).then(function(data){
+    AddFeedback({username:username,sort:sort,txt:txt,tel:tel,people:people}).then(function(data){
         if(data){
             res.send('1');
             console.log('反馈成功');
