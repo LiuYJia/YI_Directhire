@@ -14,7 +14,7 @@
 
 
 <ion-content id="body">
-    <div>
+    <!-- <div>
         <ion-segment [(ngModel)]="position">
           <ion-segment-button value="publish">
             发布一般职位
@@ -24,7 +24,7 @@
           </ion-segment-button>
           
         </ion-segment>
-    </div>
+    </div> -->
     
     <div [ngSwitch]="position">
         <ion-list *ngSwitchCase="'publish'">
@@ -84,7 +84,7 @@
             <button ion-button color="none" class="but" (click)="submit1()">确认发布</button>
         </ion-list>
 
-        <ion-list *ngSwitchCase="'manage'">
+        <!-- <ion-list *ngSwitchCase="'manage'">
                 <ion-list-header id="title">
                     <h2 style="display:inline">可抢职位信息</h2>
                     <p class="error" style="display:inline;font-size:1.5em">{{err}}</p>
@@ -134,6 +134,6 @@
                     <textarea rows="10" id="area"  [(ngModel)]="intro1"></textarea>
                 </ion-item>
                 <button ion-button color="none" class="but" (click)="submit2()">确认发布</button>
-        </ion-list>        
+        </ion-list>         -->
     </div>
 </ion-content>

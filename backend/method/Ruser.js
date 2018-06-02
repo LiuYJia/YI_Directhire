@@ -353,6 +353,77 @@ module.exports = {
             })
         })
     },
+    //获取自己附近发布
+    Getnearpub:function Getnearpub(username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Getnearpub_sql = "select * from near where username =?";
+                connection.query(Getnearpub_sql,username,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        console.log(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    //发布附近职位
+    Nearpub:function Nearpub(data){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Nearpub_sql = "insert into near(username,job,tel,num,address,longitude,latitude,time,money,detail) values(?,?,?,?,?,?,?,?,?,?)";
+                connection.query(Nearpub_sql,[data.username,data.job,data.tel,data.num,data.address,data.longitude,data.latitude,data.time,data.money,data.detail],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    //职位更改
+    Updatenear:function Updatenear(data){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Updatenear_sql = "update near set job=?,tel=?,num=?,address=?,longitude=?,latitude=?,time=?,money=?,detail=? where id =?";
+                connection.query(Updatenear_sql,[data.job,data.tel,data.num,data.address,data.longitude,data.latitude,data.time,data.money,data.detail,data.id],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+
+    //删除附近发布
+    Delnear:function Delnear(id){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Delnear_sql = "delete from near where id=?";
+                connection.query(Delnear_sql,id,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+
 
 
 

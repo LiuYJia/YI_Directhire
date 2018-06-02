@@ -2,15 +2,18 @@ page-recnear {
     #body{
         background-color: #f2f2f2;
     }
-    .seeker{
-        margin-top:8px;
+    #btn{
+        float: right;
+    }
+    #title{
+        margin-left: 20px;
     }
     .spe{
         margin-top:8px;
     }
-    .iconfont{
-        color:#1990ef;
-        margin-left:5px;
+    #time{
+        color: gray;
+        float: right;
     }
     #money{
         font-style: normal;
@@ -22,6 +25,22 @@ page-recnear {
         font-style: normal;
         margin-left:10px;
         font-size:18px;
+    }
+    #but{
+        float: right;
+        width:100px;
+        height:30px;
+        display: inline;
+    }
+    .seeker{
+        margin-top:8px;
+    }
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
+    }
+    #time{
+        float: right;
     }
     .sal{
         margin-left:10px;

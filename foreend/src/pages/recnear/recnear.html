@@ -8,63 +8,30 @@
 
   <ion-navbar  color="primary">
     <ion-title text-center>附近</ion-title>
+    <button id="btn" ion-button (click)="pub()"> <ion-icon name="md-add"></ion-icon></button>
   </ion-navbar>
+  <!-- <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+  </ion-buttons> -->
 
 </ion-header>
 
 
 <ion-content id="body">
 
-    <div id="top">
-      <ion-segment [(ngModel)]="near">
-        <ion-segment-button value="fast">
-          最快到达
-        </ion-segment-button>
-        <ion-segment-button value="high">
-          信誉度高
-        </ion-segment-button>
-      </ion-segment>
-    </div>
-      
-    <div [ngSwitch]="near">
-      <ion-list *ngSwitchCase="'fast'" class="classify" >
-          <ion-item *ngFor="let item of fastitem"  class="seeker" (click)="seeker(item)">
-              <ion-item>
-                  <ion-avatar item-start>
-                    <img src="{{item.img}}">
-                  </ion-avatar>
-                  <h2>{{item.name}}</h2>
-                  <h3><i class="iconfont">&#xe624;</i>{{item.schooling}} 
-                    <i class="iconfont">&#xe522;</i>{{item.age}}
-                    <i class="iconfont">&#xe62b;</i>{{item.sex}}
-                  </h3>
-                  <p>{{item.mes}}</p>
-                </ion-item>
-                <ion-item>
-                    <p><i style="font-style:normal">期望薪资:</i><i id="money">3000-5000</i></p>
-                    <p><i style="font-style:normal">期望职位:</i><i id="position">助理</i></p>
-                </ion-item>
-          </ion-item>
-      </ion-list>
-    
-      <ion-list *ngSwitchCase="'high'" class="classify">
-          <ion-item *ngFor="let item of highitem"  class="seeker" (click)="seeker(item)">
-              <ion-item>
-                  <ion-avatar item-start>
-                    <img src="{{item.img}}">
-                  </ion-avatar>
-                  <h2>{{item.name}}</h2>
-                  <h3><i class="iconfont">&#xe624;</i>{{item.schooling}} 
-                    <i class="iconfont">&#xe522;</i>{{item.age}}
-                    <i class="iconfont">&#xe62b;</i>{{item.sex}}
-                  </h3>
-                  <p>{{item.mes}}</p>
-                </ion-item>
-                <ion-item>
-                    <p><i style="font-style:normal">期望薪资:</i><i id="money">3000-5000</i></p>
-                    <p><i style="font-style:normal">期望职位:</i><i id="position">助理</i></p>
-                </ion-item>
-          </ion-item>
-      </ion-list>
-    </div>
+  <ion-list>
+    <ion-item class="spe" *ngFor="let item of info">
+        <ion-item style="display:inline" (click)="msg(item)">
+            <h2>{{item.job}} <span id="time">{{item.time}}</span></h2>
+            <p><i style="font-style:normal">薪资:</i><i id="money">￥{{item.money}}</i></p>      
+        </ion-item>
+        <ion-item>
+          <p><i style="font-style:normal">需求人数:</i><i id="position">{{item.num}}人</i></p>
+          <p>地　　点：{{item.address}}</p>         
+          <button id="but" color="danger"  ion-button item-end (click)="del(item)">删除</button>
+        </ion-item>       
+    </ion-item>
+  </ion-list>
 </ion-content>

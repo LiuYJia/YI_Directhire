@@ -1,0 +1,53 @@
+<!--
+  Generated template for the NearpubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title text-center>发布可抢职位信息</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content id="body">
+    <ion-list>
+        <ion-list-header id="title">
+            <h2 style="display:inline">可抢职位信息</h2>
+            <p class="error" style="display:inline;font-size:1.5em">{{err}}</p>
+        </ion-list-header>
+        <ion-item>
+            <label>职位名称:</label>
+            <input type="text" [(ngModel)]="job">
+        </ion-item> 
+        <ion-item>
+            <label>地　　址:</label>
+            <input type="text" [(ngModel)]="address">
+        </ion-item>
+        <ion-item>
+            <label>招聘人数:</label>
+            <input type="text" [(ngModel)]="num">
+        </ion-item>
+        <ion-item>
+            <label>薪　　酬:</label>
+            <input type="text" [(ngModel)]="money">
+        </ion-item>
+        <ion-item>
+            <label>联系方式:</label>
+            <input type="text" [(ngModel)]="tel">
+        </ion-item>
+        <ion-item>
+            <label>时　　间:</label>
+            <input type="text" [(ngModel)]="time">
+        </ion-item>
+        <ion-item>职位要求：</ion-item>
+        <ion-item>
+            <textarea rows="10" id="area"  [(ngModel)]="detail"></textarea>
+        </ion-item>
+        <button ion-button color="none" class="but" (click)="submit()">确认发布</button>
+</ion-list>
+
+</ion-content>

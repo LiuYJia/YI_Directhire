@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
+import { JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { SeekhomePage } from '../pages/seekhome/seekhome';
@@ -26,6 +27,9 @@ import { AnimationPage } from '../pages/animation/animation';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { Geolocation } from '@ionic-native/geolocation';
+import { Platform } from 'ionic-angular';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     FormsModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
@@ -89,6 +94,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

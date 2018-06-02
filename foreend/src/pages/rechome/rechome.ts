@@ -22,12 +22,12 @@ export class RechomePage {
   row1="class1";
   class = [{img:"assets/imgs/class1.png",name:"",val:"class1"},
   {img:"assets/imgs/class2.png",name:"",val:"class2"},
-  {img:"assets/imgs/class3.png",name:"",val:"class3"},
-  {img:"assets/imgs/class4.png",name:"",val:"class4"},];
-  class0 = [{img:"assets/imgs/class5.png",name:"",val:"class5"},
-  {img:"assets/imgs/class6.png",name:"",val:"class6"},
+  {img:"assets/imgs/class5.png",name:"",val:"class3"},
+  {img:"assets/imgs/class8.png",name:"",val:"class4"},];
+  class0 = [{img:"assets/imgs/class6.png",name:"",val:"class5"},
+  {img:"assets/imgs/class3.png",name:"",val:"class6"},
   {img:"assets/imgs/class7.png",name:"",val:"class7"},
-  {img:"assets/imgs/class8.png",name:"",val:"class8"}];
+  {img:"assets/imgs/class4.png",name:"",val:"class8"}];
   items = [];class1=[];slide=[];slide1;slide2;slide3;searchInfo;
   ionViewDidEnter() {
     console.log('ionViewDidLoad RechomePage');

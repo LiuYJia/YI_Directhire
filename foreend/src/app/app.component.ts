@@ -10,16 +10,18 @@ import { RectabsPage } from '../pages/rectabs/rectabs';
 import { LoginPage } from '../pages/login/login';
 import { StartPage } from '../pages/start/start';
 import { SeekmessagePage } from '../pages/seekmessage/seekmessage';
+import { SeeknearPage } from '../pages/seeknear/seeknear';
+import { RecnearPage } from '../pages/recnear/recnear';
+import { NearpubPage } from '../pages/nearpub/nearpub';
+import { NearmsgPage } from '../pages/nearmsg/nearmsg';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  //rootPage:any = TabsPage;
-  //rootPage:any = RectabsPage;
-  //rootPage:any = LoginPage;
+  // rootPage:any = LoginPage;
   rootPage:any = StartPage;
-
+  //  rootPage:any = RectabsPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

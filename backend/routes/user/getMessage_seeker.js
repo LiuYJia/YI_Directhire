@@ -12,11 +12,17 @@ var getImg_seeker = require('../../method/Suser').getImg_seeker;
 var getCollect_seeker = require('../../method/Suser').getCollect_seeker;
 var getCollect_msg = require('../../method/Suser').getCollect_msg;
 var Search = require('../../method/Suser').Search;
+var Getnear = require('../../method/Suser').Getnear;
+
+
+
 //获取分类
 router.get('/getsort',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
+  console.log(555555555555555555);
   getSort().then(function(data){
     if(data){
+      console.log(data);
       res.send(data);
       console.log('获取分类成功');
     }
@@ -143,5 +149,45 @@ router.get('/search',function(req,res){
 
 
 })
+
+//获取附近职位
+router.get('/Getnear',function(req,res){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  var lng = req.query.longitude,lat = req.query.latitude,arr=[];
+  Getnear().then(function(data){
+    if(data){
+      console.log('附近获取成功');
+      for(var i=0;i<data.length;i++){
+        !function(){
+          var range = distance(lng,lat,Number(data[i].longitude),Number(data[i].latitude));
+          data[i].range = Math.round(range*1000);
+          console.log('此位置距离'+data[i].address+'：'+range*1000+'米');
+          if(range*1000<1500){
+            arr.push(data[i]);
+          } 
+        }(i);
+      }
+      // console.log(arr);
+      res.send(arr);
+    }
+  }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  })
+
+  //距离计算
+  function rad(d){
+    return d*Math.PI/180.0;
+  }
+  function distance(lon1,lat1,lon2,lat2){
+      var radLat1 = rad(lat1); 
+      var radLat2 = rad(lat2); 
+      var a = radLat1 - radLat2;
+      var b = rad(lon1) - rad(lon2);
+      var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2)+Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)))*6378.137;       
+      return s;
+}
+});
+
 
 module.exports = router;

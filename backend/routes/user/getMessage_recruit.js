@@ -14,7 +14,25 @@ var getCollect_seeker = require('../../method/Ruser').getCollect_seeker;
 var getCollect_msg = require('../../method/Ruser').getCollect_msg;
 var Search = require('../../method/Ruser').Search;
 var detailR = require('../../method/Ruser').detailR;
+var Getnearpub = require('../../method/Ruser').Getnearpub;
 
+//获取我的附近发布
+router.get('/Getnearpub',function(req,res){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  var username = req.query.username;
+  console.log(username);
+  Getnearpub(username).then(function(data){
+    if(data){
+      console.log(data);
+      res.send(data);
+      console.log('获取我的附近发布成功');
+    }
+  }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  });
+})
+//招聘者详情（设置页头像）
 router.get('/detailR',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
   var username = req.query.username;

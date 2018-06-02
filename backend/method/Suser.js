@@ -257,5 +257,23 @@ module.exports = {
                 })
             })
         })
-    }
+    },
+    //获取附近发布
+    Getnear:function Getnear(){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var Getnear_sql = "select * from near";
+                connection.query(Getnear_sql,function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+
 }

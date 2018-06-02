@@ -17,16 +17,18 @@ import { Headers } from '@angular/http';
   templateUrl: 'seeknearmes.html',
 })
 export class SeeknearmesPage {
-  job;price;time;location;num;username;
+  job;money;time;address;num;username;detail;tel;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public http:Http,
     public alertCtrl: AlertController) {
     this.job = navParams.get('mes').job;
-    this.price = navParams.get('mes').price;
+    this.money = navParams.get('mes').money;
     this.time = navParams.get('mes').time;
-    this.location = navParams.get('mes').location;
+    this.address = navParams.get('mes').address;
     this.num = navParams.get('mes').num;
+    this.detail = navParams.get('mes').detail;
+    this.tel = navParams.get('mes').tel;
   }
 
   ionViewDidLoad() {

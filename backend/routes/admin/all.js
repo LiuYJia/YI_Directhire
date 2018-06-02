@@ -18,7 +18,24 @@ var delArticle = require('../../method/admin').delArticle;
 var msgArticle = require('../../method/admin').msgArticle;
 var SearchS = require('../../method/Ruser').Search;
 var SearchR = require('../../method/Suser').Search;
+var Delnear = require('../../method/Ruser').Delnear;
 
+
+//删除附近
+router.post('/Delnear',function(req,res){
+    var id = req.body.delnear;
+    // console.log(id);
+    Delnear(id).then(function(data){
+        if(data != 0){
+            res.redirect('/admin/detail');
+            console.log('删除成功');
+        }
+    }).catch(function(err){
+        console.log(err);
+    })
+})
+
+//搜索结果
 router.post('/searchdata',function(req,res){
     var range = req.body.radio;
     var data = req.body.txt;

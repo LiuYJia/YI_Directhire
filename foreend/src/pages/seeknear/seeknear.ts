@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http,Jsonp } from "@angular/http"; 
+import { AlertController } from 'ionic-angular';
+
+import { Geolocation } from '@ionic-native/geolocation';
+
 
 /**
  * Generated class for the SeeknearPage page.
@@ -15,20 +20,47 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SeeknearPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private geolocation: Geolocation,
+    public http:Http,
+    public jsonp:Jsonp,
+    public alertCtrl:AlertController) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SeeknearPage');
+  job;tel;num;address;longitude;latitude;time;money;
+  info=[{job:'服务员',money:'￥80/天',time:'2017/12/27',address:'空中花园',num:'5人',detail:'1.负责开发移动端前端开发',range:'100'}];
+  ionViewDidEnter() {
+    console.log('SeeknearPage');
+    // this.geolocation.getCurrentPosition().then((resp) => {
+    //   this.jsonp.get('http://v.juhe.cn/offset/index?key=c1d497ad101410ff5c7113c37baef2da&lat='+resp.coords.latitude+'&lng='+resp.coords.longitude+'&type=1&callback=JSONP_CALLBACK').subscribe(data=>{
+    //     console.log(data['_body'].result.off_lng,data['_body'].result.off_lat);
+    //     this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/Getnear?&longitude='+data['_body'].result.off_lng+'&latitude='+data['_body'].result.off_lat).subscribe(data=>{
+    //       var message = JSON.parse(data['_body']);
+    //       console.log(message);
+    //       for(var i=0;i<message.length;i++){
+    //         this.info[i] = message[i];
+    //       }
+    //     })
+    //   })           
+    // }).catch((error) => {
+    //   alert(error);
+    // });
+    this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/Getnear?&longitude=114.529357&latitude=38.003581').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      console.log(message);
+      for(var i=0;i<message.length;i++){
+        this.info[i] = message[i];
+      }
+    })
+    
   }
-  info=[{job:'服务员',price:'￥80/天',time:'2017/12/27',location:'空中花园',num:'5人'},
-        {job:'宣传人员',price:'￥80/天',time:'2017/12/27',location:'空中花园',num:'3人'},
-        {job:'话务员',price:'￥80/天',time:'2017/12/27',location:'空中花园',num:'2人'},
-        {job:'销售员',price:'￥80/小时',time:'2017/12/27',location:'空中花园',num:'2人'}];
+  //进入可抢职位详情页
   goseeknearmes(item){
     this.navCtrl.push('SeeknearmesPage',{mes:item});
   }
-  grab(){
-    console.log('grab');
-  }
+  //抢单
+  // grab(){
+  //   console.log('grab');
+  // }
+  
 }

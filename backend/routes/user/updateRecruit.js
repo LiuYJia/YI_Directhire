@@ -12,6 +12,94 @@ var imgSave = require('../../method/Ruser').imgSave;
 var delResume = require('../../method/Ruser').delResume;
 var Collect_recruit = require('../../method/Ruser').Collect_recruit;
 var delCollect = require('../../method/Ruser').delCollect;
+var Nearpub = require('../../method/Ruser').Nearpub;
+var Updatenear = require('../../method/Ruser').Updatenear;
+var Delnear = require('../../method/Ruser').Delnear;
+
+//删除附近
+router.post('/Delnear',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var data = req.body,id;
+    for(key in data){
+        id = JSON.parse(key).id;
+    }
+    Delnear(id).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('删除成功');
+        }
+    }).catch(function(err){
+        console.log(err);
+    });
+
+})
+
+//发布附近
+router.post('/Nearpub',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+    var data = req.body,username,job,tel,num,address,longitude,latitude,time,money,detail;
+    console.log(data);
+    // console.log(username,money);
+    for(key in data){
+        username = JSON.parse(key).username;
+        job = JSON.parse(key).job;
+        tel = JSON.parse(key).tel;
+        num = JSON.parse(key).num;
+        address = JSON.parse(key).address;
+        longitude = JSON.parse(key).longitude;
+        latitude = JSON.parse(key).latitude;
+        time = JSON.parse(key).time;
+        money = JSON.parse(key).money;
+        detail = JSON.parse(key).detail;
+        
+    }
+    Nearpub({username:username,job:job,tel:tel,num:num,address:address,longitude:longitude,latitude:latitude,time:time,money:money,detail:detail}).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('发布成功');
+        }
+    }).catch(function(err){
+        res.send('2')
+        console.log(err);
+    });
+})
+
+//更新附近信息
+router.post('/Updatenear',function(req,res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'content-type');
+
+    var data = req.body,job,tel,num,address,longitude,latitude,time,money,id,detail;
+    for(key in data){
+        job = JSON.parse(key).job;
+        tel = JSON.parse(key).tel;
+        num = JSON.parse(key).num;
+        address = JSON.parse(key).address;
+        longitude = JSON.parse(key).longitude;
+        latitude = JSON.parse(key).latitude;
+        time = JSON.parse(key).time;
+        money = JSON.parse(key).money;
+        id = JSON.parse(key).id;
+        detail = JSON.parse(key).id;
+    }
+    Updatenear({detail:detail,job:job,tel:tel,num:num,address:address,longitude:longitude,latitude:latitude,time:time,money:money,id:id}).then(function(data){
+        if(data != 0){
+            res.send('1');
+            console.log('更新成功');
+        }
+    }).catch(function(err){
+        res.send('2');
+        console.log(err);
+    });
+})
 
 //修改注册用户信息
 router.post('/',function(req,res){

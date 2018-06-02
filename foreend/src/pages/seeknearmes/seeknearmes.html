@@ -26,14 +26,15 @@
               </ion-avatar>
               <h2>{{job}}</h2>
               <h3> 
-                <i class="iconfont">&#xe522;</i>{{num}}
-                <i class="iconfont">&#xe511;</i>{{location}}
-                <i id="money">{{price}}</i>
+                <i class="iconfont">&#xe522;</i>{{num}}&nbsp;
+                <i class="iconfont">&#xe511;</i>{{address}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i id="money">￥{{money}}</i>
               </h3>              
-              <button id="but" color="danger"  ion-button item-end (click)="grab()">抢单</button>
+              <!-- <button id="but" color="danger"  ion-button item-end (click)="grab()">抢单</button> -->
         </ion-item>
+        <ion-item class="title"><h2>联系方式:&nbsp;&nbsp;{{tel}}</h2></ion-item>
         <ion-item class="title"><h2>职位描述</h2></ion-item>
-        <ion-item><p>1.负责开发移动端前端开发<p></ion-item>
+        <ion-item><p>{{detail}}<p></ion-item>
       </ion-list>
     
       <div id="bottom">
