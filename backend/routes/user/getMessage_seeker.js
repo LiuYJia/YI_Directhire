@@ -156,18 +156,18 @@ router.get('/Getnear',function(req,res){
   var lng = req.query.longitude,lat = req.query.latitude,arr=[];
   Getnear().then(function(data){
     if(data){
-      console.log('附近获取成功');
+      console.log('附近获取成功\n');
       for(var i=0;i<data.length;i++){
         !function(){
           var range = distance(lng,lat,Number(data[i].longitude),Number(data[i].latitude));
           data[i].range = Math.round(range*1000);
-          console.log('此位置距离'+data[i].address+'：'+range*1000+'米');
+          console.log('此位置距离'+data[i].address+'：'+range*1000+'米\n');
           if(range*1000<1500){
             arr.push(data[i]);
           } 
         }(i);
-      }
-      // console.log(arr);
+      }      
+      arr.sort(sortRange);
       res.send(arr);
     }
   }).catch(function(err){
@@ -175,6 +175,10 @@ router.get('/Getnear',function(req,res){
     console.log(err);
   })
 
+  //排序
+  function sortRange(a,b){
+    return a.range-b.range;
+  }
   //距离计算
   function rad(d){
     return d*Math.PI/180.0;
