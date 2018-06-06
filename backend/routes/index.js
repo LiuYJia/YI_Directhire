@@ -31,6 +31,8 @@ module.exports = function (app) {
     app.use('/user/getMessage_recruit',require('./user/getMessage_recruit'));
     app.use('/user/updateSeeker',require('./user/updateSeeker'));
     app.use('/user/updateRecruit',require('./user/updateRecruit'));
+
+    app.use('/user/chat',require('./user/chat'));
    
     
 }

@@ -6,10 +6,37 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var router = express.Router();
-
 var routes = require('./routes');
-
 var app = express();
+
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+io.on("connection", function(socket){
+  console.log('user come!');
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
+  socket.on("joinRoom",function (data,fn) {
+    socket.join(data.roomName);
+    console.log('joinRoom:'+data.roomName); // join(房间名)加入房间       
+    fn({"code":0,"msg":"加入房间成功","roomName":data.roomName});
+  });
+
+  socket.on("leaveRoom",function(data,fn){
+    socket.leave(data.roomName);
+    fn({"code":0,"msg":"已退出房间","roomName":data.roomName});
+  })
+
+  socket.on('sendMsg', function(data,fn){
+    console.log('message:'+data.msg);
+    socket.broadcast.to(data.roomName).emit('receiveMsg',data)
+    fn({"code":0,"msg":"消息发送成功"});
+  });
+});
+http.listen(3100);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +54,7 @@ app.use(cookieParser('Wilson'));
 app.use(session({ secret: 'wilson'}));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use("/scripts", express.static(__dirname + "/node_modules/"));
 
 routes(app);
 

@@ -19,8 +19,8 @@ import { NearmsgPage } from '../pages/nearmsg/nearmsg';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // rootPage:any = LoginPage;
-  rootPage:any = StartPage;
+  rootPage:any = LoginPage;
+  // rootPage:any = StartPage;
   //  rootPage:any = RectabsPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
