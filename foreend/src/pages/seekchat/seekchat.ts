@@ -31,6 +31,7 @@ export class SeekchatPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SeekchatPage');
+    console.log(this.sendImg);
     //获取本用户信息
     this.username = localStorage.getItem("login");
     this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/ResumeMsg?username='+localStorage.getItem('login')).subscribe(data=>{

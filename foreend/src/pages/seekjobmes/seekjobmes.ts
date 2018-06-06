@@ -18,7 +18,7 @@ import { Headers } from '@angular/http';
 })
 export class SeekjobmesPage {
 
-  all = [];job;school;num;name;money;age;detail;tel;username;id;
+  all = [];job;school;num;name;money;age;detail;tel;username;id;img;mes;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public http:Http,
@@ -34,6 +34,7 @@ export class SeekjobmesPage {
     this.tel = navParams.get("item").tel;
     this.username = navParams.get("item").username;
     this.id = navParams.get('item').id;
+    this.mes = navParams.get('item');
   }
 
   ionViewDidLoad() {
@@ -89,6 +90,9 @@ export class SeekjobmesPage {
       if(data['_body']==2) this.showAlert4();
     })
   }
-  
+  //发起聊天
+  chat(item){
+    this.navCtrl.push('SeekchatPage',{all:this.mes});
+  }
 
 }

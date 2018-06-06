@@ -17,7 +17,7 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'recseeker.html',
 })
 export class RecseekerPage {
-  img;name;sex;age;email;tel;school;job;money;detail;id;
+  img;name;sex;age;email;tel;school;job;money;detail;id;mes;
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,
     public alertCtrl: AlertController) {
     this.img = navParams.get('title').img;
@@ -25,7 +25,7 @@ export class RecseekerPage {
     this.sex = navParams.get('title').sex;
     this.age = navParams.get('title').age;
     this.id = navParams.get('title').id;
-    console.log(navParams.get('title'));
+    this.mes=navParams.get('title');
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getmsg?username='+navParams.get('title').username).subscribe(data=>{
       var message = JSON.parse(data['_body']);
       console.log(message[0]);
@@ -69,6 +69,10 @@ export class RecseekerPage {
        if(data['_body']==1) this.showAlert3();
        if(data['_body']==2) this.showAlert4();
      })
+   }
+   //发起聊天
+   sub(){
+    this.navCtrl.push('RecchatPage',{all:this.mes});
    }
 
 }
