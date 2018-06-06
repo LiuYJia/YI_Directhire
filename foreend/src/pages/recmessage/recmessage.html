@@ -15,16 +15,20 @@
 
 <ion-content id="body">
   <ion-list>
-    <ion-item *ngFor='let item of items' (click)="gorecchat(item)">
-      <ion-avatar item-start>
-        <img src="{{item.img}}">
-      </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.last}}</p>
-      <ion-note item-end>{{item.time}}</ion-note>
-    </ion-item>
-  </ion-list>
-
+      <ion-item-sliding *ngFor='let item of items'>
+          <ion-item (click)="gorecchat(item)">
+              <ion-avatar item-start>
+                <img src="{{item.img}}">
+              </ion-avatar>
+              <h2>{{item.name}}</h2>
+              <p>{{item.last}}</p>
+              <ion-note item-end>{{item.time}}</ion-note>
+            </ion-item>
+          <ion-item-options side="right">
+            <button ion-button  color="danger" (click)="del(item)" style="color:white">删除</button>
+          </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
   <!-- 文章推荐 -->
   <ion-list>
       <ion-list-header id="head">时文推荐</ion-list-header>

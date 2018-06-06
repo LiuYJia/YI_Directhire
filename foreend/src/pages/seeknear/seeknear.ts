@@ -28,7 +28,7 @@ export class SeeknearPage {
     public alertCtrl:AlertController) {}
 
   job;tel;num;address;longitude;latitude;time;money;
-  info=[{job:'服务员',money:'￥80/天',time:'2017/12/27',address:'空中花园',num:'5人',detail:'1.负责开发移动端前端开发',range:'100'}];
+  info=[];
   ionViewDidEnter() {
     console.log('SeeknearPage');
     // this.geolocation.getCurrentPosition().then((resp) => {

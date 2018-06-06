@@ -14,14 +14,18 @@
     <ion-searchbar placeholder="搜索"></ion-searchbar>
     <!-- 消息列表 -->
     <ion-list>
-      <ion-item *ngFor='let item of list'  (click)="goseekchat(item)">
-        <ion-avatar item-start>
-            <img src="{{item.icon}}">
-        </ion-avatar>
-        <h2>{{item.title}}<span style="float:right">{{item.time}}</span></h2>
-        <p>{{item.ig}}</p>
-
-      </ion-item>
+      <ion-item-sliding *ngFor='let item of list'>
+          <ion-item (click)="goseekchat(item)">
+              <ion-avatar item-start>
+                  <img src="{{item.img}}">
+              </ion-avatar>
+              <h2>{{item.name}}<span style="float:right">{{item.time}}</span></h2>
+              <p id="mes">{{item.ig}}</p><span></span>      
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button  color="danger" (click)="del(item)" style="color:white">删除</button>
+          </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
     <!-- 文章推荐 -->
     <ion-list>
@@ -34,3 +38,6 @@
       </ion-item>
     </ion-list>
 </ion-content>
+
+
+
