@@ -1,4 +1,4 @@
-# 《易·直聘》APP
+# 《易·直聘》
 
 ### 前端：AngularJS+Ionic
 ### 后台：Node.js+Express+EJS+Bootstrap
