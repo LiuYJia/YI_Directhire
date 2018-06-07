@@ -18,8 +18,10 @@ export class RecmessagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
   }
-  info=[];
-  ionViewDidLoad() {
+  info=[];seeker;img;
+  //items=[{img:"assets/imgs/class1.png",name:"seeker01",last:"last message!",time:'5:00'}];
+  items=[];
+  ionViewDidEnter() {
     console.log('ionViewDidLoad RecmessagePage');
     //获取文章列表
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
@@ -29,16 +31,38 @@ export class RecmessagePage {
         this.info[i] = message[i];
       }
     });
+    //获取消息列表
+    this.seeker = localStorage.getItem('chatseek');
+    if(this.seeker==null){
+      return;
+    }else{
+      this.http.get('http://127.0.0.1:3000/user/getMessage_seeker/ResumeMsg?username='+this.seeker).subscribe(data=>{
+        var message = JSON.parse(data['_body']);
+        console.log(message);
+        this.items.unshift({img:"",name:"",last:"last message!",time:'5:00'})
+        this.img = 'http://127.0.0.1:3000'+message[0].img;
+        this.items[0].img = this.img;
+        this.items[0].name = this.seeker;
+        localStorage.removeItem('chatseek');
+      })
+    }
   }
-  items=[{img:"assets/imgs/class1.png",name:"seeker01",last:"last message!",time:'5:00'},
-  {img:"assets/imgs/class2.png",name:"seeker02",last:"last message!",time:'4:00'},
-  {img:"assets/imgs/class3.png",name:"seeker03",last:"last message!",time:'3:00'},
-  {img:"assets/imgs/class4.png",name:"seeker04",last:"last message!",time:'2:00'}];
   gorecchat(item){
     this.navCtrl.push('RecchatPage',{all:item});
   }
 //进入相应文章页
   goto(item){
     this.navCtrl.push('SeekremessagePage',{all:item});
+  }
+  //删除
+  del(item){
+    var list = this.items;
+    for(var i = 0;i < list.length; i++) { 
+      !function(i){
+          if(list[i] == item){  
+            list.splice(i,1);         
+          } 
+        }(i);
+    }
   }
 }

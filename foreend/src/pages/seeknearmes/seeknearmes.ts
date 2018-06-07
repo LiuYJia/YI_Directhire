@@ -17,7 +17,7 @@ import { Headers } from '@angular/http';
   templateUrl: 'seeknearmes.html',
 })
 export class SeeknearmesPage {
-  job;money;time;address;num;username;detail;tel;
+  job;money;time;address;num;username;detail;tel;mes;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public http:Http,
@@ -29,6 +29,8 @@ export class SeeknearmesPage {
     this.num = navParams.get('mes').num;
     this.detail = navParams.get('mes').detail;
     this.tel = navParams.get('mes').tel;
+    this.mes = navParams.get('mes');
+    console.log(this.mes);
   }
 
   ionViewDidLoad() {
@@ -59,5 +61,9 @@ export class SeeknearmesPage {
       if(data['_body']==1) this.showAlert1();
       if(data['_body']==2) this.showAlert2();
     })
+  }
+  chat(item){
+    this.navCtrl.push('SeekchatPage',{all:this.mes});
+    localStorage.setItem('chatrec',this.username);
   }
 }

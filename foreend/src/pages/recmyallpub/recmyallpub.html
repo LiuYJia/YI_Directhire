@@ -14,37 +14,14 @@
 
 
 <ion-content id="body">
-    <!-- <div id="reg"><ion-icon name="arrow-back" id="back" (click)="back()"></ion-icon><p>我发布的</p></div> -->
-    <!-- <div >
-        <ion-segment [(ngModel)]="position">
-          <ion-segment-button value="all">
-            全部
-          </ion-segment-button>
-          <ion-segment-button value="viewed">
-            被查看
-          </ion-segment-button>
-          <ion-segment-button value="finish">
-             已结束
-          </ion-segment-button>
-        </ion-segment>
-      </div> -->
-      
+
       <div [ngSwitch]="position" id="more">
-        <!-- <ion-list *ngSwitchCase="'all'">
-          <ion-item *ngFor="let item of all" (click)="gorecpub_set(item)">
-            <ion-thumbnail item-start><img src="assets/imgs/logo.png"></ion-thumbnail>
-            <h2 class="pos">{{item.job}}</h2>
-            <h2 class="money" ion-end>{{item.money}}</h2>
-            <p><i>{{item.address}}</i><i>{{item.age}}</i><i>{{item.school}}</i></p>
-            <p>公司：<i class="name">{{item.name}}</i></p>
-            <p>{{item.detail}}</p>
-          </ion-item>
-        </ion-list> -->
+
         <ion-list>      
             <ion-item *ngFor="let item of all"  class="single">
                 <ion-item (click)="gorecpub_set(item)">
                   <ion-avatar item-start>
-                    <img src="assets/imgs/class1.png">
+                    <img src="assets/imgs/job.png">
                   </ion-avatar>
                   <h2>{{item.job}}</h2>
                   <h3><i class="iconfont">&#xe624;</i>{{item.school}} 

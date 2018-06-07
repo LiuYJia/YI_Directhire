@@ -13,13 +13,48 @@ var getCollect_seeker = require('../../method/Suser').getCollect_seeker;
 var getCollect_msg = require('../../method/Suser').getCollect_msg;
 var Search = require('../../method/Suser').Search;
 var Getnear = require('../../method/Suser').Getnear;
+var getRid = require('../../method/Suser').getRid;
+var alreadySend = require('../../method/Suser').alreadySend;
 
+//已投递
+router.get('/alreadySend',function(req,res){
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  var s_username = req.query.s_username;
+  var finaldata=[];
+  console.log(s_username);
+
+  getRid(s_username).then(function(data){
+    console.log(data);
+
+      for(var i =0;i<data.length;i++){
+        !function(i){
+          alreadySend(data[i].r_id).then(function(result){
+          
+            if(result){
+              finaldata.push(result[0]);
+            }else{
+              res.send('2');
+              console.log('不存在');
+            }
+            if(i==data.length-1){
+              res.send(finaldata);
+              console.log('获取已投递成功');
+            }
+          })
+        }(i);               
+      }
+
+    }).catch(function(err){
+    res.send('2');
+    console.log(err);
+  })
+
+})
 
 
 //获取分类
 router.get('/getsort',function(req,res){
   res.setHeader("Access-Control-Allow-Origin", "*");
-  console.log(555555555555555555);
   getSort().then(function(data){
     if(data){
       console.log(data);

@@ -8,13 +8,23 @@ page-seekmygrab {
     .spe{
         margin-top:8px;
     }
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
+    }
     #time{
         color: gray;
         float: right;
     }
+    #name{
+        font-style: normal;
+        color:#1990ef;
+        margin-left:10px;
+        font-size: 18px;
+    }
     #money{
         font-style: normal;
-        color:rgb(243, 97, 97);
+        color:red;
         margin-left:10px;
         font-size: 18px;
     }
@@ -23,10 +33,8 @@ page-seekmygrab {
         margin-left:10px;
         font-size:18px;
     }
-    #but{
-        float: right;
-        width:100px;
-        height:30px;
-        display: inline;
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
     }
 }

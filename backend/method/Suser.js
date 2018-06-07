@@ -158,16 +158,50 @@ module.exports = {
         })
     },
     //投递简历
-    SendResume:function SendResume(r_username,s_username){     
+    SendResume:function SendResume(data){     
         return new Promise(function(resolve,reject){
             pool.getConnection(function(err,connection){
-                var SendResume_sql = 'insert into resume(r_username,s_username) values(?,?)';
-                connection.query(SendResume_sql,[r_username,s_username],function(err,result){
+                var SendResume_sql = 'insert into resume(r_username,s_username,r_id) values(?,?,?)';
+                connection.query(SendResume_sql,[data.r_username,data.s_username,data.r_id],function(err,result){
                     if(err){
                         console.log(err);
                         reject(err);
                     }else{
                         resolve(result.affectedRows);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    //已投递
+    getRid:function getRid(s_username){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var getRid_sql = 'select * from resume where s_username=?';
+                connection.query(getRid_sql,[s_username],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
+                        console.log(result);
+                    }
+                    connection.release();
+                })
+            })
+        })
+    },
+    alreadySend:function alreadySend(r_id){
+        return new Promise(function(resolve,reject){
+            pool.getConnection(function(err,connection){
+                var alreadySend_sql = 'select * from msg_recruit where id=?';
+                connection.query(alreadySend_sql,[r_id],function(err,result){
+                    if(err){
+                        console.log(err);
+                        reject(err);
+                    }else{
+                        resolve(result);
                     }
                     connection.release();
                 })

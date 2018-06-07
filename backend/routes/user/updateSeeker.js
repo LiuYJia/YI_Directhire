@@ -65,12 +65,14 @@ router.post('/SendResume',function(req,res){
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.header('Access-Control-Allow-Headers', 'content-type');
-    var r_username,s_username,data = req.body;
+    var r_id,r_username,s_username,data = req.body;
     for(key in data){
+        r_id = JSON.parse(key).r_id;
         r_username = JSON.parse(key).r_username;
         s_username = JSON.parse(key).s_username;
     }
-    SendResume(r_username,s_username).then(function(data){
+    console.log(r_id);
+    SendResume({r_username:r_username,s_username:s_username,r_id:r_id}).then(function(data){
         if(data != 0){
             res.send('1');
             console.log('投递成功');

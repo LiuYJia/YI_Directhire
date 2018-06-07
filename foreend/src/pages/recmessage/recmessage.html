@@ -16,7 +16,7 @@
 <ion-content id="body">
   <ion-searchbar placeholder="搜索"></ion-searchbar>
   <ion-list id="list">
-      <ion-item-sliding *ngFor='let item of items'>
+      <ion-item-sliding *ngFor="let item of items">
           <ion-item (click)="gorecchat(item)">
               <ion-avatar item-start>
                 <img src="{{item.img}}">

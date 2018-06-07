@@ -59,7 +59,7 @@ export class SeekjobmesPage {
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   sub(){
     this.http.post('http://127.0.0.1:3000/user/updateSeeker/SendResume',JSON.stringify({
-      s_username:localStorage.getItem("login"),r_username:this.username}),{headers:this.headers}).subscribe(data=>{
+      s_username:localStorage.getItem("login"),r_username:this.username,r_id:this.id}),{headers:this.headers}).subscribe(data=>{
       if(data['_body']==1) this.showAlert1();
       if(data['_body']==2) this.showAlert2();
     });
@@ -93,6 +93,7 @@ export class SeekjobmesPage {
   //发起聊天
   chat(item){
     this.navCtrl.push('SeekchatPage',{all:this.mes});
+    localStorage.setItem('chatrec',this.username);
   }
 
 }

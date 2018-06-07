@@ -23,15 +23,16 @@ export class RecmyallpubPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http,public alertCtrl:AlertController) {
   }
 
-  all = [];
+  all = [];img;
   position="all";
   ionViewDidEnter() {
     console.log('ionViewDidLoad RecmyallpubPage');
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/publishme?username='+localStorage.getItem("login")).subscribe(data=>{
       var message = JSON.parse(data['_body']);
-      console.log(message[0]);
+      console.log(message);
       for(var i=0;i<message.length;i++){
         this.all[i] = message[i];
+        // this.all[i].img = 'http://127.0.0.1:3000'+message[i].img;
       }
     })
   }

@@ -6,13 +6,13 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title text-center>已抢职位</ion-title>
+    <ion-title text-center>已投递职位</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content id="body">
-  <ion-list>
+  <!-- <ion-list>
     <ion-item *ngFor="let item of info" class="spe">
 
         <ion-item style="display:inline" (click)="jobinfo(item)">
@@ -27,5 +27,25 @@
         </ion-item>  
 
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+  <ion-list>
+    <ion-item *ngFor="let item of info;let i = index" class="spe">
+
+        <ion-item (click)="gojobmes(item)">
+            <ion-avatar item-start>
+              <img src="{{item.img}}">
+            </ion-avatar>
+            <h2>{{item.job}}</h2>
+            <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+              <i class="iconfont">&#xe522;</i>{{item.num}}
+            </h3>
+            <!-- <p>地点：{{item.name}}</p> -->
+            <p id="money" item-end><i style="font-style:normal">薪资:</i>{{item.money}}</p>
+          </ion-item>
+          <ion-item>
+              <p><i style="font-style:normal">地点:</i><i id="name">{{item.name}}</i></p>
+          </ion-item>
+
+    </ion-item>
+</ion-list>
 </ion-content>

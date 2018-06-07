@@ -6,7 +6,6 @@ router.get('/', function(req, res) {
   if(req.cookies.islogin)
   { 
     console.log('cookies:' + req.cookies.islogin);
-    res.cookie('islogin', 'sucess', { maxAge: 60000 });
     req.session.username = req.cookies.islogin;
   }  
 

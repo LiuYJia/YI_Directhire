@@ -19,9 +19,56 @@ export class SeekmessagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
   }
-  info=[];
+  info=[];rec;img;name;arr=[];chatrec;
   ionViewDidEnter() {
     console.log('ionViewDidLoad SeekmessagePage');
+    // this.rec = JSON.stringify(localStorage);
+    // var job=JSON.parse(this.rec);
+    // for(var key in job){
+    //   this.arr.push(key);
+    // }
+    // for(var i=0;i<this.arr.length-1;i++){
+    //   var arr=this.arr;
+    //   var img =this.img;
+    //   var list = this.list;
+    //   var server = this.http;
+    //   !function(i){
+    //     console.log(arr[i]);
+    //     // for(var i=0;i<list.length;i++){
+
+    //     // }
+    //     // if(arr[i]!=list[i])
+    //     server.get('http://127.0.0.1:3000/user/getMessage_recruit/detailR?username='+arr[i]).subscribe(data=>{
+    //       var message = JSON.parse(data["_body"]);
+    //       console.log(message);
+    //       img = 'http://127.0.0.1:3000'+message[0].img;
+    //       list.unshift({img:"",name:"",ig:"last message!",time:'5:00'});
+    //       list[0].name = arr[i];
+    //       list[0].img = img;
+    //     });
+    //   }(i);    
+    // }
+    this.chatrec = localStorage.getItem('chatrec');
+    console.log(this.chatrec);
+    // for(var i=0;i<this.list.length;i++){
+    //   console.log(this.chatrec!=this.list[i].name)
+    // }
+    if(this.chatrec==null){
+      return;
+    }else{
+      this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/detailR?username='+this.chatrec).subscribe(data=>{
+      var message = JSON.parse(data["_body"]);
+      console.log(message);
+      this.img = 'http://127.0.0.1:3000'+message[0].img;
+      this.list.unshift({img:"",name:"",ig:"last message!",time:'5:00'});
+      this.list[0].name = this.chatrec;
+      this.list[0].img = this.img;
+      localStorage.removeItem('chatrec');
+    });
+    }
+    
+    
+    //获取文章列表
     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
       var message = JSON.parse(data['_body']);
       console.log(message);
@@ -29,11 +76,10 @@ export class SeekmessagePage {
         this.info[i] = message[i];
       }
     });
+    
   }
-  list=[{name:'马云',img:'assets/imgs/18.jpg',ig:'五星级酒店不能去抢麻辣烫的生意，要有自己的定位。',time:'10:11'},
-  {name:'马化腾',img:'assets/imgs/19.jpg',ig:'再小的网店，做的都是全中国的生意。',time:'11:11'},
-  {name:'雷军',img:'assets/imgs/20.jpg',ig:'买家不是职业采购，买家的判断来源于生活经验，而不是工程师学历。',time:'12:41'},
-  {name:'刘强东',img:'assets/imgs/21.jpg',ig:'页面漂亮的目的不是让买家爽心悦目，是为了让消费者信任你。',time:'13:01'}];
+  list = [];
+  //list=[{name:'马云',img:'assets/imgs/18.jpg',ig:'五星级酒店不能去抢麻辣烫的生意，要有自己的定位。',time:'10:11'}];
   //进入聊天页面
   goseekchat(item){
     this.navCtrl.push('SeekchatPage',{all:item});
@@ -46,16 +92,12 @@ export class SeekmessagePage {
   headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
   del(item){
     var list = this.list;
-    var serve = this.http;
-    var header = this.headers;
     for(var i = 0;i < list.length; i++) { 
       !function(i){
           if(list[i] == item){  
-            serve.post('',JSON.stringify({}),{headers:header}).subscribe(data=>{
-              list.splice(i,1);            
-            });            
+            list.splice(i,1);         
           } 
-        }(i);    
+        }(i);
     }
   }
 }
