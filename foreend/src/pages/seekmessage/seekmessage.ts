@@ -22,32 +22,15 @@ export class SeekmessagePage {
   info=[];rec;img;name;arr=[];chatrec;
   ionViewDidEnter() {
     console.log('ionViewDidLoad SeekmessagePage');
-    // this.rec = JSON.stringify(localStorage);
-    // var job=JSON.parse(this.rec);
-    // for(var key in job){
-    //   this.arr.push(key);
-    // }
-    // for(var i=0;i<this.arr.length-1;i++){
-    //   var arr=this.arr;
-    //   var img =this.img;
-    //   var list = this.list;
-    //   var server = this.http;
-    //   !function(i){
-    //     console.log(arr[i]);
-    //     // for(var i=0;i<list.length;i++){
+     //获取文章列表
+     this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
+      var message = JSON.parse(data['_body']);
+      console.log(message);
+      for(var i=0;i<message.length;i++){
+        this.info[i] = message[i];
+      }
+    });
 
-    //     // }
-    //     // if(arr[i]!=list[i])
-    //     server.get('http://127.0.0.1:3000/user/getMessage_recruit/detailR?username='+arr[i]).subscribe(data=>{
-    //       var message = JSON.parse(data["_body"]);
-    //       console.log(message);
-    //       img = 'http://127.0.0.1:3000'+message[0].img;
-    //       list.unshift({img:"",name:"",ig:"last message!",time:'5:00'});
-    //       list[0].name = arr[i];
-    //       list[0].img = img;
-    //     });
-    //   }(i);    
-    // }
     this.chatrec = localStorage.getItem('chatrec');
     console.log(this.chatrec);
     // for(var i=0;i<this.list.length;i++){
@@ -64,18 +47,11 @@ export class SeekmessagePage {
       this.list[0].name = this.chatrec;
       this.list[0].img = this.img;
       localStorage.removeItem('chatrec');
-    });
+      });
     }
     
     
-    //获取文章列表
-    this.http.get('http://127.0.0.1:3000/user/getMessage_recruit/getarticle').subscribe(data=>{
-      var message = JSON.parse(data['_body']);
-      console.log(message);
-      for(var i=0;i<message.length;i++){
-        this.info[i] = message[i];
-      }
-    });
+   
     
   }
   list = [];
