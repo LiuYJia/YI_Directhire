@@ -1,0 +1,23 @@
+page-seekmessage {
+    #body{
+        background-color: #f2f2f2;
+    }
+    .item-ios ion-avatar ion-img, .item-ios ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+    }
+    .info{
+        margin-top:5px;
+    }
+    #head{
+        font-size:1.3em;
+    }
+    .art{
+        color:#1990ef;
+    }
+    #mes{
+        width:80%;
+    }
+}

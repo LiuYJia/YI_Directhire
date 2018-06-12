@@ -1,0 +1,60 @@
+<!--
+  Generated template for the RecmyallpubPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>我发布的</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="body">
+
+      <div [ngSwitch]="position" id="more">
+
+        <ion-list>      
+            <ion-item *ngFor="let item of all"  class="single">
+                <ion-item (click)="gorecpub_set(item)">
+                  <ion-avatar item-start>
+                    <img src="assets/imgs/job.png">
+                  </ion-avatar>
+                  <h2>{{item.job}}</h2>
+                  <h3><i class="iconfont">&#xe624;</i>{{item.school}} 
+                    <i class="iconfont">&#xe522;</i>{{item.num}}
+                  </h3>
+                  <p><i style="font-style:normal">要求:</i><i id="position">{{item.detail}}</i></p>
+                </ion-item>
+                <ion-item>
+                    <p><i style="font-style:normal">薪资:</i><i id="money">{{item.money}}</i></p>
+                    <button ion-button item-end color="danger" id="del" (click)="del(item)">删除</button>
+                </ion-item>
+            </ion-item>
+        </ion-list>
+      
+        <!-- <ion-list *ngSwitchCase="'viewed'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-kitten-1.jpg">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+          ...
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'finish'">
+            <ion-item>
+              <ion-thumbnail item-start>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+            </ion-item>
+            ...
+          </ion-list> -->
+      </div>
+
+</ion-content>

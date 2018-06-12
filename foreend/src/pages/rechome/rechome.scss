@@ -1,0 +1,83 @@
+page-rechome {
+    #body{
+        background-color: #f2f2f2;
+    }
+    #grid{
+        margin-left:4px;
+    }
+    #slides{
+        height:30%;
+    }
+    .slide img{
+        margin-left:0;
+        margin-top:0px;
+    }
+    //搜索
+    #search{
+        height:35px;
+        border:1px solid #f2f2f2;
+        width:80%; 
+        padding-left:15px;   
+    }
+    #searchbut{
+        height:30px;
+        display: inline;
+        width:15%;
+        float: right;
+        position: relative;
+        margin-top:-10%;
+        margin-right:3%;
+    }
+    .head{
+        font-size:1.3em;
+    }
+    .col{
+        width:25%;
+        height:110px;
+        border:2px solid #e6e6e6;
+        margin-left:-2px;
+        margin-top:-2px;
+        text-align: center
+    }
+    .segment-md .segment-button{
+        color:black;
+    }
+    #class img{
+         width:85%;
+        //margin-left:10%;
+        border-radius: 50%;
+    }
+    #class p{
+        //margin-top:-3px;
+    }
+    .spe{
+        margin-top:8px;
+    }
+    .iconfont{
+        color:#1990ef;
+        margin-left:5px;
+    }
+    #money{
+        font-style: normal;
+        color:rgb(243, 97, 97);
+        margin-left:10px;
+        font-size: 18px;
+    }
+    #position{
+        font-style: normal;
+        margin-left:10px;
+        font-size:18px;
+    }
+    .segment-ios .segment-button{
+        line-height: 1rem;
+        color: black;
+    }
+    .segment-button{
+        width:25%;
+        white-space: normal;
+    }
+    /*列表最后一项样式*/
+    .list-ios > .item-block:last-child .item-inner{
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+}

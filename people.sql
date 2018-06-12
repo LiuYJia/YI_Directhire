@@ -89,7 +89,7 @@ CREATE TABLE `collect_recruit` (
 
 LOCK TABLES `collect_recruit` WRITE;
 /*!40000 ALTER TABLE `collect_recruit` DISABLE KEYS */;
-INSERT INTO `collect_recruit` VALUES (17,'11',3),(18,'11',8),(19,'11',8),(20,'11',1);
+INSERT INTO `collect_recruit` VALUES (17,'11',3),(20,'11',1);
 /*!40000 ALTER TABLE `collect_recruit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `feedback` (
   `tel` varchar(64) DEFAULT NULL,
   `people` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `msg_recruit` (
   `detail` varchar(64) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `msg_seeker` (
 
 LOCK TABLES `msg_seeker` WRITE;
 /*!40000 ALTER TABLE `msg_seeker` DISABLE KEYS */;
-INSERT INTO `msg_seeker` VALUES (1,'11','男','IT/互联网','Node.js','10k','本科','3485698748','23','积极向上，认真负责','小刘','/imgSeeker/0.3805307006514922.jpg'),(2,'22','男','教师','数学','6k','本科','03180125489','22','积极向上，认真负责','小赵','/imgSeeker/0.5880396868760518.jpg'),(3,'33','男','文职人员','售货员','8k','本科','25345354345','23','积极向上，认真负责','小李','/imgSeeker/0.7462698355686377.jpg'),(4,'44','女','建筑师','话务员','5k','本科','54343535743','24','积极向上，认真负责','小冯','/imgSeeker/0.8605092510473284.jpg'),(5,'55','女','金融','基金','7k','本科','5345343543','35','积极向上，认真负责','小陈','/imgSeeker/0.6304186778823913.jpg'),(7,'77','女','医生','研发人员','9k','本科','535737537','30','积极向上，认真负责','小白','/imgSeeker/0.3068699224611151.jpg'),(8,'88','男','药剂师','记者','5k','本科','527537357','40','积极向上，认真负责','小孙','/imgSeeker/0.31451574370141144.jpg'),(9,'99','男','IT/互联网','JAVA','10k','本科','5657645342','30','积极向上，认真负责','小张','/imgSeeker/0.10093049626332729.jpg'),(10,'aa','女','IT/互联网','测试','7k','本科','324421435','24','积极向上，认真负责','小杨','/imgSeeker/0.3068699224611151.jpg'),(11,'bb','男','教师','英语','8k','本科','345356432','28','积极向上，认真负责','小刘','/imgSeeker/0.8536641718854978.jpg'),(12,'cc','男','金融','分货员','8k','本科','8765434566','30','积极向上，认真负责','小晓','/imgSeeker/0.30136868924611804.jpg'),(13,'dd','女','医生','技术人员','8k','本科','23567765','29','积极向上，认真负责','小崔','/imgSeeker/0.9257085813159478.jpg'),(14,'ee','男','文职人员','摄影师','9k','本科','1234565432','20','积极向上，认真负责','小赵','/imgSeeker/0.740690924975969.jpg'),(15,'ff','男','金融','证券','8k','本科','6437445456','28','积极向上，认真负责','小李','/imgSeeker/0.6304186778823913.jpg'),(16,'kk','女','IT/互联网','前端开发','10k','本科','23566534235','25','积极向上，认真负责','小丁','/imgSeeker/0.35292249066078174.jpg'),(17,'gg','女','家政服务','咨询','9k','本科','3564763542','28','积极向上，认真负责','小菜','/imgSeeker/0.10093049626332729.jpg');
+INSERT INTO `msg_seeker` VALUES (1,'11','男','IT/互联网','Node.js','10k','本科','3485698748','23','积极向上，认真负责','小刘','/imgSeeker/0.3805307006514922.jpg'),(2,'22','男','教师','数学','6k','本科','03180125489','22','积极向上，认真负责','小赵','/imgSeeker/0.5880396868760518.jpg'),(3,'33','男','文职人员','售货员','8k','本科','25345354345','23','积极向上，认真负责','小李','/imgSeeker/0.30891957942227055.jpg'),(4,'44','女','建筑师','话务员','5k','本科','54343535743','24','积极向上，认真负责','小冯','/imgSeeker/0.8605092510473284.jpg'),(5,'55','女','金融','基金','7k','本科','5345343543','35','积极向上，认真负责','小陈','/imgSeeker/0.6304186778823913.jpg'),(7,'77','女','医生','研发人员','9k','本科','535737537','30','积极向上，认真负责','小白','/imgSeeker/0.3068699224611151.jpg'),(8,'88','男','药剂师','记者','5k','本科','527537357','40','积极向上，认真负责','小孙','/imgSeeker/0.31451574370141144.jpg'),(9,'99','男','IT/互联网','JAVA','10k','本科','5657645342','30','积极向上，认真负责','小张','/imgSeeker/0.10093049626332729.jpg'),(10,'aa','女','IT/互联网','测试','7k','本科','324421435','24','积极向上，认真负责','小杨','/imgSeeker/0.3068699224611151.jpg'),(11,'bb','男','教师','英语','8k','本科','345356432','28','积极向上，认真负责','小刘','/imgSeeker/0.8536641718854978.jpg'),(12,'cc','男','金融','分货员','8k','本科','8765434566','30','积极向上，认真负责','小晓','/imgSeeker/0.30136868924611804.jpg'),(13,'dd','女','医生','技术人员','8k','本科','23567765','29','积极向上，认真负责','小崔','/imgSeeker/0.9257085813159478.jpg'),(14,'ee','男','文职人员','摄影师','9k','本科','1234565432','20','积极向上，认真负责','小赵','/imgSeeker/0.740690924975969.jpg'),(15,'ff','男','金融','证券','8k','本科','6437445456','28','积极向上，认真负责','小李','/imgSeeker/0.6304186778823913.jpg'),(16,'kk','女','IT/互联网','前端开发','10k','本科','23566534235','25','积极向上，认真负责','小丁','/imgSeeker/0.35292249066078174.jpg'),(17,'gg','女','家政服务','咨询','9k','本科','3564763542','28','积极向上，认真负责','小菜','/imgSeeker/0.10093049626332729.jpg');
 /*!40000 ALTER TABLE `msg_seeker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +283,7 @@ CREATE TABLE `near` (
   `range` varchar(64) DEFAULT NULL,
   `detail` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,7 +309,7 @@ CREATE TABLE `resume` (
   `s_username` varchar(10) NOT NULL,
   `r_id` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -385,4 +385,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-07 20:01:07
+-- Dump completed on 2018-06-12  8:39:20

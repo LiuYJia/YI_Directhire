@@ -1,0 +1,28 @@
+page-recpubset {
+    #body{
+        background-color: #f2f2f2;
+    }
+    input{
+        margin-left:20%; 
+        border:none;
+    }
+    select{
+        margin-left:20%;
+    }
+    .left{
+        width:26%;
+    }
+    .right{
+        width:26%;
+    }
+    #area{
+        width:100%;
+        border:1px solid #aaa;
+    }
+    .but{
+        width:80%;
+        margin-left: 10%;
+        //background-color: #1990ef;
+        margin-top:50px;
+    }
+}

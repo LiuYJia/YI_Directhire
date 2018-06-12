@@ -1,0 +1,67 @@
+page-recregister {
+    #body{
+        background-image: url("assets/imgs/login-bg.png");
+        background-size:100%;
+    }
+    #back{
+        float: left;
+        margin-left: 5%;
+    }
+    #reg{
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        margin-right:5%;
+    }
+    #list{
+        margin-top:50px;
+        width:80%;
+        margin-left:10%;
+    }
+    .iconfont{
+        color:white;
+    }
+    .in{
+        width:80%;
+        height:50px;
+        margin-left:10%;
+        background-color:rgba(0,0,0,0);
+        color:white;
+        border:none;
+        border-bottom: 1px solid gray;
+    }
+    #get{
+        width:25%;
+        display: inline-block;
+        font-size:13px;
+        height:30px;
+    }
+    .mes{
+        color:red;
+        margin-left:10%;
+    }
+    #rad{
+        background-color:rgba(0,0,0,0);
+        color:white;
+        border:none;
+    }
+    .iconfont{
+        color: #e2e3e3;
+        display: inline;
+        font-size:24px;
+    }
+    .icon{
+        color: #e2e3e3;
+        display: inline;
+        font-size:24px;
+    }
+    input::-webkit-input-placeholder{
+        color:#e2e3e3;
+    }
+    #but1{
+        width:80%;
+        margin-left: 10%;
+        background-color: #1990ef;
+        margin-top:50px;
+    }
+}

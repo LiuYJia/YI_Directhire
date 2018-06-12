@@ -1,0 +1,28 @@
+<!--
+  Generated template for the SeekuserquePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>反馈信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="body">
+    <ion-input  value='求职人员' name="people" [(ngModel)]="people" hidden></ion-input>
+    <input type="radio" name="identity" value="技术问题" class="radio" [(ngModel)]="sort"/>技术问题
+    <input type="radio" name="identity" value="内容错误" class="radio" [(ngModel)]="sort"/>内容错误
+    <input type="radio" name="identity" value="产品建议" class="radio" [(ngModel)]="sort"/>产品建议
+    <input type="radio" name="identity" value="其他" class="radio" [(ngModel)]="sort"/>其他
+    <h6>问题描述或建议：</h6>
+    <textarea id="area" rows="10" placeholder="请在此处填写您的问题描述或建议..." [(ngModel)]="txt"></textarea>
+    <p id="mes">{{mes}}</p>
+    <h6>联系方式：</h6>
+    <input type="text" id="text" placeholder="输入电话或邮箱" [(ngModel)]="tel">
+    <button ion-button color="none" (click)="sub()" id="but1">一键反馈</button>
+</ion-content>

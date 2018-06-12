@@ -1,0 +1,53 @@
+page-recseeker {
+    #top{
+        height:30%;
+        width: 100%;
+        background-color:#0f72c4;
+        text-align: center
+    }
+    #top img{
+        border-radius:50%;
+        width:100px;
+        height:100px;
+        margin-top:4%
+    }
+    .list-ios{
+        margin:0;
+    }
+    .title{
+        color: #1990ef;
+    }
+    .iconfont{
+        color:#0f72c4;
+    }
+    .intro{
+        display:inline;
+        margin-left:10px
+    }
+    //底部样式
+    #bottom{ 
+        background-color:gainsboro;
+        height:53px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    #bottom button{
+        width: 60%;
+        margin-left:10%;
+    }
+    .star1{
+        color: #1990ef;
+        font-size: 3em;
+        margin-left:8%;
+        margin-top:1.5%;
+        position: fixed;
+    }
+    .star2{
+        color: black;
+        font-size: 3em;
+        margin-left:8%;
+        margin-top:1.5%;
+        position: fixed;
+    }
+}

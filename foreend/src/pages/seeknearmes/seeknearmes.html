@@ -1,0 +1,44 @@
+<!--
+  Generated template for the SeeknearmesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title text-center>职位详情</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+  <ion-content id="body">
+     <!-- 轮播图 -->
+     <ion-slides id="slides" pager="true">     
+        <ion-slide class="slide">
+          <img src="assets/imgs/slide2.png">
+        </ion-slide>    
+      </ion-slides>
+
+      <ion-list id="list">
+        <ion-item>
+            <ion-avatar item-start>
+                <img src="assets/imgs/job.png">
+              </ion-avatar>
+              <h2>{{job}}</h2>
+              <h3> 
+                <i class="iconfont">&#xe522;</i>{{num}}&nbsp;
+                <i class="iconfont">&#xe511;</i>{{address}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i id="money">￥{{money}}</i>
+              </h3>              
+              <!-- <button id="but" color="danger"  ion-button item-end (click)="grab()">抢单</button> -->
+        </ion-item>
+        <ion-item class="title"><h2>联系方式:&nbsp;&nbsp;{{tel}}</h2></ion-item>
+        <ion-item class="title"><h2>职位描述</h2></ion-item>
+        <ion-item><p>{{detail}}<p></ion-item>
+      </ion-list>
+    
+      <div id="bottom">
+        <button ion-button color="primary" (click)="chat()">联系商家</button>
+        <ion-icon ios="ios-star-outline" md="md-star-outline" (click)="store()" [ngClass]="{true:'star1',false:'star2'}[false]"></ion-icon>
+      </div>
+    </ion-content>
