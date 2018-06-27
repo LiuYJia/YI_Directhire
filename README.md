@@ -25,6 +25,7 @@
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/2.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/3.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/13.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/4.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/5.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/6.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
