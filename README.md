@@ -1,7 +1,9 @@
 # 易·直聘(YI_Directhire)
 + [Github](https://github.com/LiuYJia/YI_Directhire)
 ## 项目简介
-**易·直聘**是一款面向职场人员的APP，在互联网迅速发展的大背景下，新一代的人逐渐成为劳动市场的主力军，随着获取信息方式的改变，在招聘与求职方面出现了以往不同的方式，这一代人更愿意从相关APP软件商获取相关信息，**易·直聘**便旨在提供这一信息来源。
+**易·直聘**是一款面向职场人员的APP
+  
+在互联网迅速发展的大背景下，新一代的人逐渐成为劳动市场的主力军，随着获取信息方式的改变，在招聘与求职方面出现了以往不同的方式，这一代人更愿意从相关APP软件商获取相关信息，**易·直聘**便旨在提供这一信息来源。
 ## 项目成员
 + 刘永佳（Manager/Developer）   
    + Email：1158502533@qq.com
@@ -15,6 +17,10 @@
 + 邢佳蕾（Developer）
    + Email：2461539948@qq.com
    + GIthub：https://github.com/xingjialei
+## 技术栈
++ 前端：AngualrJS+Ionic
++ 后台：Node.js+Express+Ejs+Bootstrap
++ 数据库：Mysql
 ## 运行效果
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/2.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
