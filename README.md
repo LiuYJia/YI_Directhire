@@ -23,7 +23,7 @@
 + 后台：Node.js+Express+Ejs+Bootstrap
 + 数据库：Mysql
 ## 运行效果
-![avatar](images/1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/1.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/2.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/3.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![avatar](https://raw.githubusercontent.com/LiuYJia/YI_Directhire/master/images/13.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
