@@ -1,5 +1,6 @@
 # 易·直聘(YI_Directhire)
 + [Github](https://github.com/LiuYJia/YI_Directhire)
++ [Redmine](http://10.7.1.5/projects/h5_yi_directhire?jump=welcome)
 ## 项目简介
 **易·直聘**是一款可实现简历投递、职位发布与获取、人员与职位收藏，简易实时聊天与附近职位获取功能的求职招聘APP。
   
